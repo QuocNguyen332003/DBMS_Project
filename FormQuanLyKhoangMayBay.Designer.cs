@@ -272,7 +272,7 @@
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(197, 43);
             this.btn_xoa.TabIndex = 43;
-            this.btn_xoa.Text = "Xóa khoang MB";
+            this.btn_xoa.Text = "Xóa khoang ";
             this.btn_xoa.UseVisualStyleBackColor = false;
             // 
             // btn_them
@@ -285,7 +285,7 @@
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(197, 43);
             this.btn_them.TabIndex = 42;
-            this.btn_them.Text = "Thêm khoang MB";
+            this.btn_them.Text = "Thêm khoang ";
             this.btn_them.UseVisualStyleBackColor = false;
             // 
             // label6
