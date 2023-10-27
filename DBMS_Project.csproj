@@ -51,6 +51,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBMS_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLyKhoangMayBay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyKhoangMayBay.Designer.cs">
+      <DependentUpon>FormQuanLyKhoangMayBay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQuanLyMayBay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyMayBay.Designer.cs">
+      <DependentUpon>FormQuanLyMayBay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +71,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormQuanLyKhoangMayBay.resx">
+      <DependentUpon>FormQuanLyKhoangMayBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLyMayBay.resx">
+      <DependentUpon>FormQuanLyMayBay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
