@@ -20,7 +20,7 @@ namespace DBMS_Project
         private void Login_Load(object sender, EventArgs e)
         {
 
-            Image myimage = new Bitmap(@"../../../Hệ QTCSDL/Assets/background.jpg");
+            Image myimage = new Bitmap(@"../../Assets/background.jpg");
             this.BackgroundImage = myimage;
             BackgroundImageLayout = ImageLayout.Stretch;
         }

@@ -85,6 +85,8 @@
             // 
             // dgv_Quanlymaybay
             // 
+            this.dgv_Quanlymaybay.AllowUserToResizeColumns = false;
+            this.dgv_Quanlymaybay.AllowUserToResizeRows = false;
             this.dgv_Quanlymaybay.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_Quanlymaybay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Quanlymaybay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -94,6 +96,7 @@
             this.TinhTrangHD});
             this.dgv_Quanlymaybay.Location = new System.Drawing.Point(351, 3);
             this.dgv_Quanlymaybay.Name = "dgv_Quanlymaybay";
+            this.dgv_Quanlymaybay.RowHeadersVisible = false;
             this.dgv_Quanlymaybay.RowHeadersWidth = 51;
             this.dgv_Quanlymaybay.RowTemplate.Height = 24;
             this.dgv_Quanlymaybay.Size = new System.Drawing.Size(846, 238);
@@ -151,7 +154,7 @@
             // 
             // btn_huy
             // 
-            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_huy.Location = new System.Drawing.Point(642, 201);
@@ -237,7 +240,7 @@
             // 
             // btn_luu
             // 
-            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_luu.Location = new System.Drawing.Point(642, 144);
@@ -261,7 +264,7 @@
             // 
             // btn_sua
             // 
-            this.btn_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_sua.Location = new System.Drawing.Point(8, 199);
@@ -274,7 +277,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_xoa.Location = new System.Drawing.Point(8, 135);
@@ -287,7 +290,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_them.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_them.Location = new System.Drawing.Point(8, 76);
@@ -330,7 +333,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(8, 456);
@@ -343,7 +346,7 @@
             // 
             // btn_Tim
             // 
-            this.btn_Tim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Tim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_Tim.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Tim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tim.Location = new System.Drawing.Point(8, 409);
@@ -473,7 +476,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.ClientSize = new System.Drawing.Size(1229, 628);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);

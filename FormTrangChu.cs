@@ -19,7 +19,7 @@ namespace DBMS_Project
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            Image myimage = new Bitmap(@"../../../Hệ QTCSDL/Assets/bgtrangchu.jpg");
+            Image myimage = new Bitmap(@"../../Assets/bgtrangchu.jpg");
             this.BackgroundImage = myimage;
             BackgroundImageLayout = ImageLayout.Stretch;
         }

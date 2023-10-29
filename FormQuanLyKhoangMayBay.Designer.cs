@@ -37,24 +37,24 @@
             this.TenLoaiKhoang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongSoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_khoangmaybay = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tb_tongsoghe = new System.Windows.Forms.TextBox();
             this.btn_huy = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_xoa = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.btn_sua = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_tenloaikhoang = new System.Windows.Forms.TextBox();
             this.tb_makhoang = new System.Windows.Forms.TextBox();
             this.tb_tenmaybay = new System.Windows.Forms.TextBox();
             this.btn_luu = new System.Windows.Forms.Button();
             this.tb_sohieu = new System.Windows.Forms.TextBox();
-            this.btn_sua = new System.Windows.Forms.Button();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_them = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_tongsoghe = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_khoangmaybay)).BeginInit();
             this.pnl_khoangmaybay.SuspendLayout();
@@ -74,6 +74,8 @@
             // 
             // dgv_khoangmaybay
             // 
+            this.dgv_khoangmaybay.AllowUserToResizeColumns = false;
+            this.dgv_khoangmaybay.AllowUserToResizeRows = false;
             this.dgv_khoangmaybay.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_khoangmaybay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_khoangmaybay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -84,6 +86,7 @@
             this.TongSoGhe});
             this.dgv_khoangmaybay.Location = new System.Drawing.Point(15, 14);
             this.dgv_khoangmaybay.Name = "dgv_khoangmaybay";
+            this.dgv_khoangmaybay.RowHeadersVisible = false;
             this.dgv_khoangmaybay.RowHeadersWidth = 51;
             this.dgv_khoangmaybay.RowTemplate.Height = 24;
             this.dgv_khoangmaybay.Size = new System.Drawing.Size(902, 199);
@@ -149,9 +152,50 @@
             this.pnl_khoangmaybay.Size = new System.Drawing.Size(902, 286);
             this.pnl_khoangmaybay.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(220, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 28);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "Tên loại khoang:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(262, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 28);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Mã khoang:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(653, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tb_tongsoghe
+            // 
+            this.tb_tongsoghe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.tb_tongsoghe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_tongsoghe.Location = new System.Drawing.Point(392, 241);
+            this.tb_tongsoghe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_tongsoghe.Multiline = true;
+            this.tb_tongsoghe.Name = "tb_tongsoghe";
+            this.tb_tongsoghe.Size = new System.Drawing.Size(239, 30);
+            this.tb_tongsoghe.TabIndex = 50;
+            // 
             // btn_huy
             // 
-            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_huy.Location = new System.Drawing.Point(681, 226);
@@ -161,6 +205,19 @@
             this.btn_huy.TabIndex = 49;
             this.btn_huy.Text = "Hủy thao tác";
             this.btn_huy.UseVisualStyleBackColor = false;
+            // 
+            // btn_them
+            // 
+            this.btn_them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_them.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_them.Location = new System.Drawing.Point(17, 73);
+            this.btn_them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(197, 43);
+            this.btn_them.TabIndex = 42;
+            this.btn_them.Text = "Thêm khoang ";
+            this.btn_them.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -172,6 +229,19 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "Tổng số ghế:";
             // 
+            // btn_xoa
+            // 
+            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_xoa.Location = new System.Drawing.Point(17, 132);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(197, 43);
+            this.btn_xoa.TabIndex = 43;
+            this.btn_xoa.Text = "Xóa khoang ";
+            this.btn_xoa.UseVisualStyleBackColor = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -181,6 +251,19 @@
             this.label8.Size = new System.Drawing.Size(123, 28);
             this.label8.TabIndex = 39;
             this.label8.Text = "Tên loại MB:";
+            // 
+            // btn_sua
+            // 
+            this.btn_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_sua.Location = new System.Drawing.Point(17, 196);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(197, 43);
+            this.btn_sua.TabIndex = 44;
+            this.btn_sua.Text = "Thay đổi thông tin";
+            this.btn_sua.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -227,7 +310,7 @@
             // 
             // btn_luu
             // 
-            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_luu.Location = new System.Drawing.Point(681, 167);
@@ -248,45 +331,6 @@
             this.tb_sohieu.Name = "tb_sohieu";
             this.tb_sohieu.Size = new System.Drawing.Size(239, 30);
             this.tb_sohieu.TabIndex = 41;
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_sua.Location = new System.Drawing.Point(17, 196);
-            this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(197, 43);
-            this.btn_sua.TabIndex = 44;
-            this.btn_sua.Text = "Thay đổi thông tin";
-            this.btn_sua.UseVisualStyleBackColor = false;
-            // 
-            // btn_xoa
-            // 
-            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_xoa.Location = new System.Drawing.Point(17, 132);
-            this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(197, 43);
-            this.btn_xoa.TabIndex = 43;
-            this.btn_xoa.Text = "Xóa khoang ";
-            this.btn_xoa.UseVisualStyleBackColor = false;
-            // 
-            // btn_them
-            // 
-            this.btn_them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_them.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_them.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_them.Location = new System.Drawing.Point(17, 73);
-            this.btn_them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(197, 43);
-            this.btn_them.TabIndex = 42;
-            this.btn_them.Text = "Thêm khoang ";
-            this.btn_them.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -309,52 +353,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "QUẢN LÝ KHOANG MÁY BAY";
             // 
-            // tb_tongsoghe
-            // 
-            this.tb_tongsoghe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.tb_tongsoghe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_tongsoghe.Location = new System.Drawing.Point(392, 241);
-            this.tb_tongsoghe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_tongsoghe.Multiline = true;
-            this.tb_tongsoghe.Name = "tb_tongsoghe";
-            this.tb_tongsoghe.Size = new System.Drawing.Size(239, 30);
-            this.tb_tongsoghe.TabIndex = 50;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(653, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(262, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 28);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Mã khoang:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(220, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 28);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Tên loại khoang:";
-            // 
             // FormQuanLyKhoangMayBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.ClientSize = new System.Drawing.Size(965, 628);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
