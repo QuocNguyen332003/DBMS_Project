@@ -57,10 +57,6 @@
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.dgvQLNhanSu = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhanVienTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.NhanVienTableAdapter();
             this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,11 +66,15 @@
             this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayTuyenDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heSoLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nhanVienTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.NhanVienTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNhanSu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,8 +106,8 @@
             this.panel1.Controls.Add(this.btn_Edit);
             this.panel1.Controls.Add(this.btn_Add);
             this.panel1.Controls.Add(this.dgvQLNhanSu);
-            this.panel1.Location = new System.Drawing.Point(4, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(13, 48);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1150, 527);
             this.panel1.TabIndex = 5;
@@ -115,7 +115,7 @@
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(671, 425);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(169, 32);
@@ -124,7 +124,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(625, 383);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(215, 32);
@@ -133,7 +133,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(625, 338);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(215, 32);
@@ -142,7 +142,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(625, 292);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(215, 32);
@@ -151,7 +151,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(307, 468);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(169, 32);
@@ -160,7 +160,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(307, 426);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(169, 32);
@@ -169,7 +169,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(307, 385);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(169, 32);
@@ -178,7 +178,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(307, 342);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(169, 32);
@@ -187,7 +187,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(307, 295);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(169, 32);
@@ -398,39 +398,12 @@
             this.heSoLuongDataGridViewTextBoxColumn});
             this.dgvQLNhanSu.DataSource = this.nhanVienBindingSource;
             this.dgvQLNhanSu.Location = new System.Drawing.Point(4, 4);
-            this.dgvQLNhanSu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvQLNhanSu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvQLNhanSu.Name = "dgvQLNhanSu";
             this.dgvQLNhanSu.RowHeadersVisible = false;
             this.dgvQLNhanSu.RowHeadersWidth = 51;
             this.dgvQLNhanSu.Size = new System.Drawing.Size(1134, 240);
             this.dgvQLNhanSu.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(363, -2);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 46);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "QUẢN LÝ NHÂN SỰ";
-            // 
-            // dBMS_DataSet
-            // 
-            this.dBMS_DataSet.DataSetName = "DBMS_DataSet";
-            this.dBMS_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nhanVienBindingSource
-            // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.dBMS_DataSet;
-            // 
-            // nhanVienTableAdapter
-            // 
-            this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
             // maNVDataGridViewTextBoxColumn
             // 
@@ -504,15 +477,42 @@
             this.heSoLuongDataGridViewTextBoxColumn.Name = "heSoLuongDataGridViewTextBoxColumn";
             this.heSoLuongDataGridViewTextBoxColumn.Width = 125;
             // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.dBMS_DataSet;
+            // 
+            // dBMS_DataSet
+            // 
+            this.dBMS_DataSet.DataSetName = "DBMS_DataSet";
+            this.dBMS_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(409, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(335, 46);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "QUẢN LÝ NHÂN SỰ";
+            // 
+            // nhanVienTableAdapter
+            // 
+            this.nhanVienTableAdapter.ClearBeforeFill = true;
+            // 
             // FormQLNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.ClientSize = new System.Drawing.Size(1159, 578);
+            this.ClientSize = new System.Drawing.Size(1177, 590);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormQLNhanSu";
             this.Text = "FormQLNhanSu";
             this.Load += new System.EventHandler(this.FormQLNhanSu_Load);
@@ -520,8 +520,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNhanSu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
