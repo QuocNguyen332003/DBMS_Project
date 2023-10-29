@@ -48,7 +48,7 @@
             this.panel1.Controls.Add(this.btnQLMayBay);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1268, 145);
             this.panel1.TabIndex = 0;
@@ -65,13 +65,14 @@
             this.btnQLHanhKhach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLHanhKhach.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLHanhKhach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLHanhKhach.Location = new System.Drawing.Point(995, 52);
+            this.btnQLHanhKhach.Location = new System.Drawing.Point(1009, 52);
             this.btnQLHanhKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLHanhKhach.Name = "btnQLHanhKhach";
-            this.btnQLHanhKhach.Size = new System.Drawing.Size(292, 50);
+            this.btnQLHanhKhach.Size = new System.Drawing.Size(246, 50);
             this.btnQLHanhKhach.TabIndex = 17;
             this.btnQLHanhKhach.Text = "Quản Lý Hành Khách";
             this.btnQLHanhKhach.UseVisualStyleBackColor = false;
+            this.btnQLHanhKhach.Click += new System.EventHandler(this.btnQLHanhKhach_Click);
             // 
             // btnQLNhanSu
             // 
@@ -85,13 +86,14 @@
             this.btnQLNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLNhanSu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLNhanSu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLNhanSu.Location = new System.Drawing.Point(775, 52);
+            this.btnQLNhanSu.Location = new System.Drawing.Point(781, 52);
             this.btnQLNhanSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLNhanSu.Name = "btnQLNhanSu";
-            this.btnQLNhanSu.Size = new System.Drawing.Size(231, 50);
+            this.btnQLNhanSu.Size = new System.Drawing.Size(208, 50);
             this.btnQLNhanSu.TabIndex = 16;
             this.btnQLNhanSu.Text = "Quản Lý Nhân Sự";
             this.btnQLNhanSu.UseVisualStyleBackColor = false;
+            this.btnQLNhanSu.Click += new System.EventHandler(this.btnQLNhanSu_Click);
             // 
             // btnQLChuyenBay
             // 
@@ -105,13 +107,14 @@
             this.btnQLChuyenBay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLChuyenBay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLChuyenBay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLChuyenBay.Location = new System.Drawing.Point(499, 52);
+            this.btnQLChuyenBay.Location = new System.Drawing.Point(516, 52);
             this.btnQLChuyenBay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLChuyenBay.Name = "btnQLChuyenBay";
-            this.btnQLChuyenBay.Size = new System.Drawing.Size(321, 50);
+            this.btnQLChuyenBay.Size = new System.Drawing.Size(241, 50);
             this.btnQLChuyenBay.TabIndex = 15;
             this.btnQLChuyenBay.Text = "Quản Lý Chuyến Bay";
             this.btnQLChuyenBay.UseVisualStyleBackColor = false;
+            this.btnQLChuyenBay.Click += new System.EventHandler(this.btnQLChuyenBay_Click);
             // 
             // btnQLMayBay
             // 
@@ -125,13 +128,14 @@
             this.btnQLMayBay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLMayBay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLMayBay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLMayBay.Location = new System.Drawing.Point(261, 52);
+            this.btnQLMayBay.Location = new System.Drawing.Point(272, 52);
             this.btnQLMayBay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLMayBay.Name = "btnQLMayBay";
-            this.btnQLMayBay.Size = new System.Drawing.Size(276, 50);
+            this.btnQLMayBay.Size = new System.Drawing.Size(223, 50);
             this.btnQLMayBay.TabIndex = 14;
             this.btnQLMayBay.Text = "Quản Lý Máy Bay";
             this.btnQLMayBay.UseVisualStyleBackColor = false;
+            this.btnQLMayBay.Click += new System.EventHandler(this.btnQLMayBay_Click);
             // 
             // pictureBox1
             // 
@@ -148,9 +152,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 641);
+            this.ClientSize = new System.Drawing.Size(1267, 693);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTrangChu";
             this.Text = "FormTrangChu";
             this.Load += new System.EventHandler(this.FormTrangChu_Load);
