@@ -23,5 +23,37 @@ namespace DBMS_Project
             this.BackgroundImage = myimage;
             BackgroundImageLayout = ImageLayout.Stretch;
         }
+
+        private void btnQLMayBay_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormQuanLyMayBay mayBay = new FormQuanLyMayBay();
+            mayBay.ShowDialog();
+            this.Show();
+        }
+
+        private void btnQLChuyenBay_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormQuanLyChuyenBay cb = new FormQuanLyChuyenBay();
+            cb.ShowDialog();
+            this.Show();
+        }
+
+        private void btnQLNhanSu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormQLNhanSu item = new FormQLNhanSu();
+            item.ShowDialog();
+            this.Show();
+        }
+
+        private void btnQLHanhKhach_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormQuanLyHanhKhach item = new FormQuanLyHanhKhach();
+            item.ShowDialog();
+            this.Show();
+        }
     }
 }
