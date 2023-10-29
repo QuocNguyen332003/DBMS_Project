@@ -10,24 +10,18 @@ using System.Windows.Forms;
 
 namespace DBMS_Project
 {
-    public partial class Login : Form
+    public partial class FormTrangChu : Form
     {
-        public Login()
+        public FormTrangChu()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void FormTrangChu_Load(object sender, EventArgs e)
         {
-
-            Image myimage = new Bitmap(@"../../../Hệ QTCSDL/Assets/background.jpg");
+            Image myimage = new Bitmap(@"../../../Hệ QTCSDL/Assets/bgtrangchu.jpg");
             this.BackgroundImage = myimage;
             BackgroundImageLayout = ImageLayout.Stretch;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

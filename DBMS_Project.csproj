@@ -51,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBMS_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormQLNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLNhanSu.Designer.cs">
+      <DependentUpon>FormQLNhanSu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLyHanhKhach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     <Compile Include="FormQuanLyVe.Designer.cs">
       <DependentUpon>FormQuanLyVe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrangChu.Designer.cs">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormQLNhanSu.resx">
+      <DependentUpon>FormQLNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyHanhKhach.resx">
       <DependentUpon>FormQuanLyHanhKhach.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyVe.resx">
       <DependentUpon>FormQuanLyVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrangChu.resx">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
