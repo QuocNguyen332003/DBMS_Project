@@ -32,6 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyPhanDoan));
             this.pnlmain = new System.Windows.Forms.Panel();
             this.pnl_modify = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_sohieu = new System.Windows.Forms.TextBox();
+            this.nud_stt = new System.Windows.Forms.NumericUpDown();
+            this.cbb_sanbayden = new System.Windows.Forms.ComboBox();
+            this.cbb_sanbaydi = new System.Windows.Forms.ComboBox();
+            this.cbb_loai = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.nud_gioden = new System.Windows.Forms.NumericUpDown();
@@ -54,10 +64,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgv_phandoan = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
-            this.phanDoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phanDoanTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.PhanDoanTableAdapter();
             this.maChuyenBayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soHieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,27 +74,21 @@
             this.maSanBayDenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioDenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayDenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbb_loai = new System.Windows.Forms.ComboBox();
-            this.cbb_sanbaydi = new System.Windows.Forms.ComboBox();
-            this.cbb_sanbayden = new System.Windows.Forms.ComboBox();
-            this.nud_stt = new System.Windows.Forms.NumericUpDown();
-            this.txt_sohieu = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.phanDoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.phanDoanTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.PhanDoanTableAdapter();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_stt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_gioden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_giodi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phandoan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanDoanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_stt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlmain
@@ -140,6 +140,95 @@
             this.pnl_modify.Name = "pnl_modify";
             this.pnl_modify.Size = new System.Drawing.Size(1293, 293);
             this.pnl_modify.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(14, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txt_sohieu
+            // 
+            this.txt_sohieu.Location = new System.Drawing.Point(740, 120);
+            this.txt_sohieu.Multiline = true;
+            this.txt_sohieu.Name = "txt_sohieu";
+            this.txt_sohieu.Size = new System.Drawing.Size(151, 30);
+            this.txt_sohieu.TabIndex = 100;
+            // 
+            // nud_stt
+            // 
+            this.nud_stt.Location = new System.Drawing.Point(740, 68);
+            this.nud_stt.Name = "nud_stt";
+            this.nud_stt.Size = new System.Drawing.Size(54, 22);
+            this.nud_stt.TabIndex = 99;
+            // 
+            // cbb_sanbayden
+            // 
+            this.cbb_sanbayden.FormattingEnabled = true;
+            this.cbb_sanbayden.Location = new System.Drawing.Point(424, 250);
+            this.cbb_sanbayden.Name = "cbb_sanbayden";
+            this.cbb_sanbayden.Size = new System.Drawing.Size(160, 24);
+            this.cbb_sanbayden.TabIndex = 98;
+            // 
+            // cbb_sanbaydi
+            // 
+            this.cbb_sanbaydi.FormattingEnabled = true;
+            this.cbb_sanbaydi.Location = new System.Drawing.Point(424, 190);
+            this.cbb_sanbaydi.Name = "cbb_sanbaydi";
+            this.cbb_sanbaydi.Size = new System.Drawing.Size(160, 24);
+            this.cbb_sanbaydi.TabIndex = 97;
+            // 
+            // cbb_loai
+            // 
+            this.cbb_loai.FormattingEnabled = true;
+            this.cbb_loai.Location = new System.Drawing.Point(424, 130);
+            this.cbb_loai.Name = "cbb_loai";
+            this.cbb_loai.Size = new System.Drawing.Size(160, 24);
+            this.cbb_loai.TabIndex = 96;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(220, 180);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(180, 30);
+            this.label5.TabIndex = 93;
+            this.label5.Text = "Mã sân bay đi:";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(220, 240);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(180, 30);
+            this.label4.TabIndex = 92;
+            this.label4.Text = "Mã sân bay đến:";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(625, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 30);
+            this.label3.TabIndex = 91;
+            this.label3.Text = "Số hiệu:";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(625, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 30);
+            this.label2.TabIndex = 90;
+            this.label2.Text = "STT:";
             // 
             // label17
             // 
@@ -374,31 +463,6 @@
             this.dgv_phandoan.Size = new System.Drawing.Size(1293, 311);
             this.dgv_phandoan.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(491, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(415, 39);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "QUẢN LÝ CHUYẾN BAY";
-            // 
-            // dBMS_DataSet
-            // 
-            this.dBMS_DataSet.DataSetName = "DBMS_DataSet";
-            this.dBMS_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phanDoanBindingSource
-            // 
-            this.phanDoanBindingSource.DataMember = "PhanDoan";
-            this.phanDoanBindingSource.DataSource = this.dBMS_DataSet;
-            // 
-            // phanDoanTableAdapter
-            // 
-            this.phanDoanTableAdapter.ClearBeforeFill = true;
-            // 
             // maChuyenBayDataGridViewTextBoxColumn
             // 
             this.maChuyenBayDataGridViewTextBoxColumn.DataPropertyName = "MaChuyenBay";
@@ -479,94 +543,30 @@
             this.ngayDenDataGridViewTextBoxColumn.Name = "ngayDenDataGridViewTextBoxColumn";
             this.ngayDenDataGridViewTextBoxColumn.Width = 125;
             // 
-            // label2
+            // phanDoanBindingSource
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(625, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 30);
-            this.label2.TabIndex = 90;
-            this.label2.Text = "STT:";
+            this.phanDoanBindingSource.DataMember = "PhanDoan";
+            this.phanDoanBindingSource.DataSource = this.dBMS_DataSet;
             // 
-            // label3
+            // dBMS_DataSet
             // 
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(625, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 30);
-            this.label3.TabIndex = 91;
-            this.label3.Text = "Số hiệu:";
+            this.dBMS_DataSet.DataSetName = "DBMS_DataSet";
+            this.dBMS_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label4
+            // label1
             // 
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(220, 240);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 30);
-            this.label4.TabIndex = 92;
-            this.label4.Text = "Mã sân bay đến:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(491, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(385, 38);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "QUẢN LÝ PHÂN ĐOẠN";
             // 
-            // label5
+            // phanDoanTableAdapter
             // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(220, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 30);
-            this.label5.TabIndex = 93;
-            this.label5.Text = "Mã sân bay đi:";
-            // 
-            // cbb_loai
-            // 
-            this.cbb_loai.FormattingEnabled = true;
-            this.cbb_loai.Location = new System.Drawing.Point(424, 130);
-            this.cbb_loai.Name = "cbb_loai";
-            this.cbb_loai.Size = new System.Drawing.Size(160, 24);
-            this.cbb_loai.TabIndex = 96;
-            // 
-            // cbb_sanbaydi
-            // 
-            this.cbb_sanbaydi.FormattingEnabled = true;
-            this.cbb_sanbaydi.Location = new System.Drawing.Point(424, 190);
-            this.cbb_sanbaydi.Name = "cbb_sanbaydi";
-            this.cbb_sanbaydi.Size = new System.Drawing.Size(160, 24);
-            this.cbb_sanbaydi.TabIndex = 97;
-            // 
-            // cbb_sanbayden
-            // 
-            this.cbb_sanbayden.FormattingEnabled = true;
-            this.cbb_sanbayden.Location = new System.Drawing.Point(424, 250);
-            this.cbb_sanbayden.Name = "cbb_sanbayden";
-            this.cbb_sanbayden.Size = new System.Drawing.Size(160, 24);
-            this.cbb_sanbayden.TabIndex = 98;
-            // 
-            // nud_stt
-            // 
-            this.nud_stt.Location = new System.Drawing.Point(740, 68);
-            this.nud_stt.Name = "nud_stt";
-            this.nud_stt.Size = new System.Drawing.Size(54, 22);
-            this.nud_stt.TabIndex = 99;
-            // 
-            // txt_sohieu
-            // 
-            this.txt_sohieu.Location = new System.Drawing.Point(740, 120);
-            this.txt_sohieu.Multiline = true;
-            this.txt_sohieu.Name = "txt_sohieu";
-            this.txt_sohieu.Size = new System.Drawing.Size(151, 30);
-            this.txt_sohieu.TabIndex = 100;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
+            this.phanDoanTableAdapter.ClearBeforeFill = true;
             // 
             // FormQuanLyPhanDoan
             // 
@@ -582,15 +582,15 @@
             this.pnlmain.ResumeLayout(false);
             this.pnl_modify.ResumeLayout(false);
             this.pnl_modify.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_stt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_gioden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_giodi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phandoan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanDoanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_stt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
