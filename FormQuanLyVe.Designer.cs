@@ -47,19 +47,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_QuanLyVe = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_QuanLyHanhKhach = new System.Windows.Forms.Button();
             this.btn_ThongKe = new System.Windows.Forms.Button();
             this.dgv_QuanLyVe_ThongKe = new System.Windows.Forms.DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QuanLyVe)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,9 +64,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(669, 6);
+            this.label1.Location = new System.Drawing.Point(753, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 38);
+            this.label1.Size = new System.Drawing.Size(211, 45);
             this.label1.TabIndex = 3;
             this.label1.Text = "QUẢN LÝ VÉ";
             // 
@@ -97,10 +89,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dgv_QuanLyVe);
-            this.panel1.Location = new System.Drawing.Point(287, 49);
+            this.panel1.Location = new System.Drawing.Point(323, 61);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(989, 532);
+            this.panel1.Size = new System.Drawing.Size(1113, 665);
             this.panel1.TabIndex = 4;
             // 
             // btn_Xoa
@@ -108,113 +100,116 @@
             this.btn_Xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Xoa.Location = new System.Drawing.Point(690, 462);
+            this.btn_Xoa.Location = new System.Drawing.Point(776, 578);
             this.btn_Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(197, 43);
+            this.btn_Xoa.Size = new System.Drawing.Size(222, 54);
             this.btn_Xoa.TabIndex = 55;
             this.btn_Xoa.Text = "Xoá vé";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Sua
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Sua.Location = new System.Drawing.Point(389, 462);
+            this.btn_Sua.Location = new System.Drawing.Point(438, 578);
             this.btn_Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(197, 43);
+            this.btn_Sua.Size = new System.Drawing.Size(222, 54);
             this.btn_Sua.TabIndex = 54;
             this.btn_Sua.Text = "Sửa vé";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Them
             // 
             this.btn_Them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Them.Location = new System.Drawing.Point(79, 462);
+            this.btn_Them.Location = new System.Drawing.Point(89, 578);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(197, 43);
+            this.btn_Them.Size = new System.Drawing.Size(222, 54);
             this.btn_Them.TabIndex = 53;
             this.btn_Them.Text = "Thêm vé";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // tb_TenLoaiKhoang
             // 
             this.tb_TenLoaiKhoang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_TenLoaiKhoang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_TenLoaiKhoang.Location = new System.Drawing.Point(736, 394);
+            this.tb_TenLoaiKhoang.Location = new System.Drawing.Point(747, 496);
             this.tb_TenLoaiKhoang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_TenLoaiKhoang.Multiline = true;
             this.tb_TenLoaiKhoang.Name = "tb_TenLoaiKhoang";
-            this.tb_TenLoaiKhoang.Size = new System.Drawing.Size(157, 30);
+            this.tb_TenLoaiKhoang.Size = new System.Drawing.Size(251, 36);
             this.tb_TenLoaiKhoang.TabIndex = 52;
             // 
             // tb_MaChuyenBay
             // 
             this.tb_MaChuyenBay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_MaChuyenBay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_MaChuyenBay.Location = new System.Drawing.Point(222, 397);
+            this.tb_MaChuyenBay.Location = new System.Drawing.Point(250, 496);
             this.tb_MaChuyenBay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_MaChuyenBay.Multiline = true;
             this.tb_MaChuyenBay.Name = "tb_MaChuyenBay";
-            this.tb_MaChuyenBay.Size = new System.Drawing.Size(152, 30);
+            this.tb_MaChuyenBay.Size = new System.Drawing.Size(170, 36);
             this.tb_MaChuyenBay.TabIndex = 51;
             // 
             // tb_SoGhe
             // 
             this.tb_SoGhe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_SoGhe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoGhe.Location = new System.Drawing.Point(736, 345);
+            this.tb_SoGhe.Location = new System.Drawing.Point(747, 432);
             this.tb_SoGhe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_SoGhe.Multiline = true;
             this.tb_SoGhe.Name = "tb_SoGhe";
-            this.tb_SoGhe.Size = new System.Drawing.Size(157, 30);
+            this.tb_SoGhe.Size = new System.Drawing.Size(251, 36);
             this.tb_SoGhe.TabIndex = 50;
             // 
             // tb_MaHanhKhach
             // 
             this.tb_MaHanhKhach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_MaHanhKhach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_MaHanhKhach.Location = new System.Drawing.Point(736, 300);
+            this.tb_MaHanhKhach.Location = new System.Drawing.Point(747, 375);
             this.tb_MaHanhKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_MaHanhKhach.Multiline = true;
             this.tb_MaHanhKhach.Name = "tb_MaHanhKhach";
-            this.tb_MaHanhKhach.Size = new System.Drawing.Size(157, 30);
+            this.tb_MaHanhKhach.Size = new System.Drawing.Size(251, 36);
             this.tb_MaHanhKhach.TabIndex = 49;
             // 
             // tb_GiaVe
             // 
             this.tb_GiaVe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_GiaVe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_GiaVe.Location = new System.Drawing.Point(222, 346);
+            this.tb_GiaVe.Location = new System.Drawing.Point(250, 432);
             this.tb_GiaVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_GiaVe.Multiline = true;
             this.tb_GiaVe.Name = "tb_GiaVe";
-            this.tb_GiaVe.Size = new System.Drawing.Size(152, 30);
+            this.tb_GiaVe.Size = new System.Drawing.Size(170, 36);
             this.tb_GiaVe.TabIndex = 48;
             // 
             // tb_MaVe
             // 
             this.tb_MaVe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_MaVe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_MaVe.Location = new System.Drawing.Point(222, 300);
+            this.tb_MaVe.Location = new System.Drawing.Point(250, 375);
             this.tb_MaVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_MaVe.Multiline = true;
             this.tb_MaVe.Name = "tb_MaVe";
-            this.tb_MaVe.Size = new System.Drawing.Size(152, 30);
+            this.tb_MaVe.Size = new System.Drawing.Size(170, 36);
             this.tb_MaVe.TabIndex = 47;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(51, 397);
+            this.label7.Location = new System.Drawing.Point(57, 496);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(155, 28);
+            this.label7.Size = new System.Drawing.Size(186, 32);
             this.label7.TabIndex = 46;
             this.label7.Text = "Mã chuyến bay:";
             // 
@@ -222,9 +217,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(525, 397);
+            this.label6.Location = new System.Drawing.Point(531, 496);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 28);
+            this.label6.Size = new System.Drawing.Size(193, 32);
             this.label6.TabIndex = 45;
             this.label6.Text = "Tên loại khoang:";
             // 
@@ -232,9 +227,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(525, 348);
+            this.label5.Location = new System.Drawing.Point(531, 435);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 28);
+            this.label5.Size = new System.Drawing.Size(95, 32);
             this.label5.TabIndex = 44;
             this.label5.Text = "Số ghế:";
             // 
@@ -242,9 +237,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(525, 300);
+            this.label4.Location = new System.Drawing.Point(531, 375);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 28);
+            this.label4.Size = new System.Drawing.Size(189, 32);
             this.label4.TabIndex = 43;
             this.label4.Text = "Mã hành khách:";
             // 
@@ -252,9 +247,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 348);
+            this.label3.Location = new System.Drawing.Point(57, 435);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 28);
+            this.label3.Size = new System.Drawing.Size(88, 32);
             this.label3.TabIndex = 42;
             this.label3.Text = "Giá vé:";
             // 
@@ -262,9 +257,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 300);
+            this.label2.Location = new System.Drawing.Point(57, 375);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 28);
+            this.label2.Size = new System.Drawing.Size(87, 32);
             this.label2.TabIndex = 41;
             this.label2.Text = "Mã vé:";
             // 
@@ -272,62 +267,14 @@
             // 
             this.dgv_QuanLyVe.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_QuanLyVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_QuanLyVe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
             this.dgv_QuanLyVe.Location = new System.Drawing.Point(3, 2);
             this.dgv_QuanLyVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_QuanLyVe.Name = "dgv_QuanLyVe";
             this.dgv_QuanLyVe.RowHeadersWidth = 62;
             this.dgv_QuanLyVe.RowTemplate.Height = 28;
-            this.dgv_QuanLyVe.Size = new System.Drawing.Size(971, 272);
+            this.dgv_QuanLyVe.Size = new System.Drawing.Size(1107, 340);
             this.dgv_QuanLyVe.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã vé";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mã hành khách";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Mã chuyến bay";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giá vé";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số ghế";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Tên loại khoang";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 150;
+            this.dgv_QuanLyVe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_QuanLyVe_CellClick);
             // 
             // panel2
             // 
@@ -336,18 +283,19 @@
             this.panel2.Controls.Add(this.btn_QuanLyHanhKhach);
             this.panel2.Controls.Add(this.btn_ThongKe);
             this.panel2.Controls.Add(this.dgv_QuanLyVe_ThongKe);
-            this.panel2.Location = new System.Drawing.Point(15, 49);
+            this.panel2.Location = new System.Drawing.Point(3, 61);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 532);
+            this.panel2.Size = new System.Drawing.Size(317, 665);
             this.panel2.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 119);
+            this.pictureBox1.Size = new System.Drawing.Size(311, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
@@ -357,26 +305,28 @@
             this.btn_QuanLyHanhKhach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_QuanLyHanhKhach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_QuanLyHanhKhach.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_QuanLyHanhKhach.Location = new System.Drawing.Point(15, 446);
+            this.btn_QuanLyHanhKhach.Location = new System.Drawing.Point(26, 554);
             this.btn_QuanLyHanhKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_QuanLyHanhKhach.Name = "btn_QuanLyHanhKhach";
-            this.btn_QuanLyHanhKhach.Size = new System.Drawing.Size(234, 75);
+            this.btn_QuanLyHanhKhach.Size = new System.Drawing.Size(263, 94);
             this.btn_QuanLyHanhKhach.TabIndex = 55;
             this.btn_QuanLyHanhKhach.Text = "Quản lý hành khách";
             this.btn_QuanLyHanhKhach.UseVisualStyleBackColor = false;
+            this.btn_QuanLyHanhKhach.Click += new System.EventHandler(this.btn_QuanLyHanhKhach_Click);
             // 
             // btn_ThongKe
             // 
             this.btn_ThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_ThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_ThongKe.Location = new System.Drawing.Point(15, 399);
+            this.btn_ThongKe.Location = new System.Drawing.Point(26, 496);
             this.btn_ThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_ThongKe.Name = "btn_ThongKe";
-            this.btn_ThongKe.Size = new System.Drawing.Size(234, 43);
+            this.btn_ThongKe.Size = new System.Drawing.Size(263, 54);
             this.btn_ThongKe.TabIndex = 54;
             this.btn_ThongKe.Text = "Thống kê";
             this.btn_ThongKe.UseVisualStyleBackColor = false;
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
             // 
             // dgv_QuanLyVe_ThongKe
             // 
@@ -384,38 +334,22 @@
             this.dgv_QuanLyVe_ThongKe.AllowUserToResizeRows = false;
             this.dgv_QuanLyVe_ThongKe.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_QuanLyVe_ThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_QuanLyVe_ThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7,
-            this.Column8});
-            this.dgv_QuanLyVe_ThongKe.Location = new System.Drawing.Point(2, 127);
+            this.dgv_QuanLyVe_ThongKe.Location = new System.Drawing.Point(2, 159);
             this.dgv_QuanLyVe_ThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_QuanLyVe_ThongKe.Name = "dgv_QuanLyVe_ThongKe";
             this.dgv_QuanLyVe_ThongKe.RowHeadersVisible = false;
             this.dgv_QuanLyVe_ThongKe.RowHeadersWidth = 62;
             this.dgv_QuanLyVe_ThongKe.RowTemplate.Height = 28;
-            this.dgv_QuanLyVe_ThongKe.Size = new System.Drawing.Size(264, 259);
+            this.dgv_QuanLyVe_ThongKe.Size = new System.Drawing.Size(315, 324);
             this.dgv_QuanLyVe_ThongKe.TabIndex = 53;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Mã chuyến bay";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 170;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Số vé";
-            this.Column8.MinimumWidth = 8;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 90;
             // 
             // FormQuanLyVe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.ClientSize = new System.Drawing.Size(1295, 599);
+            this.ClientSize = new System.Drawing.Size(1457, 749);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -439,12 +373,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgv_QuanLyVe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -464,7 +392,5 @@
         private System.Windows.Forms.Button btn_ThongKe;
         private System.Windows.Forms.DataGridView dgv_QuanLyVe_ThongKe;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
