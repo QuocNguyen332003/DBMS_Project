@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\DB_QuanLyHanhKhach.cs" />
+    <Compile Include="BL\DB_QuanLyVe.cs" />
+    <Compile Include="ConnectDataBase\connectDataBase.cs" />
     <Compile Include="ConnectDataBase\DB_QuanLyChuyenBay.cs" />
     <Compile Include="DBMS_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -168,8 +171,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
