@@ -64,7 +64,6 @@ namespace DBMS_Project
             int numNgayDi = cb_ngaydi.Checked ? 1 : 0;
             int numGioDen = cb_gioden.Checked ? 1 : 0;
             int numNgayDen = cb_ngayden.Checked ? 1 : 0;
-            MessageBox.Show(numID.ToString() + numTT.ToString() + numGioDi.ToString() + numNgayDi.ToString() + numGioDen.ToString() + numNgayDen.ToString());
             db.openConnection();
             SqlCommand cmd = new SqlCommand("SELECT * from SearchChuyenBay(@MaCB, @numMaCB, @TT ,@numTT, @GioDi, @numGioDi, @NgayDi, @numNgayDi,@GioDen, @numGioDen, @NgayDen, @numNgayDen)", db.getConnection);
             cmd.Parameters.AddWithValue("@MaCB", cbb_id.Text);
@@ -79,10 +78,10 @@ namespace DBMS_Project
             cmd.Parameters.AddWithValue("@numGioDen", numGioDen);
             cmd.Parameters.AddWithValue("@NgayDen", cbb_ngayden.Text);
             cmd.Parameters.AddWithValue("@numNgayDen", numNgayDen);
-            MessageBox.Show(cbb_ngaydi.Text + "   " + cbb_ngayden.Text);
             SqlDataReader reader = cmd.ExecuteReader();
             DataTable data = new DataTable();
             data.Load(reader);
+            MessageBox.Show(cmd.CommandText);
             reader.Close();
             if (data.Rows.Count > 0)
             {
@@ -117,7 +116,8 @@ namespace DBMS_Project
             if (txt_id.Text != "")
             {
                 DialogResult traloi;
-                traloi = MessageBox.Show("Bạn có chắc chắn xóa Chuyến bay " + txt_id.Text + "?", "Trả lời",
+                traloi = MessageBox.Show("Bạn có chắc chắn xóa Chuyến bay " + txt_id.Text + 
+                    "? Thao tác này sẽ xóa tất cả phân đoạn và các lịch trình tham gia của nhân viên có cùng mã chuyến bay", "Trả lời",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
@@ -134,9 +134,23 @@ namespace DBMS_Project
                     LoadData();
                 }
             }
+            else { MessageBox.Show("Bạn chưa chọn chuyến bay muốn xóa!"); }
+        }
+        private void btnTamHoan_Click(object sender, EventArgs e)
+        {
+            if (txt_id.Text != "")
+            {
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xác nhận tạm hoãn chuyến bay?" + txt_id.Text + "?", "Trả lời",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (traloi == DialogResult.OK)
+                {
+                    FormYeuCauTamHoan form = new FormYeuCauTamHoan(txt_id.Text);
+                    form.ShowDialog();
+                }
+            }
             else { MessageBox.Show("Bạn chưa chọn tài khoản muốn xóa!"); }
         }
-
         private void btn_luu_Click(object sender, EventArgs e)
         {
             if (state == ChinhSua.them)
@@ -208,8 +222,26 @@ namespace DBMS_Project
                 DateTime giodenDateTime = DateTime.ParseExact(dgv_chuyenbay.Rows[r].Cells[4].Value.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
                 TimeSpan gioDen = giodenDateTime.TimeOfDay;
                 nud_gioden.Value = gioDen.Hours; nud_phutden.Value = gioDen.Minutes;
-                dtp_ngaydi.Value = Convert.ToDateTime(dgv_chuyenbay.Rows[r].Cells[5].Value.ToString());
+                dtpngayden.Value = Convert.ToDateTime(dgv_chuyenbay.Rows[r].Cells[5].Value.ToString());
             }
+        }
+
+        private void btn_QLphandoan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormQuanLyPhanDoan form = new FormQuanLyPhanDoan();
+            form.ShowDialog();
+            this.Show();
+            LoadData();
+        }
+
+        private void btn_QLTamHoan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormChuyenBayTamHoan form = new FormChuyenBayTamHoan();
+            form.ShowDialog();
+            this.Show();
+            LoadData();
         }
     }
 }

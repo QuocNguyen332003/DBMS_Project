@@ -29,10 +29,10 @@ namespace DBMS_Project
             DataTable dataTable = db.LayDuLieu("select * from DSMayBayHD");
             dgv_Quanlymaybay.DataSource = dataTable;
             dgv_Quanlymaybay.AutoResizeColumns();
-            ResetText();
+            Reset_Text();
         }
 
-        private void ResetText()
+        private void Reset_Text()
         {
             tb_sohieu.Text = string.Empty;
             tb_ten.Text = string.Empty;
@@ -74,7 +74,7 @@ namespace DBMS_Project
         private void btn_them_Click(object sender, EventArgs e)
         {
             state = ChinhSua.them;
-            ResetText();
+            Reset_Text();
             pnl_thongso.Enabled = true;
             tb_sohieu.Enabled = true;
             tb_ten.Enabled = true;

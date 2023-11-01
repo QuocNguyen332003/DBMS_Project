@@ -34,10 +34,10 @@ namespace DBMS_Project
             DataTable dataTable = db.LayDuLieu("select * from TT_KhoangMB where SoHieu = '" + soHieu + "' and TenLoaiMayBay = '" + tenLoaiMayBay + "'");
             dgv_khoangmaybay.DataSource = dataTable;
             dgv_khoangmaybay.AutoResizeColumns();
-            ResetText();
+            Reset_Text();
         }
 
-        private void ResetText()
+        private void Reset_Text()
         {
             tb_sohieu.Text = string.Empty;
             tb_tenloaimaybay.Text = string.Empty;
