@@ -124,7 +124,7 @@
             this.pnlmain.Controls.Add(this.dgv_chuyenbay);
             this.pnlmain.Controls.Add(this.pnltimkiem);
             this.pnlmain.Location = new System.Drawing.Point(9, 50);
-            this.pnlmain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlmain.Margin = new System.Windows.Forms.Padding(2);
             this.pnlmain.Name = "pnlmain";
             this.pnlmain.Size = new System.Drawing.Size(874, 508);
             this.pnlmain.TabIndex = 1;
@@ -138,7 +138,7 @@
             this.pnl_modify.Controls.Add(this.btn_them);
             this.pnl_modify.Controls.Add(this.label9);
             this.pnl_modify.Location = new System.Drawing.Point(258, 264);
-            this.pnl_modify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_modify.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_modify.Name = "pnl_modify";
             this.pnl_modify.Size = new System.Drawing.Size(605, 235);
             this.pnl_modify.TabIndex = 4;
@@ -212,7 +212,7 @@
             // nud_gioden
             // 
             this.nud_gioden.Location = new System.Drawing.Point(326, 65);
-            this.nud_gioden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nud_gioden.Margin = new System.Windows.Forms.Padding(2);
             this.nud_gioden.Name = "nud_gioden";
             this.nud_gioden.Size = new System.Drawing.Size(40, 20);
             this.nud_gioden.TabIndex = 87;
@@ -230,7 +230,7 @@
             // nud_phutden
             // 
             this.nud_phutden.Location = new System.Drawing.Point(398, 65);
-            this.nud_phutden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nud_phutden.Margin = new System.Windows.Forms.Padding(2);
             this.nud_phutden.Name = "nud_phutden";
             this.nud_phutden.Size = new System.Drawing.Size(40, 20);
             this.nud_phutden.TabIndex = 86;
@@ -248,7 +248,7 @@
             // nud_phutdi
             // 
             this.nud_phutdi.Location = new System.Drawing.Point(398, 16);
-            this.nud_phutdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nud_phutdi.Margin = new System.Windows.Forms.Padding(2);
             this.nud_phutdi.Name = "nud_phutdi";
             this.nud_phutdi.Size = new System.Drawing.Size(40, 20);
             this.nud_phutdi.TabIndex = 85;
@@ -266,7 +266,7 @@
             // nud_giodi
             // 
             this.nud_giodi.Location = new System.Drawing.Point(326, 16);
-            this.nud_giodi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nud_giodi.Margin = new System.Windows.Forms.Padding(2);
             this.nud_giodi.Name = "nud_giodi";
             this.nud_giodi.Size = new System.Drawing.Size(40, 20);
             this.nud_giodi.TabIndex = 84;
@@ -284,7 +284,7 @@
             // dtp_ngaydi
             // 
             this.dtp_ngaydi.Location = new System.Drawing.Point(87, 114);
-            this.dtp_ngaydi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtp_ngaydi.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_ngaydi.Name = "dtp_ngaydi";
             this.dtp_ngaydi.Size = new System.Drawing.Size(175, 20);
             this.dtp_ngaydi.TabIndex = 83;
@@ -306,7 +306,7 @@
             // dtpngayden
             // 
             this.dtpngayden.Location = new System.Drawing.Point(87, 162);
-            this.dtpngayden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpngayden.Margin = new System.Windows.Forms.Padding(2);
             this.dtpngayden.Name = "dtpngayden";
             this.dtpngayden.Size = new System.Drawing.Size(175, 20);
             this.dtpngayden.TabIndex = 82;
@@ -339,7 +339,7 @@
             // txt_tinhtrang
             // 
             this.txt_tinhtrang.Location = new System.Drawing.Point(130, 61);
-            this.txt_tinhtrang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_tinhtrang.Margin = new System.Windows.Forms.Padding(2);
             this.txt_tinhtrang.Multiline = true;
             this.txt_tinhtrang.Name = "txt_tinhtrang";
             this.txt_tinhtrang.Size = new System.Drawing.Size(121, 25);
@@ -351,7 +351,7 @@
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_xoa.Location = new System.Drawing.Point(2, 162);
-            this.btn_xoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(2);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(149, 41);
             this.btn_xoa.TabIndex = 76;
@@ -365,7 +365,7 @@
             this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_sua.Location = new System.Drawing.Point(2, 100);
-            this.btn_sua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(2);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(149, 58);
             this.btn_sua.TabIndex = 75;
@@ -379,7 +379,7 @@
             this.btn_them.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_them.Location = new System.Drawing.Point(2, 56);
-            this.btn_them.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_them.Margin = new System.Windows.Forms.Padding(2);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(149, 41);
             this.btn_them.TabIndex = 71;
@@ -416,7 +416,7 @@
             this.ngayDenDataGridViewTextBoxColumn});
             this.dgv_chuyenbay.DataSource = this.chuyenBayBindingSource;
             this.dgv_chuyenbay.Location = new System.Drawing.Point(258, 6);
-            this.dgv_chuyenbay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_chuyenbay.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_chuyenbay.Name = "dgv_chuyenbay";
             this.dgv_chuyenbay.RowHeadersVisible = false;
             this.dgv_chuyenbay.RowHeadersWidth = 51;
@@ -505,7 +505,7 @@
             this.pnltimkiem.Controls.Add(this.label6);
             this.pnltimkiem.Controls.Add(this.pictureBox1);
             this.pnltimkiem.Location = new System.Drawing.Point(6, 6);
-            this.pnltimkiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnltimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.pnltimkiem.Name = "pnltimkiem";
             this.pnltimkiem.Size = new System.Drawing.Size(248, 493);
             this.pnltimkiem.TabIndex = 2;
@@ -529,7 +529,7 @@
             this.cb_ngayden.AutoSize = true;
             this.cb_ngayden.Location = new System.Drawing.Point(301, 440);
             this.cb_ngayden.Name = "cb_ngayden";
-            this.cb_ngayden.Size = new System.Drawing.Size(18, 17);
+            this.cb_ngayden.Size = new System.Drawing.Size(15, 14);
             this.cb_ngayden.TabIndex = 76;
             this.cb_ngayden.UseVisualStyleBackColor = true;
             // 
@@ -538,7 +538,7 @@
             this.cb_gioden.AutoSize = true;
             this.cb_gioden.Location = new System.Drawing.Point(301, 389);
             this.cb_gioden.Name = "cb_gioden";
-            this.cb_gioden.Size = new System.Drawing.Size(18, 17);
+            this.cb_gioden.Size = new System.Drawing.Size(15, 14);
             this.cb_gioden.TabIndex = 75;
             this.cb_gioden.UseVisualStyleBackColor = true;
             // 
@@ -547,7 +547,7 @@
             this.cb_ngaydi.AutoSize = true;
             this.cb_ngaydi.Location = new System.Drawing.Point(301, 340);
             this.cb_ngaydi.Name = "cb_ngaydi";
-            this.cb_ngaydi.Size = new System.Drawing.Size(18, 17);
+            this.cb_ngaydi.Size = new System.Drawing.Size(15, 14);
             this.cb_ngaydi.TabIndex = 74;
             this.cb_ngaydi.UseVisualStyleBackColor = true;
             // 
@@ -556,7 +556,7 @@
             this.cb_tt.AutoSize = true;
             this.cb_tt.Location = new System.Drawing.Point(301, 240);
             this.cb_tt.Name = "cb_tt";
-            this.cb_tt.Size = new System.Drawing.Size(18, 17);
+            this.cb_tt.Size = new System.Drawing.Size(15, 14);
             this.cb_tt.TabIndex = 73;
             this.cb_tt.UseVisualStyleBackColor = true;
             // 
@@ -565,7 +565,7 @@
             this.cb_giodi.AutoSize = true;
             this.cb_giodi.Location = new System.Drawing.Point(301, 290);
             this.cb_giodi.Name = "cb_giodi";
-            this.cb_giodi.Size = new System.Drawing.Size(18, 17);
+            this.cb_giodi.Size = new System.Drawing.Size(15, 14);
             this.cb_giodi.TabIndex = 72;
             this.cb_giodi.UseVisualStyleBackColor = true;
             // 
@@ -574,7 +574,7 @@
             this.cb_id.AutoSize = true;
             this.cb_id.Location = new System.Drawing.Point(301, 194);
             this.cb_id.Name = "cb_id";
-            this.cb_id.Size = new System.Drawing.Size(18, 17);
+            this.cb_id.Size = new System.Drawing.Size(15, 14);
             this.cb_id.TabIndex = 71;
             this.cb_id.UseVisualStyleBackColor = true;
             // 
@@ -582,7 +582,7 @@
             // 
             this.cbb_ngayden.FormattingEnabled = true;
             this.cbb_ngayden.Location = new System.Drawing.Point(123, 358);
-            this.cbb_ngayden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_ngayden.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_ngayden.Name = "cbb_ngayden";
             this.cbb_ngayden.Size = new System.Drawing.Size(92, 21);
             this.cbb_ngayden.TabIndex = 70;
@@ -591,7 +591,7 @@
             // 
             this.cbb_gioden.FormattingEnabled = true;
             this.cbb_gioden.Location = new System.Drawing.Point(123, 317);
-            this.cbb_gioden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_gioden.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_gioden.Name = "cbb_gioden";
             this.cbb_gioden.Size = new System.Drawing.Size(92, 21);
             this.cbb_gioden.TabIndex = 69;
@@ -600,7 +600,7 @@
             // 
             this.cbb_ngaydi.FormattingEnabled = true;
             this.cbb_ngaydi.Location = new System.Drawing.Point(123, 276);
-            this.cbb_ngaydi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_ngaydi.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_ngaydi.Name = "cbb_ngaydi";
             this.cbb_ngaydi.Size = new System.Drawing.Size(92, 21);
             this.cbb_ngaydi.TabIndex = 68;
@@ -609,7 +609,7 @@
             // 
             this.cbb_giodi.FormattingEnabled = true;
             this.cbb_giodi.Location = new System.Drawing.Point(123, 236);
-            this.cbb_giodi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_giodi.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_giodi.Name = "cbb_giodi";
             this.cbb_giodi.Size = new System.Drawing.Size(92, 21);
             this.cbb_giodi.TabIndex = 67;
@@ -618,7 +618,7 @@
             // 
             this.cbb_tinhtrang.FormattingEnabled = true;
             this.cbb_tinhtrang.Location = new System.Drawing.Point(123, 195);
-            this.cbb_tinhtrang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_tinhtrang.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_tinhtrang.Name = "cbb_tinhtrang";
             this.cbb_tinhtrang.Size = new System.Drawing.Size(92, 21);
             this.cbb_tinhtrang.TabIndex = 66;
@@ -627,7 +627,7 @@
             // 
             this.cbb_id.FormattingEnabled = true;
             this.cbb_id.Location = new System.Drawing.Point(123, 154);
-            this.cbb_id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_id.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_id.Name = "cbb_id";
             this.cbb_id.Size = new System.Drawing.Size(92, 21);
             this.cbb_id.TabIndex = 65;
@@ -638,7 +638,7 @@
             this.btn_QLphandoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_QLphandoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_QLphandoan.Location = new System.Drawing.Point(32, 445);
-            this.btn_QLphandoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_QLphandoan.Margin = new System.Windows.Forms.Padding(2);
             this.btn_QLphandoan.Name = "btn_QLphandoan";
             this.btn_QLphandoan.Size = new System.Drawing.Size(182, 35);
             this.btn_QLphandoan.TabIndex = 56;
@@ -663,7 +663,7 @@
             this.btn_TimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_TimKiem.Location = new System.Drawing.Point(123, 404);
-            this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(91, 35);
             this.btn_TimKiem.TabIndex = 55;
@@ -747,7 +747,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -766,7 +766,7 @@
             this.ClientSize = new System.Drawing.Size(894, 568);
             this.Controls.Add(this.pnlmain);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormQuanLyChuyenBay";
             this.Text = "FormQuanLyChuyenBay";
             this.Load += new System.EventHandler(this.FormQuanLyChuyenBay_Load);

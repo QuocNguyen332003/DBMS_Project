@@ -33,7 +33,6 @@ namespace DBMS_Project
         {
             DataTable dataTable = db.LayDuLieu("select * from LoadNhanVien");
             dgvQLNhanSu.DataSource = dataTable;
-            dgvQLNhanSu.AutoResizeColumns();
             trangthai1();
             cbb_idnhanvien.DataSource = db.LayDuLieu("select DISTINCT MaNV from LoadNhanVien");
             this.cbb_idnhanvien.DisplayMember = "MaNV";
@@ -70,13 +69,13 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("InsertNhanVien", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNV", SqlDbType.Char).Value = txt_id_emp.Text;
-                    cmd.Parameters.Add("@HoTen", SqlDbType.NChar).Value = txt_name.Text;
-                    cmd.Parameters.Add("@GioiTinh", SqlDbType.NChar).Value = txt_gender.Text;
-                    cmd.Parameters.Add("@DiaChi", SqlDbType.NChar).Value = txt_address.Text;
+                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_id_emp.Text;
+                    cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar).Value = txt_name.Text;
+                    cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = txt_gender.Text;
+                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = txt_address.Text;
                     cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtp_born.Value.ToShortDateString();
-                    cmd.Parameters.Add("@SDT", SqlDbType.NChar).Value = txt_phone.Text;
-                    cmd.Parameters.Add("@MaCV", SqlDbType.Char).Value = txt_id_work.Text;
+                    cmd.Parameters.Add("@SDT", SqlDbType.VarChar).Value = txt_phone.Text;
+                    cmd.Parameters.Add("@MaCV", SqlDbType.VarChar).Value = txt_id_work.Text;
                     cmd.Parameters.Add("@NgayTuyenDung", SqlDbType.Date).Value = dtp_tuyendung.Value.ToShortDateString();
                     cmd.Parameters.Add("@HeSoLuong", SqlDbType.Float).Value = Convert.ToDouble(txt_hesoluong.Text);
 
@@ -94,15 +93,15 @@ namespace DBMS_Project
                 if (db.KiemTraDuLieu("select * from NhanVien where MaNV = '" + txt_id_emp.Text + "'") && txt_id_emp.Text != "")
                 {
                     db.openConnection();
-                    SqlCommand cmd = new SqlCommand("InsertNhanVien", db.getConnection);
+                    SqlCommand cmd = new SqlCommand("UpdateNhanVien", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNV", SqlDbType.Char).Value = txt_id_emp.Text;
-                    cmd.Parameters.Add("@HoTen", SqlDbType.NChar).Value = txt_name.Text;
-                    cmd.Parameters.Add("@GioiTinh", SqlDbType.NChar).Value = txt_gender.Text;
-                    cmd.Parameters.Add("@DiaChi", SqlDbType.NChar).Value = txt_address.Text;
+                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_id_emp.Text;
+                    cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar).Value = txt_name.Text;
+                    cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = txt_gender.Text;
+                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = txt_address.Text;
                     cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtp_born.Value.ToShortDateString();
-                    cmd.Parameters.Add("@SDT", SqlDbType.NChar).Value = txt_phone.Text;
-                    cmd.Parameters.Add("@MaCV", SqlDbType.Char).Value = txt_id_work.Text;
+                    cmd.Parameters.Add("@SDT", SqlDbType.VarChar).Value = txt_phone.Text;
+                    cmd.Parameters.Add("@MaCV", SqlDbType.VarChar).Value = txt_id_work.Text;
                     cmd.Parameters.Add("@NgayTuyenDung", SqlDbType.Date).Value = dtp_tuyendung.Value.ToShortDateString();
                     cmd.Parameters.Add("@HeSoLuong", SqlDbType.Float).Value = Convert.ToDouble(txt_hesoluong.Text);
 
@@ -178,7 +177,7 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("DeleteNhanVien", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNV", SqlDbType.Char).Value = txt_id_emp.Text;
+                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_id_emp.Text;
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Xóa thành công!");
                     else
@@ -200,7 +199,7 @@ namespace DBMS_Project
             object result = cmd.ExecuteScalar();
             double LuongNV = (double)result;
             string LuongNVString = LuongNV.ToString();
-            MessageBox.Show("Lương của nhân viên có Mã Nhân Viên là " + txt_id_emp.Text + "là: " + LuongNVString);
+            MessageBox.Show("Lương của nhân viên có Mã Nhân Viên là " + txt_id_emp.Text + "là: " + LuongNVString + " VNĐ");
             db.closeConnection();
         }
 

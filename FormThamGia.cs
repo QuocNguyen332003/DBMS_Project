@@ -25,7 +25,7 @@ namespace DBMS_Project
         }
         private void LoadData()
         {
-            DataTable dataTable = db.LayDuLieu("select * from LayThamGia");
+            DataTable dataTable = db.LayDuLieu("select * from LoadThamGia");
             dgv_thamgia.DataSource = dataTable;
             cbb_idchuyenbay.DataSource = db.LayDuLieu("select DISTINCT MaChuyenBay from LoadPhanDoan");
             this.cbb_idchuyenbay.DisplayMember = "MaChuyenBay";
@@ -68,11 +68,7 @@ namespace DBMS_Project
             state = ChinhSua.them;
 
             pnlEnabled.Enabled = true;
-            cbb_idchuyenbay.Enabled = false;
-            cbb_stt.Enabled = false;
 
-            cbb_idchuyenbay.Text = String.Empty;
-            cbb_stt.Text = String.Empty;
             txt_idnhanvien.Text = String.Empty;
             txt_sogiobay.Text = String.Empty;
             txt_vaitro.Text = String.Empty;
@@ -100,9 +96,9 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("DeleteThamGia", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.Char).Value = cbb_idchuyenbay.Text;
-                    cmd.Parameters.Add("@STT", SqlDbType.Char).Value = Convert.ToInt32(cbb_stt.Text);
-                    cmd.Parameters.Add("@MaNV", SqlDbType.Char).Value = txt_idnhanvien.Text;
+                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.VarChar).Value = cbb_idchuyenbay.Text;
+                    cmd.Parameters.Add("@STT", SqlDbType.Int).Value = Convert.ToInt32(cbb_stt.Text);
+                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_idnhanvien.Text;
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Xóa thành công!");
                     else
@@ -125,9 +121,9 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("AddThamGia", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.Char).Value = cbb_idchuyenbay.Text;
+                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.VarChar).Value = cbb_idchuyenbay.Text;
                     cmd.Parameters.Add("@STT", SqlDbType.Int).Value = Convert.ToInt32(cbb_stt.Text);
-                    cmd.Parameters.Add("@MaNV", SqlDbType.Char).Value = txt_idnhanvien.Text;
+                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_idnhanvien.Text;
                     cmd.Parameters.Add("@SoGioBay", SqlDbType.Int).Value = Convert.ToInt32(txt_sogiobay.Text);
                     cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar).Value = txt_vaitro.Text;
                     if (cmd.ExecuteNonQuery() > 0)
@@ -137,7 +133,7 @@ namespace DBMS_Project
                     LoadData();
                     db.closeConnection();
                 }
-                else MessageBox.Show("Mã chuyến bay không hợp lệ!");
+                else MessageBox.Show(" Không hợp lệ!");
             }
             else if (state == ChinhSua.sua)
             {
@@ -147,9 +143,9 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("UpdateThamGia", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.Char).Value = cbb_idchuyenbay.Text;
+                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.VarChar).Value = cbb_idchuyenbay.Text;
                     cmd.Parameters.Add("@STT", SqlDbType.Int).Value = Convert.ToInt32(cbb_stt.Text);
-                    cmd.Parameters.Add("@MaNV", SqlDbType.Char).Value = txt_idnhanvien.Text;
+                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_idnhanvien.Text;
                     cmd.Parameters.Add("@SoGioBay", SqlDbType.Int).Value = Convert.ToInt32(txt_sogiobay.Text);
                     cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar).Value = txt_vaitro.Text;
 
@@ -160,7 +156,7 @@ namespace DBMS_Project
                     LoadData();
                     db.closeConnection();
                 }
-                else MessageBox.Show("Mã chuyến bay không hợp lệ!");
+                else MessageBox.Show("Không hợp lệ!");
             }
             state = ChinhSua.none;
         }
