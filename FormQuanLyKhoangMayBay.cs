@@ -95,9 +95,9 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("XoaKhoangMayBay", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@SoHieu", SqlDbType.Char).Value = tb_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.Char).Value = tb_tenloaimaybay.Text;
-                    cmd.Parameters.Add("@MaKhoang", SqlDbType.Char).Value = tb_makhoang.Text;
+                    cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = tb_sohieu.Text;
+                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = tb_tenloaimaybay.Text;
+                    cmd.Parameters.Add("@MaKhoang", SqlDbType.VarChar).Value = tb_makhoang.Text;
 
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Xóa thành công!");
@@ -126,9 +126,9 @@ namespace DBMS_Project
                         db.openConnection();
                         SqlCommand cmd = new SqlCommand("ThemKhoangMayBay", db.getConnection);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@SoHieu", SqlDbType.Char).Value = this.soHieu;
-                        cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.Char).Value = this.tenLoaiMayBay;
-                        cmd.Parameters.Add("@MaKhoang", SqlDbType.Char).Value = tb_makhoang.Text;
+                        cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = this.soHieu;
+                        cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = this.tenLoaiMayBay;
+                        cmd.Parameters.Add("@MaKhoang", SqlDbType.VarChar).Value = tb_makhoang.Text;
                         cmd.Parameters.Add("@TenLoaiKhoang", SqlDbType.NVarChar).Value = tb_tenloaikhoang.Text;
                         cmd.Parameters.Add("@TongSoGhe", SqlDbType.Int).Value = tb_tongsoghe.Text;
 
@@ -149,9 +149,9 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("UpdateKhoangMayBay", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@SoHieu", SqlDbType.Char).Value = tb_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.Char).Value = tb_tenloaimaybay.Text;
-                    cmd.Parameters.Add("@MaKhoang", SqlDbType.Char).Value=tb_makhoang.Text;
+                    cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = tb_sohieu.Text;
+                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = tb_tenloaimaybay.Text;
+                    cmd.Parameters.Add("@MaKhoang", SqlDbType.VarChar).Value=tb_makhoang.Text;
                     cmd.Parameters.Add("@TenLoaiKhoang", SqlDbType.NVarChar).Value = tb_tenloaikhoang.Text;
                     cmd.Parameters.Add("@TongSoGhe", SqlDbType.Int).Value = tb_tongsoghe.Text;
 
