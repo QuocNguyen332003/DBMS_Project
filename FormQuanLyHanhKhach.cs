@@ -98,16 +98,17 @@ namespace DBMS_Project
         {
             string CCCD = tb_TimKiem_CCCD.Text.ToString();
             DataTable dataTable = db.TimHanhKhach(CCCD);
-            int d = 0;
-            foreach (DataRow row in dataTable.Rows)
+            if(dataTable.Rows.Count > 0)
             {
-                var MaHK = row["MaHanhKhach"];
-                tb_TimKiem_MaHanhKhach.Text = (string)MaHK;
-                var SDT = row["SDT"];
-                tb_TimKiem_SDT.Text = (string)SDT;
-                d++;
-            }
-            if(d == 0)
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    var MaHK = row["MaHanhKhach"];
+                    tb_TimKiem_MaHanhKhach.Text = (string)MaHK;
+                    var SDT = row["SDT"];
+                    tb_TimKiem_SDT.Text = (string)SDT;
+                }
+            }    
+            else
             {
                 tb_TimKiem_MaHanhKhach.Text = "Không tìm thấy";
                 tb_TimKiem_HoTen.Text = "Không tìm thấy";
