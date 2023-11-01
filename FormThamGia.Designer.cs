@@ -32,16 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThamGia));
             this.pnl_main = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtvaitro = new System.Windows.Forms.TextBox();
-            this.txt_sogiobay = new System.Windows.Forms.TextBox();
-            this.txt_idnhanvien = new System.Windows.Forms.TextBox();
-            this.txt_stt = new System.Windows.Forms.TextBox();
-            this.txt_idchuyenbay = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
@@ -55,10 +45,9 @@
             this.cb_stt = new System.Windows.Forms.CheckBox();
             this.cb_idnhanvien = new System.Windows.Forms.CheckBox();
             this.cb_idchuyenbay = new System.Windows.Forms.CheckBox();
-            this.cbb_gioden = new System.Windows.Forms.ComboBox();
-            this.cbb_ngaydi = new System.Windows.Forms.ComboBox();
-            this.cbb_giodi = new System.Windows.Forms.ComboBox();
-            this.cbb_tinhtrang = new System.Windows.Forms.ComboBox();
+            this.cbb_vaitro = new System.Windows.Forms.ComboBox();
+            this.cbb_idnhanvien = new System.Windows.Forms.ComboBox();
+            this.cbb_stt1 = new System.Windows.Forms.ComboBox();
             this.cbb_id = new System.Windows.Forms.ComboBox();
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -76,8 +65,19 @@
             this.thamGiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
             this.pnlEnabled = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_vaitro = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_sogiobay = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_idnhanvien = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.thamGiaTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.ThamGiaTableAdapter();
+            this.cbb_idchuyenbay = new System.Windows.Forms.ComboBox();
+            this.cbb_stt = new System.Windows.Forms.ComboBox();
+            this.num_sogiobay = new System.Windows.Forms.NumericUpDown();
             this.pnl_main.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.thamGiaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             this.pnlEnabled.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_sogiobay)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_main
@@ -116,106 +117,6 @@
             this.label13.TabIndex = 92;
             this.label13.Text = "Cập nhật tham gia:";
             // 
-            // txtvaitro
-            // 
-            this.txtvaitro.Location = new System.Drawing.Point(179, 159);
-            this.txtvaitro.Multiline = true;
-            this.txtvaitro.Name = "txtvaitro";
-            this.txtvaitro.Size = new System.Drawing.Size(126, 30);
-            this.txtvaitro.TabIndex = 91;
-            // 
-            // txt_sogiobay
-            // 
-            this.txt_sogiobay.Location = new System.Drawing.Point(179, 123);
-            this.txt_sogiobay.Multiline = true;
-            this.txt_sogiobay.Name = "txt_sogiobay";
-            this.txt_sogiobay.Size = new System.Drawing.Size(126, 30);
-            this.txt_sogiobay.TabIndex = 90;
-            // 
-            // txt_idnhanvien
-            // 
-            this.txt_idnhanvien.Location = new System.Drawing.Point(179, 82);
-            this.txt_idnhanvien.Multiline = true;
-            this.txt_idnhanvien.Name = "txt_idnhanvien";
-            this.txt_idnhanvien.Size = new System.Drawing.Size(126, 30);
-            this.txt_idnhanvien.TabIndex = 89;
-            // 
-            // txt_stt
-            // 
-            this.txt_stt.Location = new System.Drawing.Point(179, 46);
-            this.txt_stt.Multiline = true;
-            this.txt_stt.Name = "txt_stt";
-            this.txt_stt.Size = new System.Drawing.Size(126, 30);
-            this.txt_stt.TabIndex = 88;
-            // 
-            // txt_idchuyenbay
-            // 
-            this.txt_idchuyenbay.Location = new System.Drawing.Point(179, 7);
-            this.txt_idchuyenbay.Multiline = true;
-            this.txt_idchuyenbay.Name = "txt_idchuyenbay";
-            this.txt_idchuyenbay.Size = new System.Drawing.Size(126, 30);
-            this.txt_idchuyenbay.TabIndex = 88;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(25, 159);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 21);
-            this.label12.TabIndex = 87;
-            this.label12.Text = "Vai Trò:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(25, 123);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 21);
-            this.label11.TabIndex = 86;
-            this.label11.Text = "Số Giờ Bay";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(25, 87);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 21);
-            this.label10.TabIndex = 85;
-            this.label10.Text = "Mã NV:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(25, 48);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 21);
-            this.label9.TabIndex = 84;
-            this.label9.Text = "STT:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(25, 12);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 21);
-            this.label8.TabIndex = 83;
-            this.label8.Text = "Mã chuyến bay:";
-            // 
             // btn_Cancel
             // 
             this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
@@ -228,6 +129,7 @@
             this.btn_Cancel.TabIndex = 65;
             this.btn_Cancel.Text = "Hủy";
             this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Delete
             // 
@@ -241,6 +143,7 @@
             this.btn_Delete.TabIndex = 64;
             this.btn_Delete.Text = "Xóa";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Save
             // 
@@ -254,6 +157,7 @@
             this.btn_Save.TabIndex = 63;
             this.btn_Save.Text = "Lưu";
             this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Edit
             // 
@@ -267,6 +171,7 @@
             this.btn_Edit.TabIndex = 62;
             this.btn_Edit.Text = "Thay đổi";
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Add
             // 
@@ -280,10 +185,12 @@
             this.btn_Add.TabIndex = 61;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.num_sogiobay);
             this.panel1.Controls.Add(this.btn_reload);
             this.panel1.Controls.Add(this.cb_vaitro);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -291,10 +198,9 @@
             this.panel1.Controls.Add(this.cb_stt);
             this.panel1.Controls.Add(this.cb_idnhanvien);
             this.panel1.Controls.Add(this.cb_idchuyenbay);
-            this.panel1.Controls.Add(this.cbb_gioden);
-            this.panel1.Controls.Add(this.cbb_ngaydi);
-            this.panel1.Controls.Add(this.cbb_giodi);
-            this.panel1.Controls.Add(this.cbb_tinhtrang);
+            this.panel1.Controls.Add(this.cbb_vaitro);
+            this.panel1.Controls.Add(this.cbb_idnhanvien);
+            this.panel1.Controls.Add(this.cbb_stt1);
             this.panel1.Controls.Add(this.cbb_id);
             this.panel1.Controls.Add(this.btn_TimKiem);
             this.panel1.Controls.Add(this.label7);
@@ -320,6 +226,7 @@
             this.btn_reload.TabIndex = 99;
             this.btn_reload.Text = "ReLoad";
             this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // cb_vaitro
             // 
@@ -382,41 +289,32 @@
             this.cb_idchuyenbay.TabIndex = 93;
             this.cb_idchuyenbay.UseVisualStyleBackColor = true;
             // 
-            // cbb_gioden
+            // cbb_vaitro
             // 
-            this.cbb_gioden.FormattingEnabled = true;
-            this.cbb_gioden.Location = new System.Drawing.Point(142, 315);
-            this.cbb_gioden.Margin = new System.Windows.Forms.Padding(2);
-            this.cbb_gioden.Name = "cbb_gioden";
-            this.cbb_gioden.Size = new System.Drawing.Size(92, 21);
-            this.cbb_gioden.TabIndex = 91;
+            this.cbb_vaitro.FormattingEnabled = true;
+            this.cbb_vaitro.Location = new System.Drawing.Point(142, 315);
+            this.cbb_vaitro.Margin = new System.Windows.Forms.Padding(2);
+            this.cbb_vaitro.Name = "cbb_vaitro";
+            this.cbb_vaitro.Size = new System.Drawing.Size(92, 21);
+            this.cbb_vaitro.TabIndex = 91;
             // 
-            // cbb_ngaydi
+            // cbb_idnhanvien
             // 
-            this.cbb_ngaydi.FormattingEnabled = true;
-            this.cbb_ngaydi.Location = new System.Drawing.Point(142, 274);
-            this.cbb_ngaydi.Margin = new System.Windows.Forms.Padding(2);
-            this.cbb_ngaydi.Name = "cbb_ngaydi";
-            this.cbb_ngaydi.Size = new System.Drawing.Size(92, 21);
-            this.cbb_ngaydi.TabIndex = 90;
+            this.cbb_idnhanvien.FormattingEnabled = true;
+            this.cbb_idnhanvien.Location = new System.Drawing.Point(142, 231);
+            this.cbb_idnhanvien.Margin = new System.Windows.Forms.Padding(2);
+            this.cbb_idnhanvien.Name = "cbb_idnhanvien";
+            this.cbb_idnhanvien.Size = new System.Drawing.Size(92, 21);
+            this.cbb_idnhanvien.TabIndex = 89;
             // 
-            // cbb_giodi
+            // cbb_stt1
             // 
-            this.cbb_giodi.FormattingEnabled = true;
-            this.cbb_giodi.Location = new System.Drawing.Point(142, 231);
-            this.cbb_giodi.Margin = new System.Windows.Forms.Padding(2);
-            this.cbb_giodi.Name = "cbb_giodi";
-            this.cbb_giodi.Size = new System.Drawing.Size(92, 21);
-            this.cbb_giodi.TabIndex = 89;
-            // 
-            // cbb_tinhtrang
-            // 
-            this.cbb_tinhtrang.FormattingEnabled = true;
-            this.cbb_tinhtrang.Location = new System.Drawing.Point(142, 187);
-            this.cbb_tinhtrang.Margin = new System.Windows.Forms.Padding(2);
-            this.cbb_tinhtrang.Name = "cbb_tinhtrang";
-            this.cbb_tinhtrang.Size = new System.Drawing.Size(92, 21);
-            this.cbb_tinhtrang.TabIndex = 88;
+            this.cbb_stt1.FormattingEnabled = true;
+            this.cbb_stt1.Location = new System.Drawing.Point(142, 187);
+            this.cbb_stt1.Margin = new System.Windows.Forms.Padding(2);
+            this.cbb_stt1.Name = "cbb_stt1";
+            this.cbb_stt1.Size = new System.Drawing.Size(92, 21);
+            this.cbb_stt1.TabIndex = 88;
             // 
             // cbb_id
             // 
@@ -439,6 +337,7 @@
             this.btn_TimKiem.TabIndex = 78;
             this.btn_TimKiem.Text = "Tìm";
             this.btn_TimKiem.UseVisualStyleBackColor = false;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
             // label7
             // 
@@ -529,6 +428,7 @@
             this.dgv_thamgia.Name = "dgv_thamgia";
             this.dgv_thamgia.Size = new System.Drawing.Size(520, 167);
             this.dgv_thamgia.TabIndex = 59;
+            this.dgv_thamgia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thamgia_CellClick);
             // 
             // maChuyenBayDataGridViewTextBoxColumn
             // 
@@ -573,22 +473,106 @@
             // pnlEnabled
             // 
             this.pnlEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEnabled.Controls.Add(this.cbb_stt);
+            this.pnlEnabled.Controls.Add(this.cbb_idchuyenbay);
             this.pnlEnabled.Controls.Add(this.label8);
-            this.pnlEnabled.Controls.Add(this.txtvaitro);
+            this.pnlEnabled.Controls.Add(this.txt_vaitro);
             this.pnlEnabled.Controls.Add(this.label9);
             this.pnlEnabled.Controls.Add(this.txt_sogiobay);
             this.pnlEnabled.Controls.Add(this.label10);
             this.pnlEnabled.Controls.Add(this.txt_idnhanvien);
             this.pnlEnabled.Controls.Add(this.label11);
-            this.pnlEnabled.Controls.Add(this.txt_stt);
             this.pnlEnabled.Controls.Add(this.label12);
-            this.pnlEnabled.Controls.Add(this.txt_idchuyenbay);
             this.pnlEnabled.Enabled = false;
             this.pnlEnabled.Location = new System.Drawing.Point(41, 196);
             this.pnlEnabled.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEnabled.Name = "pnlEnabled";
             this.pnlEnabled.Size = new System.Drawing.Size(348, 201);
             this.pnlEnabled.TabIndex = 93;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(25, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(123, 21);
+            this.label8.TabIndex = 83;
+            this.label8.Text = "Mã chuyến bay:";
+            // 
+            // txt_vaitro
+            // 
+            this.txt_vaitro.Location = new System.Drawing.Point(179, 159);
+            this.txt_vaitro.Multiline = true;
+            this.txt_vaitro.Name = "txt_vaitro";
+            this.txt_vaitro.Size = new System.Drawing.Size(126, 30);
+            this.txt_vaitro.TabIndex = 91;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(25, 48);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 21);
+            this.label9.TabIndex = 84;
+            this.label9.Text = "STT:";
+            // 
+            // txt_sogiobay
+            // 
+            this.txt_sogiobay.Location = new System.Drawing.Point(179, 123);
+            this.txt_sogiobay.Multiline = true;
+            this.txt_sogiobay.Name = "txt_sogiobay";
+            this.txt_sogiobay.Size = new System.Drawing.Size(126, 30);
+            this.txt_sogiobay.TabIndex = 90;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(25, 87);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 21);
+            this.label10.TabIndex = 85;
+            this.label10.Text = "Mã NV:";
+            // 
+            // txt_idnhanvien
+            // 
+            this.txt_idnhanvien.Location = new System.Drawing.Point(179, 82);
+            this.txt_idnhanvien.Multiline = true;
+            this.txt_idnhanvien.Name = "txt_idnhanvien";
+            this.txt_idnhanvien.Size = new System.Drawing.Size(126, 30);
+            this.txt_idnhanvien.TabIndex = 89;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(25, 123);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 21);
+            this.label11.TabIndex = 86;
+            this.label11.Text = "Số Giờ Bay";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(25, 159);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 21);
+            this.label12.TabIndex = 87;
+            this.label12.Text = "Vai Trò:";
             // 
             // label1
             // 
@@ -605,6 +589,31 @@
             // thamGiaTableAdapter
             // 
             this.thamGiaTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbb_idchuyenbay
+            // 
+            this.cbb_idchuyenbay.FormattingEnabled = true;
+            this.cbb_idchuyenbay.Location = new System.Drawing.Point(179, 12);
+            this.cbb_idchuyenbay.Margin = new System.Windows.Forms.Padding(2);
+            this.cbb_idchuyenbay.Name = "cbb_idchuyenbay";
+            this.cbb_idchuyenbay.Size = new System.Drawing.Size(126, 21);
+            this.cbb_idchuyenbay.TabIndex = 94;
+            // 
+            // cbb_stt
+            // 
+            this.cbb_stt.FormattingEnabled = true;
+            this.cbb_stt.Location = new System.Drawing.Point(179, 48);
+            this.cbb_stt.Margin = new System.Windows.Forms.Padding(2);
+            this.cbb_stt.Name = "cbb_stt";
+            this.cbb_stt.Size = new System.Drawing.Size(126, 21);
+            this.cbb_stt.TabIndex = 95;
+            // 
+            // num_sogiobay
+            // 
+            this.num_sogiobay.Location = new System.Drawing.Point(142, 274);
+            this.num_sogiobay.Name = "num_sogiobay";
+            this.num_sogiobay.Size = new System.Drawing.Size(92, 20);
+            this.num_sogiobay.TabIndex = 100;
             // 
             // FormThamGia
             // 
@@ -627,6 +636,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
             this.pnlEnabled.ResumeLayout(false);
             this.pnlEnabled.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_sogiobay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -653,10 +663,9 @@
         private System.Windows.Forms.CheckBox cb_stt;
         private System.Windows.Forms.CheckBox cb_idnhanvien;
         private System.Windows.Forms.CheckBox cb_idchuyenbay;
-        private System.Windows.Forms.ComboBox cbb_gioden;
-        private System.Windows.Forms.ComboBox cbb_ngaydi;
-        private System.Windows.Forms.ComboBox cbb_giodi;
-        private System.Windows.Forms.ComboBox cbb_tinhtrang;
+        private System.Windows.Forms.ComboBox cbb_vaitro;
+        private System.Windows.Forms.ComboBox cbb_idnhanvien;
+        private System.Windows.Forms.ComboBox cbb_stt1;
         private System.Windows.Forms.ComboBox cbb_id;
         private System.Windows.Forms.Button btn_TimKiem;
         private System.Windows.Forms.Label label7;
@@ -675,12 +684,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtvaitro;
+        private System.Windows.Forms.TextBox txt_vaitro;
         private System.Windows.Forms.TextBox txt_sogiobay;
         private System.Windows.Forms.TextBox txt_idnhanvien;
-        private System.Windows.Forms.TextBox txt_stt;
-        private System.Windows.Forms.TextBox txt_idchuyenbay;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel pnlEnabled;
+        private System.Windows.Forms.ComboBox cbb_stt;
+        private System.Windows.Forms.ComboBox cbb_idchuyenbay;
+        private System.Windows.Forms.NumericUpDown num_sogiobay;
     }
 }
