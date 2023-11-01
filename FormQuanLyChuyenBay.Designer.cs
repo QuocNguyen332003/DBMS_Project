@@ -33,27 +33,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlmain = new System.Windows.Forms.Panel();
             this.pnl_modify = new System.Windows.Forms.Panel();
+            this.pnlEnabled = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.nud_gioden = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.nud_phutden = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
             this.nud_phutdi = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
             this.nud_giodi = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.dtp_ngaydi = new System.Windows.Forms.DateTimePicker();
+            this.btn_luu = new System.Windows.Forms.Button();
             this.dtpngayden = new System.Windows.Forms.DateTimePicker();
+            this.btn_huy = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_tinhtrang = new System.Windows.Forms.TextBox();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.btn_huy = new System.Windows.Forms.Button();
-            this.btn_luu = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
             this.maChuyenBayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +66,13 @@
             this.chuyenBayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
             this.pnltimkiem = new System.Windows.Forms.Panel();
+            this.btn_reload = new System.Windows.Forms.Button();
+            this.cb_ngayden = new System.Windows.Forms.CheckBox();
+            this.cb_gioden = new System.Windows.Forms.CheckBox();
+            this.cb_ngaydi = new System.Windows.Forms.CheckBox();
+            this.cb_tt = new System.Windows.Forms.CheckBox();
+            this.cb_giodi = new System.Windows.Forms.CheckBox();
+            this.cb_id = new System.Windows.Forms.CheckBox();
             this.cbb_ngayden = new System.Windows.Forms.ComboBox();
             this.cbb_gioden = new System.Windows.Forms.ComboBox();
             this.cbb_ngaydi = new System.Windows.Forms.ComboBox();
@@ -82,16 +90,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chuyenBayTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.ChuyenBayTableAdapter();
-            this.cb_id = new System.Windows.Forms.CheckBox();
-            this.cb_giodi = new System.Windows.Forms.CheckBox();
-            this.cb_tt = new System.Windows.Forms.CheckBox();
-            this.cb_ngaydi = new System.Windows.Forms.CheckBox();
-            this.cb_gioden = new System.Windows.Forms.CheckBox();
-            this.cb_ngayden = new System.Windows.Forms.CheckBox();
-            this.btn_reload = new System.Windows.Forms.Button();
-            this.pnlEnabled = new System.Windows.Forms.Panel();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
+            this.pnlEnabled.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_gioden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutdi)).BeginInit();
@@ -101,7 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             this.pnltimkiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlEnabled.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -140,6 +140,32 @@
             this.pnl_modify.Size = new System.Drawing.Size(806, 289);
             this.pnl_modify.TabIndex = 4;
             // 
+            // pnlEnabled
+            // 
+            this.pnlEnabled.Controls.Add(this.label17);
+            this.pnlEnabled.Controls.Add(this.txt_id);
+            this.pnlEnabled.Controls.Add(this.label16);
+            this.pnlEnabled.Controls.Add(this.label10);
+            this.pnlEnabled.Controls.Add(this.nud_gioden);
+            this.pnlEnabled.Controls.Add(this.label11);
+            this.pnlEnabled.Controls.Add(this.nud_phutden);
+            this.pnlEnabled.Controls.Add(this.label14);
+            this.pnlEnabled.Controls.Add(this.nud_phutdi);
+            this.pnlEnabled.Controls.Add(this.label13);
+            this.pnlEnabled.Controls.Add(this.nud_giodi);
+            this.pnlEnabled.Controls.Add(this.label12);
+            this.pnlEnabled.Controls.Add(this.dtp_ngaydi);
+            this.pnlEnabled.Controls.Add(this.btn_luu);
+            this.pnlEnabled.Controls.Add(this.dtpngayden);
+            this.pnlEnabled.Controls.Add(this.btn_huy);
+            this.pnlEnabled.Controls.Add(this.label15);
+            this.pnlEnabled.Controls.Add(this.txt_tinhtrang);
+            this.pnlEnabled.Enabled = false;
+            this.pnlEnabled.Location = new System.Drawing.Point(211, 40);
+            this.pnlEnabled.Name = "pnlEnabled";
+            this.pnlEnabled.Size = new System.Drawing.Size(590, 244);
+            this.pnlEnabled.TabIndex = 5;
+            // 
             // label17
             // 
             this.label17.BackColor = System.Drawing.Color.White;
@@ -149,6 +175,14 @@
             this.label17.Size = new System.Drawing.Size(31, 30);
             this.label17.TabIndex = 89;
             this.label17.Text = "h";
+            // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(173, 15);
+            this.txt_id.Multiline = true;
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(160, 30);
+            this.txt_id.TabIndex = 78;
             // 
             // label16
             // 
@@ -160,12 +194,32 @@
             this.label16.TabIndex = 88;
             this.label16.Text = "h";
             // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(13, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(160, 30);
+            this.label10.TabIndex = 72;
+            this.label10.Text = "Mã chuyến bay:";
+            // 
             // nud_gioden
             // 
             this.nud_gioden.Location = new System.Drawing.Point(434, 80);
             this.nud_gioden.Name = "nud_gioden";
             this.nud_gioden.Size = new System.Drawing.Size(54, 22);
             this.nud_gioden.TabIndex = 87;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(13, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(160, 30);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "Tình trạng:";
             // 
             // nud_phutden
             // 
@@ -174,12 +228,32 @@
             this.nud_phutden.Size = new System.Drawing.Size(54, 22);
             this.nud_phutden.TabIndex = 86;
             // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(339, 75);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(106, 30);
+            this.label14.TabIndex = 73;
+            this.label14.Text = "Giờ đến:";
+            // 
             // nud_phutdi
             // 
             this.nud_phutdi.Location = new System.Drawing.Point(531, 20);
             this.nud_phutdi.Name = "nud_phutdi";
             this.nud_phutdi.Size = new System.Drawing.Size(54, 22);
             this.nud_phutdi.TabIndex = 85;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(13, 135);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 30);
+            this.label13.TabIndex = 72;
+            this.label13.Text = "Ngày đi:";
             // 
             // nud_giodi
             // 
@@ -188,6 +262,16 @@
             this.nud_giodi.Size = new System.Drawing.Size(54, 22);
             this.nud_giodi.TabIndex = 84;
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(339, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 30);
+            this.label12.TabIndex = 71;
+            this.label12.Text = "Giờ đi:";
+            // 
             // dtp_ngaydi
             // 
             this.dtp_ngaydi.Location = new System.Drawing.Point(116, 140);
@@ -195,12 +279,40 @@
             this.dtp_ngaydi.Size = new System.Drawing.Size(232, 22);
             this.dtp_ngaydi.TabIndex = 83;
             // 
+            // btn_luu
+            // 
+            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_luu.Location = new System.Drawing.Point(382, 140);
+            this.btn_luu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(203, 43);
+            this.btn_luu.TabIndex = 77;
+            this.btn_luu.Text = "Lưu thay đổi";
+            this.btn_luu.UseVisualStyleBackColor = false;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            // 
             // dtpngayden
             // 
             this.dtpngayden.Location = new System.Drawing.Point(116, 200);
             this.dtpngayden.Name = "dtpngayden";
             this.dtpngayden.Size = new System.Drawing.Size(232, 22);
             this.dtpngayden.TabIndex = 82;
+            // 
+            // btn_huy
+            // 
+            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_huy.Location = new System.Drawing.Point(382, 187);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(203, 43);
+            this.btn_huy.TabIndex = 77;
+            this.btn_huy.Text = "Hủy thao tác";
+            this.btn_huy.UseVisualStyleBackColor = false;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // label15
             // 
@@ -219,42 +331,6 @@
             this.txt_tinhtrang.Name = "txt_tinhtrang";
             this.txt_tinhtrang.Size = new System.Drawing.Size(160, 30);
             this.txt_tinhtrang.TabIndex = 79;
-            // 
-            // txt_id
-            // 
-            this.txt_id.Location = new System.Drawing.Point(173, 15);
-            this.txt_id.Multiline = true;
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(160, 30);
-            this.txt_id.TabIndex = 78;
-            // 
-            // btn_huy
-            // 
-            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_huy.Location = new System.Drawing.Point(382, 187);
-            this.btn_huy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(203, 43);
-            this.btn_huy.TabIndex = 77;
-            this.btn_huy.Text = "Hủy thao tác";
-            this.btn_huy.UseVisualStyleBackColor = false;
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
-            // 
-            // btn_luu
-            // 
-            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_luu.Location = new System.Drawing.Point(382, 140);
-            this.btn_luu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(203, 43);
-            this.btn_luu.TabIndex = 77;
-            this.btn_luu.Text = "Lưu thay đổi";
-            this.btn_luu.UseVisualStyleBackColor = false;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // btn_xoa
             // 
@@ -297,56 +373,6 @@
             this.btn_them.Text = "Tạo chuyến bay";
             this.btn_them.UseVisualStyleBackColor = false;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(339, 15);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 30);
-            this.label12.TabIndex = 71;
-            this.label12.Text = "Giờ đi:";
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 135);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 30);
-            this.label13.TabIndex = 72;
-            this.label13.Text = "Ngày đi:";
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(339, 75);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 30);
-            this.label14.TabIndex = 73;
-            this.label14.Text = "Giờ đến:";
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 75);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(160, 30);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "Tình trạng:";
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(160, 30);
-            this.label10.TabIndex = 72;
-            this.label10.Text = "Mã chuyến bay:";
             // 
             // label9
             // 
@@ -472,6 +498,74 @@
             this.pnltimkiem.Name = "pnltimkiem";
             this.pnltimkiem.Size = new System.Drawing.Size(330, 606);
             this.pnltimkiem.TabIndex = 2;
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_reload.Location = new System.Drawing.Point(43, 497);
+            this.btn_reload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(115, 43);
+            this.btn_reload.TabIndex = 77;
+            this.btn_reload.Text = "ReLoad";
+            this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
+            // 
+            // cb_ngayden
+            // 
+            this.cb_ngayden.AutoSize = true;
+            this.cb_ngayden.Location = new System.Drawing.Point(301, 440);
+            this.cb_ngayden.Name = "cb_ngayden";
+            this.cb_ngayden.Size = new System.Drawing.Size(18, 17);
+            this.cb_ngayden.TabIndex = 76;
+            this.cb_ngayden.UseVisualStyleBackColor = true;
+            // 
+            // cb_gioden
+            // 
+            this.cb_gioden.AutoSize = true;
+            this.cb_gioden.Location = new System.Drawing.Point(301, 389);
+            this.cb_gioden.Name = "cb_gioden";
+            this.cb_gioden.Size = new System.Drawing.Size(18, 17);
+            this.cb_gioden.TabIndex = 75;
+            this.cb_gioden.UseVisualStyleBackColor = true;
+            // 
+            // cb_ngaydi
+            // 
+            this.cb_ngaydi.AutoSize = true;
+            this.cb_ngaydi.Location = new System.Drawing.Point(301, 340);
+            this.cb_ngaydi.Name = "cb_ngaydi";
+            this.cb_ngaydi.Size = new System.Drawing.Size(18, 17);
+            this.cb_ngaydi.TabIndex = 74;
+            this.cb_ngaydi.UseVisualStyleBackColor = true;
+            // 
+            // cb_tt
+            // 
+            this.cb_tt.AutoSize = true;
+            this.cb_tt.Location = new System.Drawing.Point(301, 240);
+            this.cb_tt.Name = "cb_tt";
+            this.cb_tt.Size = new System.Drawing.Size(18, 17);
+            this.cb_tt.TabIndex = 73;
+            this.cb_tt.UseVisualStyleBackColor = true;
+            // 
+            // cb_giodi
+            // 
+            this.cb_giodi.AutoSize = true;
+            this.cb_giodi.Location = new System.Drawing.Point(301, 290);
+            this.cb_giodi.Name = "cb_giodi";
+            this.cb_giodi.Size = new System.Drawing.Size(18, 17);
+            this.cb_giodi.TabIndex = 72;
+            this.cb_giodi.UseVisualStyleBackColor = true;
+            // 
+            // cb_id
+            // 
+            this.cb_id.AutoSize = true;
+            this.cb_id.Location = new System.Drawing.Point(301, 194);
+            this.cb_id.Name = "cb_id";
+            this.cb_id.Size = new System.Drawing.Size(18, 17);
+            this.cb_id.TabIndex = 71;
+            this.cb_id.UseVisualStyleBackColor = true;
             // 
             // cbb_ngayden
             // 
@@ -639,100 +733,6 @@
             // 
             this.chuyenBayTableAdapter.ClearBeforeFill = true;
             // 
-            // cb_id
-            // 
-            this.cb_id.AutoSize = true;
-            this.cb_id.Location = new System.Drawing.Point(301, 194);
-            this.cb_id.Name = "cb_id";
-            this.cb_id.Size = new System.Drawing.Size(18, 17);
-            this.cb_id.TabIndex = 71;
-            this.cb_id.UseVisualStyleBackColor = true;
-            // 
-            // cb_giodi
-            // 
-            this.cb_giodi.AutoSize = true;
-            this.cb_giodi.Location = new System.Drawing.Point(301, 290);
-            this.cb_giodi.Name = "cb_giodi";
-            this.cb_giodi.Size = new System.Drawing.Size(18, 17);
-            this.cb_giodi.TabIndex = 72;
-            this.cb_giodi.UseVisualStyleBackColor = true;
-            // 
-            // cb_tt
-            // 
-            this.cb_tt.AutoSize = true;
-            this.cb_tt.Location = new System.Drawing.Point(301, 240);
-            this.cb_tt.Name = "cb_tt";
-            this.cb_tt.Size = new System.Drawing.Size(18, 17);
-            this.cb_tt.TabIndex = 73;
-            this.cb_tt.UseVisualStyleBackColor = true;
-            // 
-            // cb_ngaydi
-            // 
-            this.cb_ngaydi.AutoSize = true;
-            this.cb_ngaydi.Location = new System.Drawing.Point(301, 340);
-            this.cb_ngaydi.Name = "cb_ngaydi";
-            this.cb_ngaydi.Size = new System.Drawing.Size(18, 17);
-            this.cb_ngaydi.TabIndex = 74;
-            this.cb_ngaydi.UseVisualStyleBackColor = true;
-            // 
-            // cb_gioden
-            // 
-            this.cb_gioden.AutoSize = true;
-            this.cb_gioden.Location = new System.Drawing.Point(301, 389);
-            this.cb_gioden.Name = "cb_gioden";
-            this.cb_gioden.Size = new System.Drawing.Size(18, 17);
-            this.cb_gioden.TabIndex = 75;
-            this.cb_gioden.UseVisualStyleBackColor = true;
-            // 
-            // cb_ngayden
-            // 
-            this.cb_ngayden.AutoSize = true;
-            this.cb_ngayden.Location = new System.Drawing.Point(301, 440);
-            this.cb_ngayden.Name = "cb_ngayden";
-            this.cb_ngayden.Size = new System.Drawing.Size(18, 17);
-            this.cb_ngayden.TabIndex = 76;
-            this.cb_ngayden.UseVisualStyleBackColor = true;
-            // 
-            // btn_reload
-            // 
-            this.btn_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_reload.Location = new System.Drawing.Point(43, 497);
-            this.btn_reload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(115, 43);
-            this.btn_reload.TabIndex = 77;
-            this.btn_reload.Text = "ReLoad";
-            this.btn_reload.UseVisualStyleBackColor = false;
-            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
-            // 
-            // pnlEnabled
-            // 
-            this.pnlEnabled.Controls.Add(this.label17);
-            this.pnlEnabled.Controls.Add(this.txt_id);
-            this.pnlEnabled.Controls.Add(this.label16);
-            this.pnlEnabled.Controls.Add(this.label10);
-            this.pnlEnabled.Controls.Add(this.nud_gioden);
-            this.pnlEnabled.Controls.Add(this.label11);
-            this.pnlEnabled.Controls.Add(this.nud_phutden);
-            this.pnlEnabled.Controls.Add(this.label14);
-            this.pnlEnabled.Controls.Add(this.nud_phutdi);
-            this.pnlEnabled.Controls.Add(this.label13);
-            this.pnlEnabled.Controls.Add(this.nud_giodi);
-            this.pnlEnabled.Controls.Add(this.label12);
-            this.pnlEnabled.Controls.Add(this.dtp_ngaydi);
-            this.pnlEnabled.Controls.Add(this.btn_luu);
-            this.pnlEnabled.Controls.Add(this.dtpngayden);
-            this.pnlEnabled.Controls.Add(this.btn_huy);
-            this.pnlEnabled.Controls.Add(this.label15);
-            this.pnlEnabled.Controls.Add(this.txt_tinhtrang);
-            this.pnlEnabled.Enabled = false;
-            this.pnlEnabled.Location = new System.Drawing.Point(211, 40);
-            this.pnlEnabled.Name = "pnlEnabled";
-            this.pnlEnabled.Size = new System.Drawing.Size(590, 244);
-            this.pnlEnabled.TabIndex = 5;
-            // 
             // FormQuanLyChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -747,6 +747,8 @@
             this.pnlmain.ResumeLayout(false);
             this.pnl_modify.ResumeLayout(false);
             this.pnl_modify.PerformLayout();
+            this.pnlEnabled.ResumeLayout(false);
+            this.pnlEnabled.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_gioden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutdi)).EndInit();
@@ -757,8 +759,6 @@
             this.pnltimkiem.ResumeLayout(false);
             this.pnltimkiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlEnabled.ResumeLayout(false);
-            this.pnlEnabled.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
