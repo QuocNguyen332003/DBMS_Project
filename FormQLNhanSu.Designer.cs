@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLNhanSu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Luong = new System.Windows.Forms.Button();
             this.dtp_tuyendung = new System.Windows.Forms.DateTimePicker();
             this.dtp_born = new System.Windows.Forms.DateTimePicker();
             this.txt_hesoluong = new System.Windows.Forms.TextBox();
@@ -70,7 +71,11 @@
             this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.nhanVienTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.NhanVienTableAdapter();
-            this.btn_Luong = new System.Windows.Forms.Button();
+            this.btn_QLThamGia = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbb_idnhanvien = new System.Windows.Forms.ComboBox();
+            this.btn_Tim = new System.Windows.Forms.Button();
+            this.btn_Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNhanSu)).BeginInit();
@@ -81,6 +86,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btn_Reload);
+            this.panel1.Controls.Add(this.btn_Tim);
+            this.panel1.Controls.Add(this.cbb_idnhanvien);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.btn_QLThamGia);
             this.panel1.Controls.Add(this.btn_Luong);
             this.panel1.Controls.Add(this.dtp_tuyendung);
             this.panel1.Controls.Add(this.dtp_born);
@@ -112,6 +122,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(862, 428);
             this.panel1.TabIndex = 5;
+            // 
+            // btn_Luong
+            // 
+            this.btn_Luong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_Luong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Luong.ForeColor = System.Drawing.Color.White;
+            this.btn_Luong.Location = new System.Drawing.Point(728, 384);
+            this.btn_Luong.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Luong.Name = "btn_Luong";
+            this.btn_Luong.Size = new System.Drawing.Size(125, 37);
+            this.btn_Luong.TabIndex = 89;
+            this.btn_Luong.Text = "Tính Lương";
+            this.btn_Luong.UseVisualStyleBackColor = false;
+            this.btn_Luong.Click += new System.EventHandler(this.btn_Luong_Click);
             // 
             // dtp_tuyendung
             // 
@@ -382,11 +406,11 @@
             this.ngayTuyenDungDataGridViewTextBoxColumn,
             this.heSoLuongDataGridViewTextBoxColumn});
             this.dgvQLNhanSu.DataSource = this.nhanVienBindingSource;
-            this.dgvQLNhanSu.Location = new System.Drawing.Point(3, 3);
+            this.dgvQLNhanSu.Location = new System.Drawing.Point(3, 37);
             this.dgvQLNhanSu.Name = "dgvQLNhanSu";
             this.dgvQLNhanSu.RowHeadersVisible = false;
             this.dgvQLNhanSu.RowHeadersWidth = 51;
-            this.dgvQLNhanSu.Size = new System.Drawing.Size(850, 195);
+            this.dgvQLNhanSu.Size = new System.Drawing.Size(850, 161);
             this.dgvQLNhanSu.TabIndex = 13;
             this.dgvQLNhanSu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLNhanSu_CellClick);
             // 
@@ -488,19 +512,68 @@
             // 
             this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
-            // btn_Luong
+            // btn_QLThamGia
             // 
-            this.btn_Luong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_Luong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luong.ForeColor = System.Drawing.Color.White;
-            this.btn_Luong.Location = new System.Drawing.Point(664, 384);
-            this.btn_Luong.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Luong.Name = "btn_Luong";
-            this.btn_Luong.Size = new System.Drawing.Size(189, 37);
-            this.btn_Luong.TabIndex = 89;
-            this.btn_Luong.Text = "Tính Lương";
-            this.btn_Luong.UseVisualStyleBackColor = false;
-            this.btn_Luong.Click += new System.EventHandler(this.btn_Luong_Click);
+            this.btn_QLThamGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_QLThamGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QLThamGia.ForeColor = System.Drawing.Color.White;
+            this.btn_QLThamGia.Location = new System.Drawing.Point(451, 384);
+            this.btn_QLThamGia.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_QLThamGia.Name = "btn_QLThamGia";
+            this.btn_QLThamGia.Size = new System.Drawing.Size(273, 37);
+            this.btn_QLThamGia.TabIndex = 90;
+            this.btn_QLThamGia.Text = "Nhân Sự Tham Gia Chuyến Bay";
+            this.btn_QLThamGia.UseVisualStyleBackColor = false;
+            this.btn_QLThamGia.Click += new System.EventHandler(this.btn_QLThamGia_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(460, 8);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 21);
+            this.label12.TabIndex = 91;
+            this.label12.Text = "Mã NV:";
+            // 
+            // cbb_idnhanvien
+            // 
+            this.cbb_idnhanvien.FormattingEnabled = true;
+            this.cbb_idnhanvien.Location = new System.Drawing.Point(538, 8);
+            this.cbb_idnhanvien.Margin = new System.Windows.Forms.Padding(2);
+            this.cbb_idnhanvien.Name = "cbb_idnhanvien";
+            this.cbb_idnhanvien.Size = new System.Drawing.Size(92, 21);
+            this.cbb_idnhanvien.TabIndex = 92;
+            // 
+            // btn_Tim
+            // 
+            this.btn_Tim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_Tim.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tim.ForeColor = System.Drawing.Color.White;
+            this.btn_Tim.Location = new System.Drawing.Point(648, 4);
+            this.btn_Tim.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Tim.Name = "btn_Tim";
+            this.btn_Tim.Size = new System.Drawing.Size(93, 30);
+            this.btn_Tim.TabIndex = 90;
+            this.btn_Tim.Text = "Tìm";
+            this.btn_Tim.UseVisualStyleBackColor = false;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
+            // 
+            // btn_Reload
+            // 
+            this.btn_Reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_Reload.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reload.ForeColor = System.Drawing.Color.White;
+            this.btn_Reload.Location = new System.Drawing.Point(760, 4);
+            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Reload.Name = "btn_Reload";
+            this.btn_Reload.Size = new System.Drawing.Size(93, 30);
+            this.btn_Reload.TabIndex = 93;
+            this.btn_Reload.Text = "Reload";
+            this.btn_Reload.UseVisualStyleBackColor = false;
+            this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
             // 
             // FormQLNhanSu
             // 
@@ -567,5 +640,10 @@
         private System.Windows.Forms.DateTimePicker dtp_born;
         private System.Windows.Forms.DateTimePicker dtp_tuyendung;
         private System.Windows.Forms.Button btn_Luong;
+        private System.Windows.Forms.Button btn_QLThamGia;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_Tim;
+        private System.Windows.Forms.ComboBox cbb_idnhanvien;
+        private System.Windows.Forms.Button btn_Reload;
     }
 }

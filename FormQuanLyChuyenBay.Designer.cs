@@ -536,7 +536,7 @@
             this.cb_ngayden.Location = new System.Drawing.Point(295, 519);
             this.cb_ngayden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_ngayden.Name = "cb_ngayden";
-            this.cb_ngayden.Size = new System.Drawing.Size(18, 17);
+            this.cb_ngayden.Size = new System.Drawing.Size(15, 14);
             this.cb_ngayden.TabIndex = 76;
             this.cb_ngayden.UseVisualStyleBackColor = true;
             // 
@@ -546,7 +546,7 @@
             this.cb_gioden.Location = new System.Drawing.Point(295, 468);
             this.cb_gioden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_gioden.Name = "cb_gioden";
-            this.cb_gioden.Size = new System.Drawing.Size(18, 17);
+            this.cb_gioden.Size = new System.Drawing.Size(15, 14);
             this.cb_gioden.TabIndex = 75;
             this.cb_gioden.UseVisualStyleBackColor = true;
             // 
@@ -556,7 +556,7 @@
             this.cb_ngaydi.Location = new System.Drawing.Point(295, 418);
             this.cb_ngaydi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_ngaydi.Name = "cb_ngaydi";
-            this.cb_ngaydi.Size = new System.Drawing.Size(18, 17);
+            this.cb_ngaydi.Size = new System.Drawing.Size(15, 14);
             this.cb_ngaydi.TabIndex = 74;
             this.cb_ngaydi.UseVisualStyleBackColor = true;
             // 
@@ -566,7 +566,7 @@
             this.cb_tt.Location = new System.Drawing.Point(295, 318);
             this.cb_tt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_tt.Name = "cb_tt";
-            this.cb_tt.Size = new System.Drawing.Size(18, 17);
+            this.cb_tt.Size = new System.Drawing.Size(15, 14);
             this.cb_tt.TabIndex = 73;
             this.cb_tt.UseVisualStyleBackColor = true;
             // 
@@ -576,7 +576,7 @@
             this.cb_giodi.Location = new System.Drawing.Point(295, 368);
             this.cb_giodi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_giodi.Name = "cb_giodi";
-            this.cb_giodi.Size = new System.Drawing.Size(18, 17);
+            this.cb_giodi.Size = new System.Drawing.Size(15, 14);
             this.cb_giodi.TabIndex = 72;
             this.cb_giodi.UseVisualStyleBackColor = true;
             // 
@@ -586,7 +586,7 @@
             this.cb_id.Location = new System.Drawing.Point(295, 268);
             this.cb_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_id.Name = "cb_id";
-            this.cb_id.Size = new System.Drawing.Size(18, 17);
+            this.cb_id.Size = new System.Drawing.Size(15, 14);
             this.cb_id.TabIndex = 71;
             this.cb_id.UseVisualStyleBackColor = true;
             // 
