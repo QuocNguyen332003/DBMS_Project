@@ -35,6 +35,8 @@ namespace DBMS_Project
             dgvQLNhanSu.DataSource = dataTable;
             dgvQLNhanSu.AutoResizeColumns();
             trangthai1();
+            cbb_idnhanvien.DataSource = db.LayDuLieu("select DISTINCT MaNV from LoadNhanVien");
+            this.cbb_idnhanvien.DisplayMember = "MaNV";
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -200,6 +202,39 @@ namespace DBMS_Project
             string LuongNVString = LuongNV.ToString();
             MessageBox.Show("Lương của nhân viên có Mã Nhân Viên là " + txt_id_emp.Text + "là: " + LuongNVString);
             db.closeConnection();
+        }
+
+        private void btn_QLThamGia_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormThamGia thamgia = new FormThamGia();
+            thamgia.ShowDialog();
+            this.Show();
+        }
+
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            db.openConnection();
+            SqlCommand cmd = new SqlCommand("SELECT * from SearchNhanVien(@MaNV)", db.getConnection);
+            cmd.Parameters.AddWithValue("@MaNV", cbb_idnhanvien.Text);
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(reader);
+            reader.Close();
+            if (data.Rows.Count > 0)
+            {
+                dgvQLNhanSu.DataSource = data;
+            }
+            else
+            {
+                MessageBox.Show("Không tồn tại nhân viên!");
+            }
+            db.closeConnection();
+        }
+
+        private void btn_Reload_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
