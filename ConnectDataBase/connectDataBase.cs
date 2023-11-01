@@ -13,7 +13,7 @@ namespace DBMS_Project.ConnectDataBase
     {
         ~connectDataBase() { }
 
-        string ConnStr = "Data Source=Anh;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
+        string ConnStr = "Data Source=ADMIN\\BAOQUOC;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
         SqlConnection conn = null;
         public connectDataBase()
         {
