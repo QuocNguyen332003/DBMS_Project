@@ -124,7 +124,7 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("DeleteChuyenBay", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.Char).Value = txt_id.Text;
+                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Xóa thành công!");
                     else
@@ -160,8 +160,8 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("InsertChuyenBay", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.Char).Value = txt_id.Text;
-                    cmd.Parameters.Add("@TinhTrang", SqlDbType.NChar).Value = txt_tinhtrang.Text;
+                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
+                    cmd.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = txt_tinhtrang.Text;
                     cmd.Parameters.Add("@GioDi", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0);
                     cmd.Parameters.Add("@NgayDi", SqlDbType.Date).Value = dtp_ngaydi.Value.ToShortDateString();
                     cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0);
@@ -182,8 +182,8 @@ namespace DBMS_Project
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("UpdateChuyenBay", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.Char).Value = txt_id.Text;
-                    cmd.Parameters.Add("@TinhTrang", SqlDbType.NChar).Value = txt_tinhtrang.Text;
+                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
+                    cmd.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = txt_tinhtrang.Text;
                     cmd.Parameters.Add("@GioDi", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0);
                     cmd.Parameters.Add("@NgayDi", SqlDbType.Date).Value = dtp_ngaydi.Value.ToShortDateString();
                     cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0);

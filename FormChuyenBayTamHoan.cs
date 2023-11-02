@@ -77,7 +77,7 @@ namespace DBMS_Project
                     db.openConnection();  
                     SqlCommand cmd = new SqlCommand("[DeleteChuyenBayTamHoan]", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.Char).Value = txt_id.Text;
+                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Xóa thành công!");
                     else
