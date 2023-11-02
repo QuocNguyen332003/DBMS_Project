@@ -81,7 +81,6 @@ namespace DBMS_Project
             SqlDataReader reader = cmd.ExecuteReader();
             DataTable data = new DataTable();
             data.Load(reader);
-            MessageBox.Show(cmd.CommandText);
             reader.Close();
             if (data.Rows.Count > 0)
             {

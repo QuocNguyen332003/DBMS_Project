@@ -159,6 +159,7 @@ namespace DBMS_Project
                 else MessageBox.Show("Không hợp lệ!");
             }
             state = ChinhSua.none;
+            pnlEnabled.Enabled = false;
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)

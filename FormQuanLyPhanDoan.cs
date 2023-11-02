@@ -89,7 +89,6 @@ namespace DBMS_Project
             }
             else { MessageBox.Show("Bạn chưa chọn phân đoạn muốn xóa!"); }
         }
-
         private void btn_luu_Click(object sender, EventArgs e)
         {
             if (state == ChinhSua.them)
@@ -109,7 +108,6 @@ namespace DBMS_Project
                     cmd.Parameters.Add("@MaSanBayDen", SqlDbType.VarChar).Value = cbb_sanbayden.Text;
                     cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0);
                     cmd.Parameters.Add("@NgayDen", SqlDbType.Date).Value = dtp_ngayden.Value.ToShortDateString();
-
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Thêm thành công!");
                     else
