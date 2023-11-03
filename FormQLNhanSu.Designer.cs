@@ -210,7 +210,7 @@
             // 
             // dtp_born
             // 
-            this.dtp_born.Location = new System.Drawing.Point(307, 482);
+            this.dtp_born.Location = new System.Drawing.Point(307, 488);
             this.dtp_born.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtp_born.Name = "dtp_born";
             this.dtp_born.Size = new System.Drawing.Size(268, 22);
@@ -240,7 +240,7 @@
             this.txt_address.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_address.Multiline = true;
             this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(169, 32);
+            this.txt_address.Size = new System.Drawing.Size(169, 47);
             this.txt_address.TabIndex = 83;
             // 
             // txt_phone

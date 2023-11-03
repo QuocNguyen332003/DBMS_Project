@@ -40,7 +40,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tb_sohieu = new System.Windows.Forms.TextBox();
             this.tb_tenloaikhoang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_tongsoghe = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dgv_khoangmaybay = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.tb_sohieu = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnl_khoangmaybay.SuspendLayout();
             this.pnl_thongso.SuspendLayout();
@@ -92,7 +92,7 @@
             this.btn_Quaylai.Location = new System.Drawing.Point(10, 249);
             this.btn_Quaylai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Quaylai.Name = "btn_Quaylai";
-            this.btn_Quaylai.Size = new System.Drawing.Size(197, 43);
+            this.btn_Quaylai.Size = new System.Drawing.Size(190, 56);
             this.btn_Quaylai.TabIndex = 46;
             this.btn_Quaylai.Text = "Quay lại";
             this.btn_Quaylai.UseVisualStyleBackColor = false;
@@ -128,9 +128,9 @@
             this.btn_huy.Location = new System.Drawing.Point(470, 190);
             this.btn_huy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(197, 43);
+            this.btn_huy.Size = new System.Drawing.Size(182, 56);
             this.btn_huy.TabIndex = 49;
-            this.btn_huy.Text = "Hủy thao tác";
+            this.btn_huy.Text = "Hủy ";
             this.btn_huy.UseVisualStyleBackColor = false;
             this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
@@ -151,12 +151,12 @@
             this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_luu.Location = new System.Drawing.Point(470, 140);
+            this.btn_luu.Location = new System.Drawing.Point(470, 125);
             this.btn_luu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(197, 43);
+            this.btn_luu.Size = new System.Drawing.Size(182, 56);
             this.btn_luu.TabIndex = 45;
-            this.btn_luu.Text = "Lưu thay đổi";
+            this.btn_luu.Text = "Lưu ";
             this.btn_luu.UseVisualStyleBackColor = false;
             this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
@@ -199,18 +199,6 @@
             this.label7.Size = new System.Drawing.Size(86, 28);
             this.label7.TabIndex = 40;
             this.label7.Text = "Số hiệu:";
-            // 
-            // tb_sohieu
-            // 
-            this.tb_sohieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.tb_sohieu.Enabled = false;
-            this.tb_sohieu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sohieu.Location = new System.Drawing.Point(177, 13);
-            this.tb_sohieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_sohieu.Multiline = true;
-            this.tb_sohieu.Name = "tb_sohieu";
-            this.tb_sohieu.Size = new System.Drawing.Size(239, 30);
-            this.tb_sohieu.TabIndex = 41;
             // 
             // tb_tenloaikhoang
             // 
@@ -273,9 +261,9 @@
             this.btn_them.Location = new System.Drawing.Point(10, 57);
             this.btn_them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(197, 43);
+            this.btn_them.Size = new System.Drawing.Size(190, 56);
             this.btn_them.TabIndex = 42;
-            this.btn_them.Text = "Thêm khoang ";
+            this.btn_them.Text = "Thêm ";
             this.btn_them.UseVisualStyleBackColor = false;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
@@ -284,12 +272,12 @@
             this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_xoa.Location = new System.Drawing.Point(10, 103);
+            this.btn_xoa.Location = new System.Drawing.Point(10, 177);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(197, 43);
+            this.btn_xoa.Size = new System.Drawing.Size(190, 56);
             this.btn_xoa.TabIndex = 43;
-            this.btn_xoa.Text = "Xóa khoang ";
+            this.btn_xoa.Text = "Xóa ";
             this.btn_xoa.UseVisualStyleBackColor = false;
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
@@ -298,12 +286,12 @@
             this.btn_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_sua.Location = new System.Drawing.Point(10, 152);
+            this.btn_sua.Location = new System.Drawing.Point(10, 117);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(197, 43);
+            this.btn_sua.Size = new System.Drawing.Size(190, 56);
             this.btn_sua.TabIndex = 44;
-            this.btn_sua.Text = "Thay đổi thông tin";
+            this.btn_sua.Text = "Thay đổi";
             this.btn_sua.UseVisualStyleBackColor = false;
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
@@ -345,6 +333,18 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "QUẢN LÝ KHOANG MÁY BAY";
             // 
+            // tb_sohieu
+            // 
+            this.tb_sohieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.tb_sohieu.Enabled = false;
+            this.tb_sohieu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_sohieu.Location = new System.Drawing.Point(177, 13);
+            this.tb_sohieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_sohieu.Multiline = true;
+            this.tb_sohieu.Name = "tb_sohieu";
+            this.tb_sohieu.Size = new System.Drawing.Size(239, 30);
+            this.tb_sohieu.TabIndex = 41;
+            // 
             // FormQuanLyKhoangMayBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -383,7 +383,6 @@
         private System.Windows.Forms.TextBox tb_tenloaikhoang;
         private System.Windows.Forms.TextBox tb_makhoang;
         private System.Windows.Forms.TextBox tb_tenloaimaybay;
-        private System.Windows.Forms.TextBox tb_sohieu;
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_them;
@@ -396,5 +395,6 @@
         private System.Windows.Forms.Button btn_luu;
         private System.Windows.Forms.Panel pnl_thongso;
         private System.Windows.Forms.Button btn_Quaylai;
+        private System.Windows.Forms.TextBox tb_sohieu;
     }
 }
