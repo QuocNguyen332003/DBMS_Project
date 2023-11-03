@@ -16,7 +16,7 @@ namespace DBMS_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormQuanLyVe());
+            Application.Run(new FormTrangChu());
         }
     }
 }

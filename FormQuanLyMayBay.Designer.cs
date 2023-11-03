@@ -48,6 +48,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dgv_Quanlymaybay = new System.Windows.Forms.DataGridView();
             this.pnl_Timkiem = new System.Windows.Forms.Panel();
+            this.cb_tinhtrang = new System.Windows.Forms.CheckBox();
+            this.cb_tongsoghe = new System.Windows.Forms.CheckBox();
+            this.cb_ten = new System.Windows.Forms.CheckBox();
+            this.cb_sohieu = new System.Windows.Forms.CheckBox();
             this.cbb_tinhtrang = new System.Windows.Forms.ComboBox();
             this.cbb_tongsoghe = new System.Windows.Forms.ComboBox();
             this.cbb_ten = new System.Windows.Forms.ComboBox();
@@ -61,10 +65,6 @@
             this.lb_id = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cb_sohieu = new System.Windows.Forms.CheckBox();
-            this.cb_ten = new System.Windows.Forms.CheckBox();
-            this.cb_tongsoghe = new System.Windows.Forms.CheckBox();
-            this.cb_tinhtrang = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pnl_Capnhat.SuspendLayout();
             this.pnl_thongso.SuspendLayout();
@@ -322,6 +322,42 @@
             this.pnl_Timkiem.Size = new System.Drawing.Size(342, 507);
             this.pnl_Timkiem.TabIndex = 56;
             // 
+            // cb_tinhtrang
+            // 
+            this.cb_tinhtrang.AutoSize = true;
+            this.cb_tinhtrang.Location = new System.Drawing.Point(311, 366);
+            this.cb_tinhtrang.Name = "cb_tinhtrang";
+            this.cb_tinhtrang.Size = new System.Drawing.Size(18, 17);
+            this.cb_tinhtrang.TabIndex = 73;
+            this.cb_tinhtrang.UseVisualStyleBackColor = true;
+            // 
+            // cb_tongsoghe
+            // 
+            this.cb_tongsoghe.AutoSize = true;
+            this.cb_tongsoghe.Location = new System.Drawing.Point(311, 305);
+            this.cb_tongsoghe.Name = "cb_tongsoghe";
+            this.cb_tongsoghe.Size = new System.Drawing.Size(18, 17);
+            this.cb_tongsoghe.TabIndex = 72;
+            this.cb_tongsoghe.UseVisualStyleBackColor = true;
+            // 
+            // cb_ten
+            // 
+            this.cb_ten.AutoSize = true;
+            this.cb_ten.Location = new System.Drawing.Point(310, 241);
+            this.cb_ten.Name = "cb_ten";
+            this.cb_ten.Size = new System.Drawing.Size(18, 17);
+            this.cb_ten.TabIndex = 71;
+            this.cb_ten.UseVisualStyleBackColor = true;
+            // 
+            // cb_sohieu
+            // 
+            this.cb_sohieu.AutoSize = true;
+            this.cb_sohieu.Location = new System.Drawing.Point(311, 180);
+            this.cb_sohieu.Name = "cb_sohieu";
+            this.cb_sohieu.Size = new System.Drawing.Size(18, 17);
+            this.cb_sohieu.TabIndex = 70;
+            this.cb_sohieu.UseVisualStyleBackColor = true;
+            // 
             // cbb_tinhtrang
             // 
             this.cbb_tinhtrang.FormattingEnabled = true;
@@ -453,42 +489,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ MÁY BAY";
             // 
-            // cb_sohieu
-            // 
-            this.cb_sohieu.AutoSize = true;
-            this.cb_sohieu.Location = new System.Drawing.Point(311, 180);
-            this.cb_sohieu.Name = "cb_sohieu";
-            this.cb_sohieu.Size = new System.Drawing.Size(18, 17);
-            this.cb_sohieu.TabIndex = 70;
-            this.cb_sohieu.UseVisualStyleBackColor = true;
-            // 
-            // cb_ten
-            // 
-            this.cb_ten.AutoSize = true;
-            this.cb_ten.Location = new System.Drawing.Point(310, 241);
-            this.cb_ten.Name = "cb_ten";
-            this.cb_ten.Size = new System.Drawing.Size(18, 17);
-            this.cb_ten.TabIndex = 71;
-            this.cb_ten.UseVisualStyleBackColor = true;
-            // 
-            // cb_tongsoghe
-            // 
-            this.cb_tongsoghe.AutoSize = true;
-            this.cb_tongsoghe.Location = new System.Drawing.Point(311, 305);
-            this.cb_tongsoghe.Name = "cb_tongsoghe";
-            this.cb_tongsoghe.Size = new System.Drawing.Size(18, 17);
-            this.cb_tongsoghe.TabIndex = 72;
-            this.cb_tongsoghe.UseVisualStyleBackColor = true;
-            // 
-            // cb_tinhtrang
-            // 
-            this.cb_tinhtrang.AutoSize = true;
-            this.cb_tinhtrang.Location = new System.Drawing.Point(311, 366);
-            this.cb_tinhtrang.Name = "cb_tinhtrang";
-            this.cb_tinhtrang.Size = new System.Drawing.Size(18, 17);
-            this.cb_tinhtrang.TabIndex = 73;
-            this.cb_tinhtrang.UseVisualStyleBackColor = true;
-            // 
             // FormQuanLyMayBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -497,6 +497,9 @@
             this.ClientSize = new System.Drawing.Size(1229, 628);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormQuanLyMayBay";
             this.Text = "FormQuanLyMayBay";
             this.Load += new System.EventHandler(this.FormQuanLyMayBay_Load);

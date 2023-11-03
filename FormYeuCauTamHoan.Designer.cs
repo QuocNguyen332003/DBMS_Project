@@ -189,6 +189,9 @@
             this.ClientSize = new System.Drawing.Size(488, 386);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlEnabled);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormYeuCauTamHoan";
             this.Text = "FormYeuCauTamHoan";
             this.Load += new System.EventHandler(this.FormYeuCauTamHoan_Load);
