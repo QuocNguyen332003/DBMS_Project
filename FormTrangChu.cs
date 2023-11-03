@@ -14,11 +14,13 @@ namespace DBMS_Project
     {
         public FormTrangChu()
         {
+
             InitializeComponent();
         }
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
+
             Image myimage = new Bitmap(@"../../Assets/bgtrangchu2.jpg");
             this.BackgroundImage = myimage;
             BackgroundImageLayout = ImageLayout.Stretch;

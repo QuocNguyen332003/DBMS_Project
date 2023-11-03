@@ -353,6 +353,9 @@
             this.ClientSize = new System.Drawing.Size(974, 628);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormQuanLyKhoangMayBay";
             this.Text = "FormQuanLyKhoangMayBay";
             this.Load += new System.EventHandler(this.FormQuanLyKhoangMayBay_Load);

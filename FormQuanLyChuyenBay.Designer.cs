@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlmain = new System.Windows.Forms.Panel();
             this.pnl_modify = new System.Windows.Forms.Panel();
+            this.btnTamHoan = new System.Windows.Forms.Button();
             this.pnlEnabled = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
@@ -66,9 +67,11 @@
             this.chuyenBayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
             this.pnltimkiem = new System.Windows.Forms.Panel();
+            this.btn_QLTamHoan = new System.Windows.Forms.Button();
             this.btn_reload = new System.Windows.Forms.Button();
             this.cb_ngayden = new System.Windows.Forms.CheckBox();
             this.cb_gioden = new System.Windows.Forms.CheckBox();
+            this.btn_QLphandoan = new System.Windows.Forms.Button();
             this.cb_ngaydi = new System.Windows.Forms.CheckBox();
             this.cb_tt = new System.Windows.Forms.CheckBox();
             this.cb_giodi = new System.Windows.Forms.CheckBox();
@@ -79,7 +82,6 @@
             this.cbb_giodi = new System.Windows.Forms.ComboBox();
             this.cbb_tinhtrang = new System.Windows.Forms.ComboBox();
             this.cbb_id = new System.Windows.Forms.ComboBox();
-            this.btn_QLphandoan = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -90,8 +92,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chuyenBayTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.ChuyenBayTableAdapter();
-            this.btnTamHoan = new System.Windows.Forms.Button();
-            this.btn_QLTamHoan = new System.Windows.Forms.Button();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
             this.pnlEnabled.SuspendLayout();
@@ -145,6 +145,20 @@
             this.pnl_modify.Size = new System.Drawing.Size(809, 289);
             this.pnl_modify.TabIndex = 4;
             // 
+            // btnTamHoan
+            // 
+            this.btnTamHoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btnTamHoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTamHoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTamHoan.Location = new System.Drawing.Point(3, 233);
+            this.btnTamHoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTamHoan.Name = "btnTamHoan";
+            this.btnTamHoan.Size = new System.Drawing.Size(199, 50);
+            this.btnTamHoan.TabIndex = 77;
+            this.btnTamHoan.Text = "Tạm hoãn";
+            this.btnTamHoan.UseVisualStyleBackColor = false;
+            this.btnTamHoan.Click += new System.EventHandler(this.btnTamHoan_Click);
+            // 
             // pnlEnabled
             // 
             this.pnlEnabled.Controls.Add(this.label17);
@@ -167,7 +181,7 @@
             this.pnlEnabled.Controls.Add(this.txt_tinhtrang);
             this.pnlEnabled.Enabled = false;
             this.pnlEnabled.Location = new System.Drawing.Point(218, 4);
-            this.pnlEnabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlEnabled.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEnabled.Name = "pnlEnabled";
             this.pnlEnabled.Size = new System.Drawing.Size(600, 300);
             this.pnlEnabled.TabIndex = 5;
@@ -185,7 +199,7 @@
             // txt_id
             // 
             this.txt_id.Location = new System.Drawing.Point(52, 56);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
             this.txt_id.Multiline = true;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(253, 36);
@@ -516,6 +530,20 @@
             this.pnltimkiem.Size = new System.Drawing.Size(326, 606);
             this.pnltimkiem.TabIndex = 2;
             // 
+            // btn_QLTamHoan
+            // 
+            this.btn_QLTamHoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_QLTamHoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QLTamHoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_QLTamHoan.Location = new System.Drawing.Point(161, 132);
+            this.btn_QLTamHoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_QLTamHoan.Name = "btn_QLTamHoan";
+            this.btn_QLTamHoan.Size = new System.Drawing.Size(152, 74);
+            this.btn_QLTamHoan.TabIndex = 78;
+            this.btn_QLTamHoan.Text = "Quản Lý CB Tạm Hoãn";
+            this.btn_QLTamHoan.UseVisualStyleBackColor = false;
+            this.btn_QLTamHoan.Click += new System.EventHandler(this.btn_QLTamHoan_Click);
+            // 
             // btn_reload
             // 
             this.btn_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
@@ -534,9 +562,9 @@
             // 
             this.cb_ngayden.AutoSize = true;
             this.cb_ngayden.Location = new System.Drawing.Point(295, 519);
-            this.cb_ngayden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_ngayden.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ngayden.Name = "cb_ngayden";
-            this.cb_ngayden.Size = new System.Drawing.Size(15, 14);
+            this.cb_ngayden.Size = new System.Drawing.Size(18, 17);
             this.cb_ngayden.TabIndex = 76;
             this.cb_ngayden.UseVisualStyleBackColor = true;
             // 
@@ -544,19 +572,33 @@
             // 
             this.cb_gioden.AutoSize = true;
             this.cb_gioden.Location = new System.Drawing.Point(295, 468);
-            this.cb_gioden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_gioden.Margin = new System.Windows.Forms.Padding(4);
             this.cb_gioden.Name = "cb_gioden";
-            this.cb_gioden.Size = new System.Drawing.Size(15, 14);
+            this.cb_gioden.Size = new System.Drawing.Size(18, 17);
             this.cb_gioden.TabIndex = 75;
             this.cb_gioden.UseVisualStyleBackColor = true;
+            // 
+            // btn_QLphandoan
+            // 
+            this.btn_QLphandoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_QLphandoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QLphandoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_QLphandoan.Location = new System.Drawing.Point(11, 132);
+            this.btn_QLphandoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_QLphandoan.Name = "btn_QLphandoan";
+            this.btn_QLphandoan.Size = new System.Drawing.Size(147, 74);
+            this.btn_QLphandoan.TabIndex = 56;
+            this.btn_QLphandoan.Text = "Quản lý phân đoạn";
+            this.btn_QLphandoan.UseVisualStyleBackColor = false;
+            this.btn_QLphandoan.Click += new System.EventHandler(this.btn_QLphandoan_Click);
             // 
             // cb_ngaydi
             // 
             this.cb_ngaydi.AutoSize = true;
             this.cb_ngaydi.Location = new System.Drawing.Point(295, 418);
-            this.cb_ngaydi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_ngaydi.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ngaydi.Name = "cb_ngaydi";
-            this.cb_ngaydi.Size = new System.Drawing.Size(15, 14);
+            this.cb_ngaydi.Size = new System.Drawing.Size(18, 17);
             this.cb_ngaydi.TabIndex = 74;
             this.cb_ngaydi.UseVisualStyleBackColor = true;
             // 
@@ -564,9 +606,9 @@
             // 
             this.cb_tt.AutoSize = true;
             this.cb_tt.Location = new System.Drawing.Point(295, 318);
-            this.cb_tt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_tt.Margin = new System.Windows.Forms.Padding(4);
             this.cb_tt.Name = "cb_tt";
-            this.cb_tt.Size = new System.Drawing.Size(15, 14);
+            this.cb_tt.Size = new System.Drawing.Size(18, 17);
             this.cb_tt.TabIndex = 73;
             this.cb_tt.UseVisualStyleBackColor = true;
             // 
@@ -574,9 +616,9 @@
             // 
             this.cb_giodi.AutoSize = true;
             this.cb_giodi.Location = new System.Drawing.Point(295, 368);
-            this.cb_giodi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_giodi.Margin = new System.Windows.Forms.Padding(4);
             this.cb_giodi.Name = "cb_giodi";
-            this.cb_giodi.Size = new System.Drawing.Size(15, 14);
+            this.cb_giodi.Size = new System.Drawing.Size(18, 17);
             this.cb_giodi.TabIndex = 72;
             this.cb_giodi.UseVisualStyleBackColor = true;
             // 
@@ -584,9 +626,9 @@
             // 
             this.cb_id.AutoSize = true;
             this.cb_id.Location = new System.Drawing.Point(295, 268);
-            this.cb_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_id.Margin = new System.Windows.Forms.Padding(4);
             this.cb_id.Name = "cb_id";
-            this.cb_id.Size = new System.Drawing.Size(15, 14);
+            this.cb_id.Size = new System.Drawing.Size(18, 17);
             this.cb_id.TabIndex = 71;
             this.cb_id.UseVisualStyleBackColor = true;
             // 
@@ -643,20 +685,6 @@
             this.cbb_id.Name = "cbb_id";
             this.cbb_id.Size = new System.Drawing.Size(121, 24);
             this.cbb_id.TabIndex = 65;
-            // 
-            // btn_QLphandoan
-            // 
-            this.btn_QLphandoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_QLphandoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QLphandoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_QLphandoan.Location = new System.Drawing.Point(11, 132);
-            this.btn_QLphandoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_QLphandoan.Name = "btn_QLphandoan";
-            this.btn_QLphandoan.Size = new System.Drawing.Size(147, 74);
-            this.btn_QLphandoan.TabIndex = 56;
-            this.btn_QLphandoan.Text = "Quản lý phân đoạn";
-            this.btn_QLphandoan.UseVisualStyleBackColor = false;
-            this.btn_QLphandoan.Click += new System.EventHandler(this.btn_QLphandoan_Click);
             // 
             // label8
             // 
@@ -764,34 +792,6 @@
             // 
             this.chuyenBayTableAdapter.ClearBeforeFill = true;
             // 
-            // btnTamHoan
-            // 
-            this.btnTamHoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnTamHoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTamHoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTamHoan.Location = new System.Drawing.Point(3, 233);
-            this.btnTamHoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTamHoan.Name = "btnTamHoan";
-            this.btnTamHoan.Size = new System.Drawing.Size(199, 50);
-            this.btnTamHoan.TabIndex = 77;
-            this.btnTamHoan.Text = "Tạm hoãn";
-            this.btnTamHoan.UseVisualStyleBackColor = false;
-            this.btnTamHoan.Click += new System.EventHandler(this.btnTamHoan_Click);
-            // 
-            // btn_QLTamHoan
-            // 
-            this.btn_QLTamHoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_QLTamHoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QLTamHoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_QLTamHoan.Location = new System.Drawing.Point(161, 132);
-            this.btn_QLTamHoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_QLTamHoan.Name = "btn_QLTamHoan";
-            this.btn_QLTamHoan.Size = new System.Drawing.Size(152, 74);
-            this.btn_QLTamHoan.TabIndex = 78;
-            this.btn_QLTamHoan.Text = "Quản Lý CB Tạm Hoãn";
-            this.btn_QLTamHoan.UseVisualStyleBackColor = false;
-            this.btn_QLTamHoan.Click += new System.EventHandler(this.btn_QLTamHoan_Click);
-            // 
             // FormQuanLyChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -800,7 +800,10 @@
             this.ClientSize = new System.Drawing.Size(1192, 699);
             this.Controls.Add(this.pnlmain);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormQuanLyChuyenBay";
             this.Text = "FormQuanLyChuyenBay";
             this.Load += new System.EventHandler(this.FormQuanLyChuyenBay_Load);

@@ -32,38 +32,38 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChuyenBayTamHoan));
             this.pnlmain = new System.Windows.Forms.Panel();
             this.pnl_modify = new System.Windows.Forms.Panel();
-            this.txt_id = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.nud_phutdi = new System.Windows.Forms.NumericUpDown();
             this.nud_giodi = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.btn_luu = new System.Windows.Forms.Button();
-            this.btn_huy = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.txt_lydo = new System.Windows.Forms.TextBox();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_sua = new System.Windows.Forms.Button();
             this.dgv_chuyenbay = new System.Windows.Forms.DataGridView();
-            this.pnltimkiem = new System.Windows.Forms.Panel();
-            this.btn_QLphandoan = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
-            this.chuyenBayTamHoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.chuyenBayTamHoanTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.ChuyenBayTamHoanTableAdapter();
             this.maChuyenBayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoiGianTamHoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lyDoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chuyenBayTamHoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
+            this.pnltimkiem = new System.Windows.Forms.Panel();
+            this.btn_QLphandoan = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_huy = new System.Windows.Forms.Button();
+            this.btn_sua = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chuyenBayTamHoanTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.ChuyenBayTamHoanTableAdapter();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_giodi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chuyenBayTamHoanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             this.pnltimkiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chuyenBayTamHoanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlmain
@@ -97,16 +97,6 @@
             this.pnl_modify.Size = new System.Drawing.Size(809, 128);
             this.pnl_modify.TabIndex = 4;
             // 
-            // txt_id
-            // 
-            this.txt_id.Enabled = false;
-            this.txt_id.Location = new System.Drawing.Point(187, 4);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_id.Multiline = true;
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(253, 36);
-            this.txt_id.TabIndex = 78;
-            // 
             // label16
             // 
             this.label16.BackColor = System.Drawing.Color.White;
@@ -117,27 +107,15 @@
             this.label16.TabIndex = 88;
             this.label16.Text = "h";
             // 
-            // label10
+            // txt_id
             // 
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(18, 4);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 37);
-            this.label10.TabIndex = 72;
-            this.label10.Text = "Mã chuyến bay:";
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(18, 60);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 37);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "Lý do:";
+            this.txt_id.Enabled = false;
+            this.txt_id.Location = new System.Drawing.Point(187, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_id.Multiline = true;
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(253, 36);
+            this.txt_id.TabIndex = 78;
             // 
             // nud_phutdi
             // 
@@ -155,6 +133,17 @@
             this.nud_giodi.Size = new System.Drawing.Size(53, 22);
             this.nud_giodi.TabIndex = 84;
             // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(18, 60);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 37);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "Lý do:";
+            // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.White;
@@ -166,33 +155,16 @@
             this.label12.TabIndex = 71;
             this.label12.Text = "Giờ đi:";
             // 
-            // btn_luu
+            // label10
             // 
-            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_luu.Location = new System.Drawing.Point(41, 321);
-            this.btn_luu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(243, 42);
-            this.btn_luu.TabIndex = 77;
-            this.btn_luu.Text = "Lưu thay đổi";
-            this.btn_luu.UseVisualStyleBackColor = false;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
-            // 
-            // btn_huy
-            // 
-            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_huy.Location = new System.Drawing.Point(41, 370);
-            this.btn_huy.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(243, 43);
-            this.btn_huy.TabIndex = 77;
-            this.btn_huy.Text = "Hủy thao tác";
-            this.btn_huy.UseVisualStyleBackColor = false;
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(18, 4);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(161, 37);
+            this.label10.TabIndex = 72;
+            this.label10.Text = "Mã chuyến bay:";
             // 
             // txt_lydo
             // 
@@ -202,34 +174,6 @@
             this.txt_lydo.Name = "txt_lydo";
             this.txt_lydo.Size = new System.Drawing.Size(517, 37);
             this.txt_lydo.TabIndex = 79;
-            // 
-            // btn_xoa
-            // 
-            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_xoa.Location = new System.Drawing.Point(41, 237);
-            this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(243, 44);
-            this.btn_xoa.TabIndex = 76;
-            this.btn_xoa.Text = "Xóa";
-            this.btn_xoa.UseVisualStyleBackColor = false;
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_sua.Location = new System.Drawing.Point(41, 190);
-            this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(243, 43);
-            this.btn_sua.TabIndex = 75;
-            this.btn_sua.Text = "Thay đổi thông tin";
-            this.btn_sua.UseVisualStyleBackColor = false;
-            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // dgv_chuyenbay
             // 
@@ -253,6 +197,37 @@
             this.dgv_chuyenbay.Size = new System.Drawing.Size(809, 311);
             this.dgv_chuyenbay.TabIndex = 3;
             this.dgv_chuyenbay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_chuyenbay_CellClick);
+            // 
+            // maChuyenBayDataGridViewTextBoxColumn
+            // 
+            this.maChuyenBayDataGridViewTextBoxColumn.DataPropertyName = "MaChuyenBay";
+            this.maChuyenBayDataGridViewTextBoxColumn.HeaderText = "MaChuyenBay";
+            this.maChuyenBayDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maChuyenBayDataGridViewTextBoxColumn.Name = "maChuyenBayDataGridViewTextBoxColumn";
+            // 
+            // thoiGianTamHoanDataGridViewTextBoxColumn
+            // 
+            this.thoiGianTamHoanDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianTamHoan";
+            this.thoiGianTamHoanDataGridViewTextBoxColumn.HeaderText = "ThoiGianTamHoan";
+            this.thoiGianTamHoanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thoiGianTamHoanDataGridViewTextBoxColumn.Name = "thoiGianTamHoanDataGridViewTextBoxColumn";
+            // 
+            // lyDoDataGridViewTextBoxColumn
+            // 
+            this.lyDoDataGridViewTextBoxColumn.DataPropertyName = "LyDo";
+            this.lyDoDataGridViewTextBoxColumn.HeaderText = "LyDo";
+            this.lyDoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lyDoDataGridViewTextBoxColumn.Name = "lyDoDataGridViewTextBoxColumn";
+            // 
+            // chuyenBayTamHoanBindingSource
+            // 
+            this.chuyenBayTamHoanBindingSource.DataMember = "ChuyenBayTamHoan";
+            this.chuyenBayTamHoanBindingSource.DataSource = this.dBMS_DataSet;
+            // 
+            // dBMS_DataSet
+            // 
+            this.dBMS_DataSet.DataSetName = "DBMS_DataSet";
+            this.dBMS_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnltimkiem
             // 
@@ -284,6 +259,20 @@
             this.btn_QLphandoan.UseVisualStyleBackColor = false;
             this.btn_QLphandoan.Click += new System.EventHandler(this.btn_QLphandoan_Click);
             // 
+            // btn_xoa
+            // 
+            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_xoa.Location = new System.Drawing.Point(41, 237);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(243, 44);
+            this.btn_xoa.TabIndex = 76;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -294,6 +283,48 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
+            // 
+            // btn_huy
+            // 
+            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_huy.Location = new System.Drawing.Point(41, 370);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(243, 43);
+            this.btn_huy.TabIndex = 77;
+            this.btn_huy.Text = "Hủy thao tác";
+            this.btn_huy.UseVisualStyleBackColor = false;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
+            // 
+            // btn_sua
+            // 
+            this.btn_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_sua.Location = new System.Drawing.Point(41, 190);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(243, 43);
+            this.btn_sua.TabIndex = 75;
+            this.btn_sua.Text = "Thay đổi thông tin";
+            this.btn_sua.UseVisualStyleBackColor = false;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_luu.Location = new System.Drawing.Point(41, 321);
+            this.btn_luu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(243, 42);
+            this.btn_luu.TabIndex = 77;
+            this.btn_luu.Text = "Lưu thay đổi";
+            this.btn_luu.UseVisualStyleBackColor = false;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // label1
             // 
@@ -306,40 +337,9 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "QUẢN LÝ CHUYẾN BAY TẠM HOÃN";
             // 
-            // dBMS_DataSet
-            // 
-            this.dBMS_DataSet.DataSetName = "DBMS_DataSet";
-            this.dBMS_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // chuyenBayTamHoanBindingSource
-            // 
-            this.chuyenBayTamHoanBindingSource.DataMember = "ChuyenBayTamHoan";
-            this.chuyenBayTamHoanBindingSource.DataSource = this.dBMS_DataSet;
-            // 
             // chuyenBayTamHoanTableAdapter
             // 
             this.chuyenBayTamHoanTableAdapter.ClearBeforeFill = true;
-            // 
-            // maChuyenBayDataGridViewTextBoxColumn
-            // 
-            this.maChuyenBayDataGridViewTextBoxColumn.DataPropertyName = "MaChuyenBay";
-            this.maChuyenBayDataGridViewTextBoxColumn.HeaderText = "MaChuyenBay";
-            this.maChuyenBayDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maChuyenBayDataGridViewTextBoxColumn.Name = "maChuyenBayDataGridViewTextBoxColumn";
-            // 
-            // thoiGianTamHoanDataGridViewTextBoxColumn
-            // 
-            this.thoiGianTamHoanDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianTamHoan";
-            this.thoiGianTamHoanDataGridViewTextBoxColumn.HeaderText = "ThoiGianTamHoan";
-            this.thoiGianTamHoanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thoiGianTamHoanDataGridViewTextBoxColumn.Name = "thoiGianTamHoanDataGridViewTextBoxColumn";
-            // 
-            // lyDoDataGridViewTextBoxColumn
-            // 
-            this.lyDoDataGridViewTextBoxColumn.DataPropertyName = "LyDo";
-            this.lyDoDataGridViewTextBoxColumn.HeaderText = "LyDo";
-            this.lyDoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lyDoDataGridViewTextBoxColumn.Name = "lyDoDataGridViewTextBoxColumn";
             // 
             // FormChuyenBayTamHoan
             // 
@@ -349,6 +349,9 @@
             this.ClientSize = new System.Drawing.Size(1213, 558);
             this.Controls.Add(this.pnlmain);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormChuyenBayTamHoan";
             this.Text = "FormChuyenBayTamHoan";
             this.Load += new System.EventHandler(this.FormChuyenBayTamHoan_Load);
@@ -358,10 +361,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_giodi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chuyenbay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chuyenBayTamHoanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
             this.pnltimkiem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chuyenBayTamHoanBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

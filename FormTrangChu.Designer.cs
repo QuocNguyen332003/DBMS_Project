@@ -50,7 +50,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1268, 145);
+            this.panel1.Size = new System.Drawing.Size(1300, 145);
             this.panel1.TabIndex = 0;
             // 
             // btnQLHanhKhach
@@ -152,9 +152,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 693);
+            this.ClientSize = new System.Drawing.Size(1299, 693);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormTrangChu";
             this.Text = "FormTrangChu";
             this.Load += new System.EventHandler(this.FormTrangChu_Load);
