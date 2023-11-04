@@ -35,9 +35,7 @@ namespace DBMS_Project
         private void Reset_Text()
         {
             tb_sohieu.Text = string.Empty;
-            tb_ten.Text = string.Empty;
             tb_tongsoghe.Text = string.Empty;
-            tb_tinhtrang.Text = string.Empty;
         }
 
         private void FormQuanLyMayBay_Load(object sender, EventArgs e)
@@ -47,10 +45,14 @@ namespace DBMS_Project
             cbb_sohieu.DisplayMember = "SoHieu";
             cbb_ten.DataSource = db.LayDuLieu("select DISTINCT TenLoaiMayBay from DSMayBayHD");
             cbb_ten.DisplayMember = "TenLoaiMayBay";
+            cbb_ten1.DataSource = db.LayDuLieu("select DISTINCT TenLoaiMayBay from DSMayBayHD");
+            cbb_ten1.DisplayMember = "TenLoaiMayBay";
             cbb_tongsoghe.DataSource = db.LayDuLieu("select DISTINCT TongSoGhe from DSMayBayHD");
             cbb_tongsoghe.DisplayMember = "TongSoGhe";
             cbb_tinhtrang.DataSource = db.LayDuLieu("select DISTINCT TinhTrangHD from DSMayBayHD");
             cbb_tinhtrang.DisplayMember = "TinhTrangHD";
+            cbb_tinhtrang1.DataSource = db.LayDuLieu("select DISTINCT TinhTrangHD from DSMayBayHD");
+            cbb_tinhtrang1.DisplayMember = "TinhTrangHD";
         }
 
         private void dgv_Quanlymaybay_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -59,9 +61,9 @@ namespace DBMS_Project
             if(r < dgv_Quanlymaybay.Rows.Count - 1 && r >= 0)
             {
                 tb_sohieu.Text = dgv_Quanlymaybay.Rows[r].Cells[0].Value.ToString();
-                tb_ten.Text = dgv_Quanlymaybay.Rows[r].Cells[1].Value.ToString();
+                cbb_ten1.Text = dgv_Quanlymaybay.Rows[r].Cells[1].Value.ToString();
                 tb_tongsoghe.Text = dgv_Quanlymaybay.Rows[r].Cells[2].Value.ToString();
-                tb_tinhtrang.Text = dgv_Quanlymaybay.Rows[r].Cells[3].Value.ToString();
+                cbb_tinhtrang1.Text = dgv_Quanlymaybay.Rows[r].Cells[3].Value.ToString();
             }
         }
 
@@ -77,7 +79,7 @@ namespace DBMS_Project
             Reset_Text();
             pnl_thongso.Enabled = true;
             tb_sohieu.Enabled = true;
-            tb_ten.Enabled = true;
+            cbb_ten1.Enabled = true;
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -85,7 +87,7 @@ namespace DBMS_Project
             state = ChinhSua.sua;
             pnl_thongso.Enabled = true;
             tb_sohieu.Enabled = false;
-            tb_ten.Enabled = false;
+            cbb_ten1.Enabled = false;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -100,7 +102,7 @@ namespace DBMS_Project
                     SqlCommand cmd = new SqlCommand("XoaMayBay", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = tb_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = tb_ten.Text;
+                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = cbb_ten1.Text;
                     
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Xóa thành công!");
@@ -117,9 +119,9 @@ namespace DBMS_Project
         {
             if(state == ChinhSua.them)
             {
-                if (!db.KiemTraDuLieu("select * from MayBay where SoHieu = '" + tb_sohieu.Text + "' and TenLoaiMayBay = '" + tb_ten + "'") && tb_sohieu.Text != "")
+                if (!db.KiemTraDuLieu("select * from MayBay where SoHieu = '" + tb_sohieu.Text + "' and TenLoaiMayBay = '" + cbb_ten1.Text + "'") && tb_sohieu.Text != "")
                 {
-                    if (tb_sohieu.Text == "" || tb_ten.Text == "" || tb_tongsoghe.Text == "" || tb_tinhtrang.Text == "")
+                    if (tb_sohieu.Text == "" || cbb_ten1.Text == "" || tb_tongsoghe.Text == "" || cbb_tinhtrang1.Text == "")
 
                     {
                         MessageBox.Show("Vui lòng điền đầy đủ thông tin máy bay!");
@@ -130,9 +132,9 @@ namespace DBMS_Project
                         SqlCommand cmd = new SqlCommand("ThemMayBay", db.getConnection);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = tb_sohieu.Text;
-                        cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = tb_ten.Text;
+                        cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = cbb_ten1.Text;
                         cmd.Parameters.Add("@TongSoGhe", SqlDbType.Int).Value = tb_tongsoghe.Text;
-                        cmd.Parameters.Add("@TinhTrangHD", SqlDbType.NVarChar).Value = tb_tinhtrang.Text;
+                        cmd.Parameters.Add("@TinhTrangHD", SqlDbType.NVarChar).Value = cbb_tinhtrang1.Text;
 
                         if (cmd.ExecuteNonQuery() > 0)
                             MessageBox.Show("Thêm thành công!");
@@ -146,15 +148,15 @@ namespace DBMS_Project
             }
             else if(state == ChinhSua.sua)
             {
-                if(!db.KiemTraDuLieu("select * from MayBay where SoHieu = '" + tb_sohieu.Text + "' and TenLoaiMayBay = '" + tb_ten + "'") && tb_sohieu.Text != "")
+                if(!db.KiemTraDuLieu("select * from MayBay where SoHieu = '" + tb_sohieu.Text + "' and TenLoaiMayBay = '" + cbb_ten1.Text + "'") && tb_sohieu.Text != "")
                 {
                     db.openConnection();
                     SqlCommand cmd = new SqlCommand("UpdateMayBay", db.getConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = tb_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = tb_ten.Text;
+                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = cbb_ten1.Text;
                     cmd.Parameters.Add("@TongSoGhe", SqlDbType.Int).Value = tb_tongsoghe.Text;
-                    cmd.Parameters.Add("@TinhTrangHD", SqlDbType.NVarChar).Value = tb_tinhtrang.Text;
+                    cmd.Parameters.Add("@TinhTrangHD", SqlDbType.NVarChar).Value = cbb_tinhtrang1.Text;
 
                     if (cmd.ExecuteNonQuery() > 0)
                         MessageBox.Show("Thay đổi thành công!");
@@ -210,6 +212,11 @@ namespace DBMS_Project
                 MessageBox.Show("Không tồn tại máy bay!");
             }
             db.closeConnection();
+        }
+
+        private void tb_ten_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
