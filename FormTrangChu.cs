@@ -53,7 +53,7 @@ namespace DBMS_Project
         private void btnQLHanhKhach_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormQuanLyHanhKhach item = new FormQuanLyHanhKhach();
+            FormQuanLyVe item = new FormQuanLyVe();
             item.ShowDialog();
             this.Show();
         }

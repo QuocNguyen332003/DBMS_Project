@@ -70,7 +70,7 @@
             this.btnQLHanhKhach.Name = "btnQLHanhKhach";
             this.btnQLHanhKhach.Size = new System.Drawing.Size(246, 50);
             this.btnQLHanhKhach.TabIndex = 17;
-            this.btnQLHanhKhach.Text = "Quản Lý Hành Khách";
+            this.btnQLHanhKhach.Text = "Quản Lý Vé";
             this.btnQLHanhKhach.UseVisualStyleBackColor = false;
             this.btnQLHanhKhach.Click += new System.EventHandler(this.btnQLHanhKhach_Click);
             // 

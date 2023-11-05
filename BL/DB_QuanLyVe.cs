@@ -15,7 +15,7 @@ namespace DBMS_Project.BL
     {
         ~DB_QuanLyVe() { }
 
-        connectDataBase connect = new connectDataBase();
+        DB_QuanLyChuyenBay connect = new DB_QuanLyChuyenBay();
 
         public DB_QuanLyVe()
         {
@@ -26,7 +26,7 @@ namespace DBMS_Project.BL
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.CommandText = "select * from LayThongTinVe";
-                comm.Connection = connect.getConnection();
+                comm.Connection = connect.getConnection;
                 DataTable ds = new DataTable();
                 ds = connect.ExecuteQueryDataTable(comm, connect);
                 return ds;
@@ -40,7 +40,7 @@ namespace DBMS_Project.BL
             {
                 command.CommandText = "ThemVe";
                 command.CommandType = CommandType.StoredProcedure;
-                command.Connection = connect.getConnection();
+                command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaVe", MaVe);
                 command.Parameters.AddWithValue("@MaHK", MaHK);
                 command.Parameters.AddWithValue("@MaCB", MaCB);
@@ -59,7 +59,7 @@ namespace DBMS_Project.BL
             {
                 command.CommandText = "SuaVe";
                 command.CommandType = CommandType.StoredProcedure;
-                command.Connection = connect.getConnection();
+                command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaVe", MaVe);
                 command.Parameters.AddWithValue("@MaHK", MaHK);
                 command.Parameters.AddWithValue("@MaCB", MaCB);
@@ -78,7 +78,7 @@ namespace DBMS_Project.BL
             {
                 command.CommandText = "XoaVe";
                 command.CommandType = CommandType.StoredProcedure;
-                command.Connection = connect.getConnection();
+                command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaVe", MaVe);
                 b = connect.MyExecuteNonQuery(command, connect, ref error);
             }
@@ -91,7 +91,7 @@ namespace DBMS_Project.BL
             {
                 comm.CommandText = "SELECT * FROM dbo.ThongKeVe()";
                 comm.CommandType = CommandType.Text;
-                comm.Connection = connect.getConnection();
+                comm.Connection = connect.getConnection;
                 DataTable ds = new DataTable();
                 ds = connect.ExecuteQueryDataTable(comm, connect);
                 return ds;

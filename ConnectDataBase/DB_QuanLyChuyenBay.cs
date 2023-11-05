@@ -42,6 +42,38 @@ namespace DBMS_Project.ConnectDataBase
                 conn.Close();
             }
         }
+        public bool MyExecuteNonQuery(SqlCommand comm, DB_QuanLyChuyenBay conn, ref string error)
+        {
+            bool f = false;
+            conn.openConnection();
+            try
+            {
+                comm.ExecuteNonQuery();
+                f = true;
+            }
+            catch (SqlException ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                conn.closeConnection();
+            }
+            return f;
+        }
+
+        public DataTable ExecuteQueryDataTable(SqlCommand comm, DB_QuanLyChuyenBay connect)
+        {
+            using (SqlDataAdapter da = new SqlDataAdapter(comm))
+            {
+                connect.openConnection();
+                DataTable ds = new DataTable();
+                da.Fill(ds);
+                connect.closeConnection();
+                return ds;
+
+            }
+        }
         public DataTable LayDuLieu(string strSQL)
         {
             if (conn.State == ConnectionState.Open)
