@@ -235,5 +235,23 @@ namespace DBMS_Project
         {
             LoadData();
         }
+
+        private void thốngKêSốGiờBayVàLươngCủaNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xemLịchSửThamGiaChuyếnBayCủaNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ThongKe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormThongKeNV thongke = new FormThongKeNV();
+            thongke.ShowDialog();
+            this.Show();
+        }
     }
 }
