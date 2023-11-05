@@ -1,4 +1,5 @@
-﻿using DBMS_Project.ConnectDataBase;
+﻿using DBMS_Project.BL;
+using DBMS_Project.ConnectDataBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace DBMS_Project
 {
     public partial class FormQuanLyPhanDoan : Form
     {
-        DB_QuanLyChuyenBay db = new DB_QuanLyChuyenBay();
+        BL_QuanLyPhanDoan bl = new BL_QuanLyPhanDoan();
         ChinhSua state = ChinhSua.none;
         public FormQuanLyPhanDoan()
         {
@@ -29,22 +30,21 @@ namespace DBMS_Project
         }
         private void LoadData()
         {
-            DataTable dataTable = db.LayDuLieu("select * from LoadPhanDoan");
+            DataTable dataTable = bl.LayDuLieu();
             dgv_phandoan.DataSource = dataTable;
             dgv_phandoan.AutoResizeColumns();
             Reset_Text();
 
-            cbb_loai.DataSource = db.LayDuLieu("SELECT TenLoaiMayBay FROM LoaiMayBay");
+            cbb_loai.DataSource = bl.getLoaiMayBay();
             cbb_loai.DisplayMember = "TenLoaiMayBay";
-            cbb_sanbaydi.DataSource = db.LayDuLieu("SElECT MaSanBay FROM SanBay");
+            cbb_sanbaydi.DataSource = bl.getSanBay();
             cbb_sanbaydi.DisplayMember = "MaSanBay";
-            cbb_sanbayden.DataSource = db.LayDuLieu("SElECT MaSanBay FROM SanBay");
+            cbb_sanbayden.DataSource = bl.getSanBay();
             cbb_sanbayden.DisplayMember = "MaSanBay";
         }
         private void Reset_Text()
         {
             txt_id.ResetText();
-            txt_sohieu.ResetText();
         }
 
         private void btn_them_Click(object sender, EventArgs e)
@@ -73,17 +73,7 @@ namespace DBMS_Project
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("DeletePhanDoan", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    cmd.Parameters.Add("@STT", SqlDbType.Int).Value = Convert.ToInt32(nud_stt.Value);
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Xóa thành công!");
-                    else
-                        MessageBox.Show("Xóa thất bại");
-
-                    db.closeConnection();
+                    bl.XoaPhanDoan(txt_id.Text, Convert.ToInt32(nud_stt.Value));
                     LoadData();
                 }
             }
@@ -93,58 +83,25 @@ namespace DBMS_Project
         {
             if (state == ChinhSua.them)
             {
-                if (!db.KiemTraDuLieu("select * from PhanDoan where MaChuyenBay = '" + txt_id.Text + "' and STT ="+nud_stt.Value) && txt_id.Text != "")
+                if (!bl.KiemTraDuDieu(txt_id.Text, Convert.ToInt32(nud_stt.Value)) && txt_id.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("InsertPhanDoan", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    cmd.Parameters.Add("@STT", SqlDbType.Int).Value = nud_stt.Value;
-                    cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = txt_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = cbb_loai.Text;
-                    cmd.Parameters.Add("@MaSanBayDi", SqlDbType.VarChar).Value = cbb_sanbaydi.Text;
-                    cmd.Parameters.Add("@GioDi", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0);
-                    cmd.Parameters.Add("@NgayDi", SqlDbType.Date).Value = dtp_ngaydi.Value.ToShortDateString();
-                    cmd.Parameters.Add("@MaSanBayDen", SqlDbType.VarChar).Value = cbb_sanbayden.Text;
-                    cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0);
-                    cmd.Parameters.Add("@NgayDen", SqlDbType.Date).Value = dtp_ngayden.Value.ToShortDateString();
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thêm thành công!");
-                    else
-                        MessageBox.Show("Thêm thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.ThemPhanDoan(txt_id.Text, Convert.ToInt32(nud_stt.Value), cbb_SoHieu.Text, cbb_loai.Text,
+                        cbb_sanbaydi.Text, new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0), dtp_ngaydi.Value,
+                        cbb_sanbayden.Text, new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0), dtp_ngayden.Value);                
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
             else if (state == ChinhSua.sua)
             {
-                if (db.KiemTraDuLieu("select * from PhanDoan where MaChuyenBay = '" + txt_id.Text + "' and STT =" + nud_stt.Value) && txt_id.Text != "")
+                if (bl.KiemTraDuDieu(txt_id.Text, Convert.ToInt32(nud_stt.Value)) && txt_id.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("UpdatePhanDoan", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    cmd.Parameters.Add("@STT", SqlDbType.Int).Value = nud_stt.Value;
-                    cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = txt_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = cbb_loai.Text;
-                    cmd.Parameters.Add("@MaSanBayDi", SqlDbType.VarChar).Value = cbb_sanbaydi.Text;
-                    cmd.Parameters.Add("@GioDi", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0);
-                    cmd.Parameters.Add("@NgayDi", SqlDbType.Date).Value = dtp_ngaydi.Value.ToShortDateString();
-                    cmd.Parameters.Add("@MaSanBayDen", SqlDbType.VarChar).Value = cbb_sanbayden.Text;
-                    cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0);
-                    cmd.Parameters.Add("@NgayDen", SqlDbType.Date).Value = dtp_ngayden.Value.ToShortDateString();
-
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thay đổi thành công!");
-                    else
-                        MessageBox.Show("Thay đổi thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.ThayDoiThongTin(txt_id.Text, Convert.ToInt32(nud_stt.Value), cbb_SoHieu.Text, cbb_loai.Text,
+                        cbb_sanbaydi.Text, new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0), dtp_ngaydi.Value,
+                        cbb_sanbayden.Text, new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0), dtp_ngayden.Value);
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
+            LoadData();
             state = ChinhSua.none;
             pnlEnabled.Enabled = false;
         }
@@ -163,7 +120,7 @@ namespace DBMS_Project
                 txt_id.Text = dgv_phandoan.Rows[r].Cells[0].Value.ToString();
                 nud_stt.Value = Convert.ToInt32(dgv_phandoan.Rows[r].Cells[1].Value);
                 cbb_loai.Text = dgv_phandoan.Rows[r].Cells[3].Value.ToString();
-                txt_sohieu.Text = dgv_phandoan.Rows[r].Cells[2].Value.ToString();
+                cbb_SoHieu.Text = dgv_phandoan.Rows[r].Cells[2].Value.ToString();
                 cbb_sanbaydi.Text = dgv_phandoan.Rows[r].Cells[4].Value.ToString();
                 DateTime gioDiDateTime = DateTime.ParseExact(dgv_phandoan.Rows[r].Cells[5].Value.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
                 TimeSpan gioDi = gioDiDateTime.TimeOfDay;
@@ -175,6 +132,12 @@ namespace DBMS_Project
                 nud_gioden.Value = gioDen.Hours; nud_phutden.Value = gioDen.Minutes;
                 dtp_ngayden.Value = Convert.ToDateTime(dgv_phandoan.Rows[r].Cells[9].Value.ToString());
             }
+        }
+
+        private void cbb_loai_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cbb_SoHieu.DataSource = bl.getSoHieuTheoLoaiMB(cbb_loai.Text);
+            cbb_SoHieu.DisplayMember = "SoHieu";
         }
     }
 }

@@ -46,8 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\DB_QuanLyHanhKhach.cs" />
-    <Compile Include="BL\DB_QuanLyVe.cs" />
+    <Compile Include="BL\BL_QuanLyChuyenBay.cs" />
+    <Compile Include="BL\BL_QuanLyHanhKhach.cs" />
+    <Compile Include="BL\BL_QuanLyPhanDoan.cs" />
+    <Compile Include="BL\BL_QuanLyTamHoan.cs" />
+    <Compile Include="BL\BL_QuanLyVe.cs" />
+    <Compile Include="FormChiTietTamHoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietTamHoan.Designer.cs">
+      <DependentUpon>FormChiTietTamHoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectDataBase\DB_QuanLyChuyenBay.cs" />
     <Compile Include="DBMS_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -134,6 +143,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormChiTietTamHoan.resx">
+      <DependentUpon>FormChiTietTamHoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChuyenBayTamHoan.resx">
       <DependentUpon>FormChuyenBayTamHoan.cs</DependentUpon>
     </EmbeddedResource>

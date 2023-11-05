@@ -34,7 +34,6 @@
             this.pnl_modify = new System.Windows.Forms.Panel();
             this.pnlEnabled = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_sohieu = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.nud_stt = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.cbb_sanbaydi = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbb_loai = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_luu = new System.Windows.Forms.Button();
@@ -79,6 +77,8 @@
             this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.phanDoanTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.PhanDoanTableAdapter();
+            this.cbb_SoHieu = new System.Windows.Forms.ComboBox();
+            this.cbb_loai = new System.Windows.Forms.ComboBox();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
             this.pnlEnabled.SuspendLayout();
@@ -119,8 +119,9 @@
             // 
             // pnlEnabled
             // 
+            this.pnlEnabled.Controls.Add(this.cbb_loai);
+            this.pnlEnabled.Controls.Add(this.cbb_SoHieu);
             this.pnlEnabled.Controls.Add(this.label9);
-            this.pnlEnabled.Controls.Add(this.txt_sohieu);
             this.pnlEnabled.Controls.Add(this.label10);
             this.pnlEnabled.Controls.Add(this.nud_stt);
             this.pnlEnabled.Controls.Add(this.label11);
@@ -128,7 +129,6 @@
             this.pnlEnabled.Controls.Add(this.label14);
             this.pnlEnabled.Controls.Add(this.cbb_sanbaydi);
             this.pnlEnabled.Controls.Add(this.label13);
-            this.pnlEnabled.Controls.Add(this.cbb_loai);
             this.pnlEnabled.Controls.Add(this.label12);
             this.pnlEnabled.Controls.Add(this.label5);
             this.pnlEnabled.Controls.Add(this.btn_luu);
@@ -163,14 +163,6 @@
             this.label9.TabIndex = 71;
             this.label9.Text = "Cập nhật phân đoạn:";
             // 
-            // txt_sohieu
-            // 
-            this.txt_sohieu.Location = new System.Drawing.Point(530, 126);
-            this.txt_sohieu.Multiline = true;
-            this.txt_sohieu.Name = "txt_sohieu";
-            this.txt_sohieu.Size = new System.Drawing.Size(151, 30);
-            this.txt_sohieu.TabIndex = 100;
-            // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.White;
@@ -201,10 +193,11 @@
             // 
             // cbb_sanbayden
             // 
+            this.cbb_sanbayden.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbb_sanbayden.FormattingEnabled = true;
-            this.cbb_sanbayden.Location = new System.Drawing.Point(214, 256);
+            this.cbb_sanbayden.Location = new System.Drawing.Point(214, 246);
             this.cbb_sanbayden.Name = "cbb_sanbayden";
-            this.cbb_sanbayden.Size = new System.Drawing.Size(160, 24);
+            this.cbb_sanbayden.Size = new System.Drawing.Size(160, 36);
             this.cbb_sanbayden.TabIndex = 98;
             // 
             // label14
@@ -219,10 +212,11 @@
             // 
             // cbb_sanbaydi
             // 
+            this.cbb_sanbaydi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbb_sanbaydi.FormattingEnabled = true;
-            this.cbb_sanbaydi.Location = new System.Drawing.Point(214, 196);
+            this.cbb_sanbaydi.Location = new System.Drawing.Point(214, 183);
             this.cbb_sanbaydi.Name = "cbb_sanbaydi";
-            this.cbb_sanbaydi.Size = new System.Drawing.Size(160, 24);
+            this.cbb_sanbaydi.Size = new System.Drawing.Size(160, 36);
             this.cbb_sanbaydi.TabIndex = 97;
             // 
             // label13
@@ -234,14 +228,6 @@
             this.label13.Size = new System.Drawing.Size(97, 30);
             this.label13.TabIndex = 72;
             this.label13.Text = "Ngày đi:";
-            // 
-            // cbb_loai
-            // 
-            this.cbb_loai.FormattingEnabled = true;
-            this.cbb_loai.Location = new System.Drawing.Point(214, 136);
-            this.cbb_loai.Name = "cbb_loai";
-            this.cbb_loai.Size = new System.Drawing.Size(160, 24);
-            this.cbb_loai.TabIndex = 96;
             // 
             // label12
             // 
@@ -587,6 +573,25 @@
             // 
             this.phanDoanTableAdapter.ClearBeforeFill = true;
             // 
+            // cbb_SoHieu
+            // 
+            this.cbb_SoHieu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbb_SoHieu.FormattingEnabled = true;
+            this.cbb_SoHieu.Location = new System.Drawing.Point(521, 124);
+            this.cbb_SoHieu.Name = "cbb_SoHieu";
+            this.cbb_SoHieu.Size = new System.Drawing.Size(160, 36);
+            this.cbb_SoHieu.TabIndex = 100;
+            // 
+            // cbb_loai
+            // 
+            this.cbb_loai.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbb_loai.FormattingEnabled = true;
+            this.cbb_loai.Location = new System.Drawing.Point(214, 124);
+            this.cbb_loai.Name = "cbb_loai";
+            this.cbb_loai.Size = new System.Drawing.Size(160, 36);
+            this.cbb_loai.TabIndex = 101;
+            this.cbb_loai.SelectedIndexChanged += new System.EventHandler(this.cbb_loai_SelectedValueChanged);
+            // 
             // FormQuanLyPhanDoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -660,15 +665,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maSanBayDenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioDenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txt_sohieu;
         private System.Windows.Forms.NumericUpDown nud_stt;
         private System.Windows.Forms.ComboBox cbb_sanbayden;
         private System.Windows.Forms.ComboBox cbb_sanbaydi;
-        private System.Windows.Forms.ComboBox cbb_loai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlEnabled;
+        private System.Windows.Forms.ComboBox cbb_SoHieu;
+        private System.Windows.Forms.ComboBox cbb_loai;
     }
 }

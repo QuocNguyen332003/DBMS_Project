@@ -55,6 +55,7 @@
             this.btn_luu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.chuyenBayTamHoanTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.ChuyenBayTamHoanTableAdapter();
+            this.btn_chitiet = new System.Windows.Forms.Button();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_phutdi)).BeginInit();
@@ -101,7 +102,7 @@
             // 
             this.label16.BackColor = System.Drawing.Color.White;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(614, 4);
+            this.label16.Location = new System.Drawing.Point(636, 4);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(31, 30);
             this.label16.TabIndex = 88;
@@ -119,7 +120,7 @@
             // 
             // nud_phutdi
             // 
-            this.nud_phutdi.Location = new System.Drawing.Point(651, 5);
+            this.nud_phutdi.Location = new System.Drawing.Point(673, 5);
             this.nud_phutdi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nud_phutdi.Name = "nud_phutdi";
             this.nud_phutdi.Size = new System.Drawing.Size(53, 22);
@@ -127,7 +128,7 @@
             // 
             // nud_giodi
             // 
-            this.nud_giodi.Location = new System.Drawing.Point(546, 5);
+            this.nud_giodi.Location = new System.Drawing.Point(568, 5);
             this.nud_giodi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nud_giodi.Name = "nud_giodi";
             this.nud_giodi.Size = new System.Drawing.Size(53, 22);
@@ -151,9 +152,9 @@
             this.label12.Location = new System.Drawing.Point(461, 4);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 37);
+            this.label12.Size = new System.Drawing.Size(110, 37);
             this.label12.TabIndex = 71;
-            this.label12.Text = "Giờ đi:";
+            this.label12.Text = "Thời Gian:";
             // 
             // label10
             // 
@@ -341,12 +342,27 @@
             // 
             this.chuyenBayTamHoanTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_chitiet
+            // 
+            this.btn_chitiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_chitiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_chitiet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_chitiet.Location = new System.Drawing.Point(1091, 11);
+            this.btn_chitiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_chitiet.Name = "btn_chitiet";
+            this.btn_chitiet.Size = new System.Drawing.Size(101, 43);
+            this.btn_chitiet.TabIndex = 78;
+            this.btn_chitiet.Text = "Chi tiết";
+            this.btn_chitiet.UseVisualStyleBackColor = false;
+            this.btn_chitiet.Click += new System.EventHandler(this.btn_chitiet_Click);
+            // 
             // FormChuyenBayTamHoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.ClientSize = new System.Drawing.Size(1213, 558);
+            this.Controls.Add(this.btn_chitiet);
             this.Controls.Add(this.pnlmain);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -397,5 +413,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maChuyenBayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianTamHoanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lyDoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_chitiet;
     }
 }

@@ -1,4 +1,5 @@
-﻿using DBMS_Project.ConnectDataBase;
+﻿using DBMS_Project.BL;
+using DBMS_Project.ConnectDataBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace DBMS_Project
 {
     public partial class FormChuyenBayTamHoan : Form
     {
-        DB_QuanLyChuyenBay db = new DB_QuanLyChuyenBay();
+        BL_QuanLyTamHoan bl = new BL_QuanLyTamHoan();
         ChinhSua state = ChinhSua.none;
         public FormChuyenBayTamHoan()
         {
@@ -34,7 +35,7 @@ namespace DBMS_Project
         }
         private void LoadData()
         {
-            DataTable dataTable = db.LayDuLieu("select * from LoadChuyenBayTamHoan");
+            DataTable dataTable = bl.LayDuLieu();
             dgv_chuyenbay.DataSource = dataTable;
             dgv_chuyenbay.AutoResizeColumns();
             Reset_Text();
@@ -73,16 +74,7 @@ namespace DBMS_Project
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
-                    db.ChinhSuaDuLieu("Update ChuyenBay SET TinhTrangHD = N'Chưa hoạt động' WHERE MaChuyenBay = '" + txt_id.Text + "'");
-                    db.openConnection();  
-                    SqlCommand cmd = new SqlCommand("[DeleteChuyenBayTamHoan]", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Xóa thành công!");
-                    else
-                        MessageBox.Show("Xóa thất bại");
-                    db.closeConnection();
+                    bl.XoaChuyenBayTamHoan(txt_id.Text);
                     LoadData();
                 }
             }
@@ -93,20 +85,11 @@ namespace DBMS_Project
         {
             if (state == ChinhSua.sua)
             {
-                if (db.KiemTraDuLieu("select * from ChuyenBayTamHoan where MaChuyenBay = '" + txt_id.Text + "'") && txt_id.Text != "")
+                if (bl.KiemTraDuDieu(txt_id.Text) && txt_id.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("UpdateChuyenBayTamHoan", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    cmd.Parameters.Add("@ThoiGian", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0);
-                    cmd.Parameters.Add("@LyDo", SqlDbType.NVarChar).Value = txt_lydo.Text;
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thay đổi thành công!");
-                    else
-                        MessageBox.Show("Thay đổi thất bại");
+                    bl.ThayDoiChuyenBayTamHoan(txt_id.Text, 
+                        new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0), txt_lydo.Text);
                     LoadData();
-                    db.closeConnection();
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
@@ -118,6 +101,12 @@ namespace DBMS_Project
         {
             state = ChinhSua.none;
             pnl_modify.Enabled = false;
+        }
+
+        private void btn_chitiet_Click(object sender, EventArgs e)
+        {
+            FormChiTietTamHoan form = new FormChiTietTamHoan();
+            form.ShowDialog();
         }
     }
 }
