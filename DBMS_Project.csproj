@@ -109,6 +109,12 @@
     <Compile Include="FormThamGia.Designer.cs">
       <DependentUpon>FormThamGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongKeNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongKeNV.Designer.cs">
+      <DependentUpon>FormThongKeNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThamGia.resx">
       <DependentUpon>FormThamGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongKeNV.resx">
+      <DependentUpon>FormThongKeNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
