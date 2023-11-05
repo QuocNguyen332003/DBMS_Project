@@ -14,7 +14,7 @@ namespace DBMS_Project
     public partial class FormQuanLyHanhKhach : Form
     {
         ~FormQuanLyHanhKhach() { }
-        DB_QuanLyHanhKhach db = new DB_QuanLyHanhKhach();
+        BL_QuanLyHanhKhach db = new BL_QuanLyHanhKhach();
         public FormQuanLyHanhKhach()
         {
             InitializeComponent();

@@ -10,6 +10,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBMS_Project.BL;
 using DBMS_Project.ConnectDataBase;
 
 namespace DBMS_Project
@@ -22,7 +23,7 @@ namespace DBMS_Project
     }
     public partial class FormQuanLyChuyenBay : Form
     {
-        DB_QuanLyChuyenBay db = new DB_QuanLyChuyenBay();
+        BL_QuanLyChuyenBay bl = new BL_QuanLyChuyenBay();
         ChinhSua state = ChinhSua.none;
         public FormQuanLyChuyenBay()
         {
@@ -30,7 +31,7 @@ namespace DBMS_Project
         }
         private void LoadData()
         {
-            DataTable dataTable = db.LayDuLieu("select * from LoadChuyenBay");
+            DataTable dataTable = bl.LayDuLieu();
             dgv_chuyenbay.DataSource = dataTable;
             dgv_chuyenbay.AutoResizeColumns();
             Reset_Text();
@@ -38,17 +39,17 @@ namespace DBMS_Project
         private void FormQuanLyChuyenBay_Load(object sender, EventArgs e)
         {
             LoadData();
-            cbb_id.DataSource = db.LayDuLieu("select DISTINCT MaChuyenBay from LoadChuyenBay");
+            cbb_id.DataSource = bl.get1Col("MaChuyenBay");
             this.cbb_id.DisplayMember = "MaChuyenBay";
-            cbb_tinhtrang.DataSource = db.LayDuLieu("select DISTINCT TinhTrangHD from LoadChuyenBay");
+            cbb_tinhtrang.DataSource = bl.get1Col("TinhTrangHD");
             this.cbb_tinhtrang.DisplayMember = "TinhTrangHD";
-            cbb_giodi.DataSource = db.LayDuLieu("select DISTINCT GioDi from LoadChuyenBay");
+            cbb_giodi.DataSource = bl.get1Col("GioDi");
             this.cbb_giodi.DisplayMember = "GioDi";
-            cbb_ngaydi.DataSource = db.LayDuLieu("select DISTINCT NgayDi from LoadChuyenBay");
+            cbb_ngaydi.DataSource = bl.get1Col("NgayDi");
             this.cbb_ngaydi.DisplayMember = "NgayDi";
-            cbb_gioden.DataSource = db.LayDuLieu("select DISTINCT GioDen from LoadChuyenBay");
+            cbb_gioden.DataSource = bl.get1Col("GioDen");
             this.cbb_gioden.DisplayMember = "GioDen";
-            cbb_ngayden.DataSource = db.LayDuLieu("select DISTINCT NgayDen from LoadChuyenBay");
+            cbb_ngayden.DataSource = bl.get1Col("NgayDen");
             this.cbb_ngayden.DisplayMember = "NgayDen";
         }
         private void Reset_Text()
@@ -64,26 +65,10 @@ namespace DBMS_Project
             int numNgayDi = cb_ngaydi.Checked ? 1 : 0;
             int numGioDen = cb_gioden.Checked ? 1 : 0;
             int numNgayDen = cb_ngayden.Checked ? 1 : 0;
-            db.openConnection();
-            SqlCommand cmd = new SqlCommand("SELECT * from SearchChuyenBay(@MaCB, @numMaCB, @TT ,@numTT, @GioDi, @numGioDi, @NgayDi, @numNgayDi,@GioDen, @numGioDen, @NgayDen, @numNgayDen)", db.getConnection);
-            cmd.Parameters.AddWithValue("@MaCB", cbb_id.Text);
-            cmd.Parameters.AddWithValue("@numMaCB", numID);
-            cmd.Parameters.AddWithValue("@TT", cbb_tinhtrang.Text);
-            cmd.Parameters.AddWithValue("@numTT", numTT);
-            cmd.Parameters.AddWithValue("@GioDi", cbb_giodi.Text);
-            cmd.Parameters.AddWithValue("@numGioDi", numGioDi);
-            cmd.Parameters.AddWithValue("@NgayDi", cbb_ngaydi.Text);
-            cmd.Parameters.AddWithValue("@numNgayDi", numNgayDi);
-            cmd.Parameters.AddWithValue("@GioDen", cbb_gioden.Text);
-            cmd.Parameters.AddWithValue("@numGioDen", numGioDen);
-            cmd.Parameters.AddWithValue("@NgayDen", cbb_ngayden.Text);
-            cmd.Parameters.AddWithValue("@numNgayDen", numNgayDen);
-            SqlDataReader reader = cmd.ExecuteReader();
-            DataTable data = new DataTable();
-            data.Load(reader);
-            MessageBox.Show(cmd.CommandText);
-            reader.Close();
-            if (data.Rows.Count > 0)
+            DataTable data = bl.TimChuyenBay(cbb_id.Text, numID, cbb_tinhtrang.Text, numTT,
+                cbb_giodi.Text, numGioDi, cbb_ngaydi.Text, numNgayDi, 
+                cbb_gioden.Text, numGioDen, cbb_ngayden.Text, numNgayDen);
+            if (data != null)
             {
                 dgv_chuyenbay.DataSource = data;
             }
@@ -91,7 +76,6 @@ namespace DBMS_Project
             {
                 MessageBox.Show("Không tồn tại chuyến bay!");
             }
-            db.closeConnection();
         }
 
         private void btn_reload_Click(object sender, EventArgs e)
@@ -121,16 +105,7 @@ namespace DBMS_Project
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("DeleteChuyenBay", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Xóa thành công!");
-                    else
-                        MessageBox.Show("Xóa thất bại");
-
-                    db.closeConnection();
+                    bl.XoaChuyenBay(txt_id.Text);
                     LoadData();
                 }
             }
@@ -155,49 +130,24 @@ namespace DBMS_Project
         {
             if (state == ChinhSua.them)
             {
-                if (!db.KiemTraDuLieu("select * from ChuyenBay where MaChuyenBay = '" + txt_id.Text + "'") && txt_id.Text != "")
+                if (!bl.KiemTraDuDieu(txt_id.Text) && txt_id.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("InsertChuyenBay", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    cmd.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = txt_tinhtrang.Text;
-                    cmd.Parameters.Add("@GioDi", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0);
-                    cmd.Parameters.Add("@NgayDi", SqlDbType.Date).Value = dtp_ngaydi.Value.ToShortDateString();
-                    cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0);
-                    cmd.Parameters.Add("@NgayDen", SqlDbType.Date).Value = dtpngayden.Value.ToShortDateString();
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thêm thành công!");
-                    else 
-                        MessageBox.Show("Thêm thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.ThemChuyenBay(txt_id.Text, txt_tinhtrang.Text,
+                        new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0), dtp_ngaydi.Value,
+                        new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0), dtpngayden.Value);
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
             else if(state == ChinhSua.sua) {
-                if (db.KiemTraDuLieu("select * from ChuyenBay where MaChuyenBay = '" + txt_id.Text + "'") && txt_id.Text != "")
+                if (bl.KiemTraDuDieu(txt_id.Text) && txt_id.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("UpdateChuyenBay", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaCB", SqlDbType.VarChar).Value = txt_id.Text;
-                    cmd.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = txt_tinhtrang.Text;
-                    cmd.Parameters.Add("@GioDi", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0);
-                    cmd.Parameters.Add("@NgayDi", SqlDbType.Date).Value = dtp_ngaydi.Value.ToShortDateString();
-                    cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0);
-                    cmd.Parameters.Add("@NgayDen", SqlDbType.Date).Value = dtpngayden.Value.ToShortDateString();
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thay đổi thành công!");
-                    else
-                        MessageBox.Show("Thay đổi thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.ThayDoiThongTin(txt_id.Text, txt_tinhtrang.Text,
+                        new TimeSpan(Convert.ToInt32(nud_giodi.Value), Convert.ToInt32(nud_phutdi.Value), 0), dtp_ngaydi.Value,
+                        new TimeSpan(Convert.ToInt32(nud_gioden.Value), Convert.ToInt32(nud_phutden.Value), 0), dtpngayden.Value);
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
+            LoadData();
             state = ChinhSua.none;
             pnlEnabled.Enabled = false;
         }
@@ -240,8 +190,8 @@ namespace DBMS_Project
             this.Hide();
             FormChuyenBayTamHoan form = new FormChuyenBayTamHoan();
             form.ShowDialog();
-            this.Show();
             LoadData();
+            this.Show();
         }
     }
 }

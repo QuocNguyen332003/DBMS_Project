@@ -10,13 +10,13 @@ using DBMS_Project.ConnectDataBase;
 
 namespace DBMS_Project.BL
 {
-    internal class DB_QuanLyHanhKhach
+    internal class BL_QuanLyHanhKhach
     {
-        ~DB_QuanLyHanhKhach() { }
+        ~BL_QuanLyHanhKhach() { }
 
-        connectDataBase connect = new connectDataBase();
+        DB_QuanLyChuyenBay connect = new DB_QuanLyChuyenBay();
 
-        public DB_QuanLyHanhKhach()
+        public BL_QuanLyHanhKhach()
         {
         }
 
@@ -25,7 +25,7 @@ namespace DBMS_Project.BL
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.CommandText = "select * from LayThongTinHanhKhach";
-                comm.Connection = connect.getConnection();
+                comm.Connection = connect.getConnection;
                 DataTable ds = new DataTable();
                 ds = connect.ExecuteQueryDataTable(comm, connect);
                 return ds;
@@ -39,7 +39,7 @@ namespace DBMS_Project.BL
             {
                 command.CommandText = "ThemHanhKhach";
                 command.CommandType = CommandType.StoredProcedure;
-                command.Connection = connect.getConnection();
+                command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaHK", MaHK);
                 command.Parameters.AddWithValue("@CCCD", CCCD);
                 command.Parameters.AddWithValue("@SDT", SDT);
@@ -55,7 +55,7 @@ namespace DBMS_Project.BL
             {
                 command.CommandText = "SuaHanhKhach";
                 command.CommandType = CommandType.StoredProcedure;
-                command.Connection = connect.getConnection();
+                command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaHK", MaHK);
                 command.Parameters.AddWithValue("@CCCD", CCCD);
                 command.Parameters.AddWithValue("@SDT", SDT);
@@ -71,7 +71,7 @@ namespace DBMS_Project.BL
             {
                 command.CommandText = "XoaHanhKhach";
                 command.CommandType = CommandType.StoredProcedure;
-                command.Connection = connect.getConnection();
+                command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaHK", MaHK);
                 b = connect.MyExecuteNonQuery(command, connect, ref error);
             }
@@ -85,7 +85,7 @@ namespace DBMS_Project.BL
                 comm.CommandText = "SELECT * FROM dbo.TimHanhKhach(@CCCD)";
                 comm.Parameters.AddWithValue("@CCCD", CCCD);
                 comm.CommandType = CommandType.Text;
-                comm.Connection = connect.getConnection();
+                comm.Connection = connect.getConnection;
                 DataTable ds = new DataTable();
                 ds = connect.ExecuteQueryDataTable(comm, connect);
                 return ds;

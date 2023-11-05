@@ -17,7 +17,7 @@ namespace DBMS_Project
     {
         ~FormQuanLyVe() { }
 
-        DB_QuanLyVe db = new DB_QuanLyVe();
+        BL_QuanLyVe db = new BL_QuanLyVe();
         public FormQuanLyVe()
         {
             InitializeComponent();

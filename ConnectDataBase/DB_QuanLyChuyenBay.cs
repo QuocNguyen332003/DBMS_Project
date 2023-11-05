@@ -11,7 +11,7 @@ namespace DBMS_Project.ConnectDataBase
 {
     internal class DB_QuanLyChuyenBay
     {
-        string ConnStr = "Data Source=LAPTOP-4U0DKBNK;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
+        string ConnStr = "Data Source=LAPTOP-MEAMVPHN\\SQLSERVER;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
@@ -40,6 +40,38 @@ namespace DBMS_Project.ConnectDataBase
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
+            }
+        }
+        public bool MyExecuteNonQuery(SqlCommand comm, DB_QuanLyChuyenBay conn, ref string error)
+        {
+            bool f = false;
+            conn.openConnection();
+            try
+            {
+                comm.ExecuteNonQuery();
+                f = true;
+            }
+            catch (SqlException ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                conn.closeConnection();
+            }
+            return f;
+        }
+
+        public DataTable ExecuteQueryDataTable(SqlCommand comm, DB_QuanLyChuyenBay connect)
+        {
+            using (SqlDataAdapter da = new SqlDataAdapter(comm))
+            {
+                connect.openConnection();
+                DataTable ds = new DataTable();
+                da.Fill(ds);
+                connect.closeConnection();
+                return ds;
+
             }
         }
         public DataTable LayDuLieu(string strSQL)
