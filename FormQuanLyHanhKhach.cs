@@ -25,7 +25,6 @@ namespace DBMS_Project
         {
             DataTable dataTable = db.LayDuLieu();
             dgv_QuanLyHanhKhach.DataSource = dataTable;
-            dgv_QuanLyHanhKhach.AutoResizeColumns();
             Reset_Text();
         }
 
@@ -114,6 +113,13 @@ namespace DBMS_Project
                 tb_TimKiem_HoTen.Text = "Không tìm thấy";
                 tb_TimKiem_SDT.Text = "Không tìm thấy";
             }    
+        }
+
+        private void FormQuanLyHanhKhach_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dBMS_DataSet.HanhKhach' table. You can move, or remove it, as needed.
+            this.hanhKhachTableAdapter.Fill(this.dBMS_DataSet.HanhKhach);
+
         }
     }
 }

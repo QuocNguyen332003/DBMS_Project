@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyHanhKhach));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,10 +55,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_QuanLyHanhKhach = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
+            this.hanhKhachBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hanhKhachTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.HanhKhachTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QuanLyHanhKhach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hanhKhachBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -361,6 +367,20 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "QUẢN LÝ HÀNH KHÁCH";
             // 
+            // dBMS_DataSet
+            // 
+            this.dBMS_DataSet.DataSetName = "DBMS_DataSet";
+            this.dBMS_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hanhKhachBindingSource
+            // 
+            this.hanhKhachBindingSource.DataMember = "HanhKhach";
+            this.hanhKhachBindingSource.DataSource = this.dBMS_DataSet;
+            // 
+            // hanhKhachTableAdapter
+            // 
+            this.hanhKhachTableAdapter.ClearBeforeFill = true;
+            // 
             // FormQuanLyHanhKhach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,12 +397,15 @@
             this.MinimizeBox = false;
             this.Name = "FormQuanLyHanhKhach";
             this.Text = "FormQuanLyHanhKhach";
+            this.Load += new System.EventHandler(this.FormQuanLyHanhKhach_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QuanLyHanhKhach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hanhKhachBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,5 +438,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private DBMS_DataSet dBMS_DataSet;
+        private System.Windows.Forms.BindingSource hanhKhachBindingSource;
+        private DBMS_DataSetTableAdapters.HanhKhachTableAdapter hanhKhachTableAdapter;
     }
 }
