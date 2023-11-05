@@ -10,6 +10,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBMS_Project.BL;
 using DBMS_Project.ConnectDataBase;
 
 namespace DBMS_Project
@@ -18,20 +19,20 @@ namespace DBMS_Project
     {
         private string soHieu;
         private string tenLoaiMayBay;
-        DB_QuanLyChuyenBay db = new DB_QuanLyChuyenBay();
+
+        BL_QuanLyKhoangMayBay bl = new BL_QuanLyKhoangMayBay();
         ChinhSua state = ChinhSua.none;
+
         public FormQuanLyKhoangMayBay(string soHieu, string tenLoaiMayBay)
         {
             InitializeComponent();
             this.soHieu = soHieu;
             this.tenLoaiMayBay = tenLoaiMayBay;
-            tb_sohieu.Enabled = false;
-            tb_tenloaimaybay.Enabled = false;
         }
 
         private void LoadData()
         {
-            DataTable dataTable = db.LayDuLieu("select * from TT_KhoangMB where SoHieu = '" + soHieu + "' and TenLoaiMayBay = '" + tenLoaiMayBay + "'");
+            DataTable dataTable = bl.LayDuLieu(soHieu,tenLoaiMayBay);
             dgv_khoangmaybay.DataSource = dataTable;
             dgv_khoangmaybay.AutoResizeColumns();
             Reset_Text();
@@ -88,90 +89,51 @@ namespace DBMS_Project
             if (tb_sohieu.Text != "")
             {
                 DialogResult traloi;
-                traloi = MessageBox.Show("Bạn có chắc chắn xóa Khoang máy bay này không? " + tb_sohieu.Text + "?", "Trả lời",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                traloi = MessageBox.Show("Bạn có chắc chắn xóa khoang máy bay này không? ", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("XoaKhoangMayBay", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = tb_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = tb_tenloaimaybay.Text;
-                    cmd.Parameters.Add("@MaKhoang", SqlDbType.VarChar).Value = tb_makhoang.Text;
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Xóa thành công!");
-                    else
-                        MessageBox.Show("Xóa thất bại");
-
-                    db.closeConnection();
+                    bl.XoaKhoangMayBay(tb_sohieu.Text, tb_tenloaikhoang.Text, tb_makhoang.Text);
                     LoadData();
                 }
             }
+            else { MessageBox.Show("Bạn chưa chọn khoang máy bay muốn xóa!"); }
         }
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
             if(state == ChinhSua.them)
             {
-                if(!db.KiemTraDuLieu("select * from KhoangMayBay where SoHieu = '" + tb_sohieu.Text + "' and TenLoaiMayBay = '" + tb_tenloaimaybay + "' and MaKhoang = '" + tb_makhoang + "'") && tb_sohieu.Text != "")
+                if(!bl.KiemTraDuDieu(tb_sohieu.Text, tb_tenloaikhoang.Text, tb_makhoang.Text) && tb_sohieu.Text != "")
                 {
                     if (tb_tongsoghe.Text == "" || tb_makhoang.Text == "" || tb_tenloaikhoang.Text == "")
 
                     {
-                        MessageBox.Show("Vui lòng điền đầy đủ thông tin máy bay!");
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin khoang máy bay!");
                     }
                     else
                     {
-                        db.openConnection();
-                        SqlCommand cmd = new SqlCommand("ThemKhoangMayBay", db.getConnection);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = this.soHieu;
-                        cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = this.tenLoaiMayBay;
-                        cmd.Parameters.Add("@MaKhoang", SqlDbType.VarChar).Value = tb_makhoang.Text;
-                        cmd.Parameters.Add("@TenLoaiKhoang", SqlDbType.NVarChar).Value = tb_tenloaikhoang.Text;
-                        cmd.Parameters.Add("@TongSoGhe", SqlDbType.Int).Value = tb_tongsoghe.Text;
-
-                        if (cmd.ExecuteNonQuery() > 0)
-                            MessageBox.Show("Thêm thành công!");
-                        else
-                            MessageBox.Show("Thêm thất bại");
-                        LoadData();
-                        db.closeConnection();
+                        bl.ThemKhoangMayBay(tb_sohieu.Text, tb_tenloaimaybay.Text, tb_makhoang.Text, tb_tenloaikhoang.Text, Convert.ToInt32(tb_tongsoghe.Text));
                     }
                 }
                 else MessageBox.Show("Khoang máy bay không hợp lệ!");
             }
             else if(state == ChinhSua.sua)
             {
-                if(!db.KiemTraDuLieu("select * from KhoangMayBay where SoHieu = '" + tb_sohieu.Text + "' and TenLoaiMayBay = '" + tb_tenloaimaybay + "' and MaKhoang = '" + tb_makhoang + "'") && tb_sohieu.Text != "")
+                if(bl.KiemTraDuDieu(tb_sohieu.Text, tb_tenloaimaybay.Text, tb_makhoang.Text) && tb_sohieu.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("UpdateKhoangMayBay", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = tb_sohieu.Text;
-                    cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = tb_tenloaimaybay.Text;
-                    cmd.Parameters.Add("@MaKhoang", SqlDbType.VarChar).Value=tb_makhoang.Text;
-                    cmd.Parameters.Add("@TenLoaiKhoang", SqlDbType.NVarChar).Value = tb_tenloaikhoang.Text;
-                    cmd.Parameters.Add("@TongSoGhe", SqlDbType.Int).Value = tb_tongsoghe.Text;
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thay đổi thành công!");
-                    else
-                        MessageBox.Show("Thay đổi thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.ThayDoiThongTin(tb_sohieu.Text, tb_tenloaimaybay.Text, tb_makhoang.Text, tb_tenloaikhoang.Text, Convert.ToInt32(tb_tongsoghe.Text));
                 }
                 else MessageBox.Show("Khoang máy bay không hợp lệ!");
             }
+            LoadData();
             state = ChinhSua.none;
             pnl_thongso.Enabled = false;
         }
 
         private void btn_Quaylai_Click(object sender, EventArgs e)
         {
-            FormQuanLyMayBay formQuanLyMayBay = new FormQuanLyMayBay();
             this.Hide();
+            FormQuanLyMayBay formQuanLyMayBay = new FormQuanLyMayBay();
             formQuanLyMayBay.ShowDialog();
             Close();
         }

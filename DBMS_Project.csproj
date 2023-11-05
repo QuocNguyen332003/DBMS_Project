@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="BL\BL_QuanLyChuyenBay.cs" />
     <Compile Include="BL\BL_QuanLyHanhKhach.cs" />
+    <Compile Include="BL\BL_QuanLyKhoangMayBay.cs" />
+    <Compile Include="BL\BL_QuanLyMayBay.cs" />
     <Compile Include="BL\BL_QuanLyPhanDoan.cs" />
     <Compile Include="BL\BL_QuanLyTamHoan.cs" />
     <Compile Include="BL\BL_QuanLyVe.cs" />

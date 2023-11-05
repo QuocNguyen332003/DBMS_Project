@@ -32,6 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_Capnhat = new System.Windows.Forms.Panel();
             this.pnl_thongso = new System.Windows.Forms.Panel();
+            this.cbb_tinhtrang1 = new System.Windows.Forms.ComboBox();
+            this.cbb_ten1 = new System.Windows.Forms.ComboBox();
             this.btn_huy = new System.Windows.Forms.Button();
             this.tb_sohieu = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,8 +65,7 @@
             this.lb_id = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbb_ten1 = new System.Windows.Forms.ComboBox();
-            this.cbb_tinhtrang1 = new System.Windows.Forms.ComboBox();
+            this.btn_Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_Capnhat.SuspendLayout();
             this.pnl_thongso.SuspendLayout();
@@ -116,6 +117,24 @@
             this.pnl_thongso.Name = "pnl_thongso";
             this.pnl_thongso.Size = new System.Drawing.Size(628, 212);
             this.pnl_thongso.TabIndex = 31;
+            // 
+            // cbb_tinhtrang1
+            // 
+            this.cbb_tinhtrang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.cbb_tinhtrang1.FormattingEnabled = true;
+            this.cbb_tinhtrang1.Location = new System.Drawing.Point(170, 156);
+            this.cbb_tinhtrang1.Name = "cbb_tinhtrang1";
+            this.cbb_tinhtrang1.Size = new System.Drawing.Size(239, 24);
+            this.cbb_tinhtrang1.TabIndex = 69;
+            // 
+            // cbb_ten1
+            // 
+            this.cbb_ten1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.cbb_ten1.FormattingEnabled = true;
+            this.cbb_ten1.Location = new System.Drawing.Point(170, 61);
+            this.cbb_ten1.Name = "cbb_ten1";
+            this.cbb_ten1.Size = new System.Drawing.Size(239, 24);
+            this.cbb_ten1.TabIndex = 68;
             // 
             // btn_huy
             // 
@@ -279,6 +298,7 @@
             // pnl_Timkiem
             // 
             this.pnl_Timkiem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Timkiem.Controls.Add(this.btn_Reload);
             this.pnl_Timkiem.Controls.Add(this.cb_tinhtrang);
             this.pnl_Timkiem.Controls.Add(this.cb_tongsoghe);
             this.pnl_Timkiem.Controls.Add(this.cb_ten);
@@ -387,10 +407,10 @@
             this.btn_Tim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_Tim.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Tim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tim.Location = new System.Drawing.Point(10, 392);
+            this.btn_Tim.Location = new System.Drawing.Point(178, 392);
             this.btn_Tim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Tim.Name = "btn_Tim";
-            this.btn_Tim.Size = new System.Drawing.Size(318, 50);
+            this.btn_Tim.Size = new System.Drawing.Size(150, 50);
             this.btn_Tim.TabIndex = 16;
             this.btn_Tim.Text = "Tìm";
             this.btn_Tim.UseVisualStyleBackColor = false;
@@ -467,23 +487,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ MÁY BAY";
             // 
-            // cbb_ten1
+            // btn_Reload
             // 
-            this.cbb_ten1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.cbb_ten1.FormattingEnabled = true;
-            this.cbb_ten1.Location = new System.Drawing.Point(170, 61);
-            this.cbb_ten1.Name = "cbb_ten1";
-            this.cbb_ten1.Size = new System.Drawing.Size(239, 24);
-            this.cbb_ten1.TabIndex = 68;
-            // 
-            // cbb_tinhtrang1
-            // 
-            this.cbb_tinhtrang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.cbb_tinhtrang1.FormattingEnabled = true;
-            this.cbb_tinhtrang1.Location = new System.Drawing.Point(170, 156);
-            this.cbb_tinhtrang1.Name = "cbb_tinhtrang1";
-            this.cbb_tinhtrang1.Size = new System.Drawing.Size(239, 24);
-            this.cbb_tinhtrang1.TabIndex = 69;
+            this.btn_Reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_Reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Reload.Location = new System.Drawing.Point(8, 392);
+            this.btn_Reload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Reload.Name = "btn_Reload";
+            this.btn_Reload.Size = new System.Drawing.Size(150, 50);
+            this.btn_Reload.TabIndex = 74;
+            this.btn_Reload.Text = "Reload";
+            this.btn_Reload.UseVisualStyleBackColor = false;
+            this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
             // 
             // FormQuanLyMayBay
             // 
@@ -551,5 +567,6 @@
         private System.Windows.Forms.CheckBox cb_tongsoghe;
         private System.Windows.Forms.ComboBox cbb_ten1;
         private System.Windows.Forms.ComboBox cbb_tinhtrang1;
+        private System.Windows.Forms.Button btn_Reload;
     }
 }

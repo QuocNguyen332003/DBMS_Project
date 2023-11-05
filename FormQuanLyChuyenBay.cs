@@ -138,7 +138,8 @@ namespace DBMS_Project
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
-            else if(state == ChinhSua.sua) {
+            else if(state == ChinhSua.sua) 
+            {
                 if (bl.KiemTraDuDieu(txt_id.Text) && txt_id.Text != "")
                 {
                     bl.ThayDoiThongTin(txt_id.Text, txt_tinhtrang.Text,
