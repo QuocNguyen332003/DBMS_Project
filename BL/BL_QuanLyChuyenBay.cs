@@ -112,5 +112,13 @@ namespace DBMS_Project.BL
             string sql = "select DISTINCT " + namecol + " from LoadChuyenBay";
             return db.LayDuLieu(sql);
         }
+        public int SoLuongChuyenBayTheoNgay(DateTime ngaydi)
+        {
+            db.openConnection();
+            SqlCommand cmd = new SqlCommand("SELECT dbo.SoLuongChuyenBay(@ngaydi)", db.getConnection);
+            cmd.Parameters.AddWithValue("@ngaydi", ngaydi.ToShortDateString());
+            object result = cmd.ExecuteScalar();
+            return (int)result;
+        }
     }
 }
