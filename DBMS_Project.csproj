@@ -50,9 +50,11 @@
     <Compile Include="BL\BL_QuanLyHanhKhach.cs" />
     <Compile Include="BL\BL_QuanLyKhoangMayBay.cs" />
     <Compile Include="BL\BL_QuanLyMayBay.cs" />
+    <Compile Include="BL\BL_QuanLyNhanSu.cs" />
     <Compile Include="BL\BL_QuanLyPhanDoan.cs" />
     <Compile Include="BL\BL_QuanLyTamHoan.cs" />
     <Compile Include="BL\BL_QuanLyVe.cs" />
+    <Compile Include="BL\BL_ThamGia.cs" />
     <Compile Include="FormChiTietTamHoan.cs">
       <SubType>Form</SubType>
     </Compile>

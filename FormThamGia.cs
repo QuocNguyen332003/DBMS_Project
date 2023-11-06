@@ -18,6 +18,8 @@ namespace DBMS_Project
     public partial class FormThamGia : Form
     {
         DB_QuanLyChuyenBay db = new DB_QuanLyChuyenBay();
+        BL_ThamGia bl = new BL_ThamGia();
+        BL_QuanLyNhanSu bl_ns = new BL_QuanLyNhanSu();
         ChinhSua state = ChinhSua.none;
         public FormThamGia()
         {
@@ -25,20 +27,25 @@ namespace DBMS_Project
         }
         private void LoadData()
         {
-            DataTable dataTable = db.LayDuLieu("select * from LoadThamGia");
+            DataTable dataTable = bl.LayDuLieu();
             dgv_thamgia.DataSource = dataTable;
-            cbb_idchuyenbay.DataSource = db.LayDuLieu("select DISTINCT MaChuyenBay from LoadPhanDoan");
+
+
+            cbb_idchuyenbay.DataSource = bl.GetPhanDoan_id();
             this.cbb_idchuyenbay.DisplayMember = "MaChuyenBay";
-            cbb_stt.DataSource = db.LayDuLieu("select DISTINCT STT from LoadPhanDoan");
+
+            cbb_stt.DataSource = bl.GetPhanDoan_stt();
             this.cbb_stt.DisplayMember = "STT";
 
-            cbb_id.DataSource = db.LayDuLieu("select DISTINCT MaChuyenBay from LoadPhanDoan");
+            cbb_id.DataSource = bl.GetPhanDoan_id();
             this.cbb_id.DisplayMember = "MaChuyenBay";
-            cbb_stt1.DataSource = db.LayDuLieu("select DISTINCT STT from LoadPhanDoan");
+
+            cbb_stt1.DataSource = bl.GetPhanDoan_stt();
             this.cbb_stt1.DisplayMember = "STT";
-            cbb_idnhanvien.DataSource = db.LayDuLieu("select DISTINCT MaNV from LoadNhanVien");
+            cbb_idnhanvien.DataSource = bl_ns.GetNhanVien();
             this.cbb_idnhanvien.DisplayMember = "MaNV";
-            cbb_vaitro.DataSource = db.LayDuLieu("select DISTINCT TenCV from LoadCongViec");
+
+            cbb_vaitro.DataSource = bl.GetCongViec();
             this.cbb_vaitro.DisplayMember = "TenCV";
         }
 
@@ -93,20 +100,10 @@ namespace DBMS_Project
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("DeleteThamGia", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.VarChar).Value = cbb_idchuyenbay.Text;
-                    cmd.Parameters.Add("@STT", SqlDbType.Int).Value = Convert.ToInt32(cbb_stt.Text);
-                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_idnhanvien.Text;
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Xóa thành công!");
-                    else
-                        MessageBox.Show("Xóa thất bại");
-
-                    db.closeConnection();
+                    bl.XoaThamGia(cbb_idchuyenbay.Text, cbb_stt.Text, txt_idnhanvien.Text);
                     LoadData();
                 }
+
             }
             else { MessageBox.Show("Bạn chưa chọn phần tử tham gia muốn xóa!"); }
         }
@@ -115,50 +112,24 @@ namespace DBMS_Project
         {
             if (state == ChinhSua.them)
             {
-                if (!db.KiemTraDuLieu("select * from ThamGia where MaChuyenBay = '" + cbb_idchuyenbay.Text + "' and STT =  '" + Convert.ToInt32(cbb_stt.Text) + "' and MaNV = '" + txt_idnhanvien.Text + "'") 
+                if (!bl.KiemTraDuLieu(cbb_idchuyenbay.Text,cbb_stt.Text, txt_idnhanvien.Text) 
                     && cbb_idchuyenbay.Text != "" && cbb_stt.Text != "" && txt_idnhanvien.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("AddThamGia", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.VarChar).Value = cbb_idchuyenbay.Text;
-                    cmd.Parameters.Add("@STT", SqlDbType.Int).Value = Convert.ToInt32(cbb_stt.Text);
-                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_idnhanvien.Text;
-                    cmd.Parameters.Add("@SoGioBay", SqlDbType.Int).Value = Convert.ToInt32(txt_sogiobay.Text);
-                    cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar).Value = txt_vaitro.Text;
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thêm thành công!");
-                    else
-                        MessageBox.Show("Thêm thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.ThemThamGia(cbb_idchuyenbay.Text, cbb_stt.Text, txt_idnhanvien.Text, txt_sogiobay.Text, txt_vaitro.Text);
                 }
                 else MessageBox.Show(" Không hợp lệ!");
             }
             else if (state == ChinhSua.sua)
             {
-                if (db.KiemTraDuLieu("select * from ThamGia where MaChuyenBay = '" + cbb_idchuyenbay.Text + "' and STT =  '" + cbb_stt.Text + "' and MaNV = '" + txt_idnhanvien.Text + "'")
+                if (bl.KiemTraDuLieu(cbb_idchuyenbay.Text, cbb_stt.Text, txt_idnhanvien.Text)
     && cbb_idchuyenbay.Text != "" && cbb_stt.Text != "" && txt_idnhanvien.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("UpdateThamGia", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaChuyenBay", SqlDbType.VarChar).Value = cbb_idchuyenbay.Text;
-                    cmd.Parameters.Add("@STT", SqlDbType.Int).Value = Convert.ToInt32(cbb_stt.Text);
-                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_idnhanvien.Text;
-                    cmd.Parameters.Add("@SoGioBay", SqlDbType.Int).Value = Convert.ToInt32(txt_sogiobay.Text);
-                    cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar).Value = txt_vaitro.Text;
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thay đổi thành công!");
-                    else
-                        MessageBox.Show("Thay đổi thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.SuaThamGia(cbb_idchuyenbay.Text, cbb_stt.Text, txt_idnhanvien.Text, txt_sogiobay.Text, txt_vaitro.Text);
                 }
                 else MessageBox.Show("Không hợp lệ!");
             }
             state = ChinhSua.none;
+            LoadData();
             pnlEnabled.Enabled = false;
         }
 
@@ -175,31 +146,16 @@ namespace DBMS_Project
             int numIDNhanVien = cb_idnhanvien.Checked ? 1 : 0;
             int numSoGioBay = cb_sogiobay.Checked ? 1 : 0;
             int numVaiTro = cb_vaitro.Checked ? 1 : 0;
-            db.openConnection();
-            SqlCommand cmd = new SqlCommand("SELECT * from SearchThamGia(@MaCB, @numMaCB, @STT ,@numSTT, @MaNV, @numIDNhanVien, @SoGioBay, @numSoGioBay,@VaiTro, @numVaiTro)", db.getConnection);
-            cmd.Parameters.AddWithValue("@MaCB", cbb_id.Text);
-            cmd.Parameters.AddWithValue("@numMaCB", numIDChuyenBay);
-            cmd.Parameters.AddWithValue("@STT", cbb_stt.Text);
-            cmd.Parameters.AddWithValue("@numSTT", numSTT);
-            cmd.Parameters.AddWithValue("@MaNV", cbb_idnhanvien.Text);
-            cmd.Parameters.AddWithValue("@numIDNhanVien", numIDNhanVien);
-            cmd.Parameters.AddWithValue("@SoGioBay", num_sogiobay.Text);
-            cmd.Parameters.AddWithValue("@numSoGioBay", numSoGioBay);
-            cmd.Parameters.AddWithValue("@VaiTro", cbb_vaitro.Text);
-            cmd.Parameters.AddWithValue("@numVaiTro", numVaiTro);
-            SqlDataReader reader = cmd.ExecuteReader();
-            DataTable data = new DataTable();
-            data.Load(reader);
-            reader.Close();
-            if (data.Rows.Count > 0)
+
+            DataTable data = bl.TimThamGia(cbb_id.Text, numIDChuyenBay, cbb_stt.Text, numSTT, cbb_idnhanvien.Text, numIDNhanVien, num_sogiobay.Text, numSoGioBay, cbb_vaitro.Text, numVaiTro);
+            if (data != null)
             {
                 dgv_thamgia.DataSource = data;
             }
             else
             {
-                MessageBox.Show("Không tồn tại chuyến bay!");
+                MessageBox.Show("Không tồn tại!");
             }
-            db.closeConnection();
         }
 
         private void btn_reload_Click(object sender, EventArgs e)

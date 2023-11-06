@@ -12,13 +12,13 @@ namespace DBMS_Project.BL
 {
     internal class BL_QuanLyHanhKhach
     {
-        ~BL_QuanLyHanhKhach() { }
-
         DB_QuanLyChuyenBay connect = new DB_QuanLyChuyenBay();
 
         public BL_QuanLyHanhKhach()
         {
         }
+
+        ~BL_QuanLyHanhKhach() { }
 
         public DataTable LayDuLieu()
         {
@@ -32,7 +32,7 @@ namespace DBMS_Project.BL
             }
         }
 
-        public bool ThemHanhKhach(string MaHK, string CCCD, string SDT, ref string error)
+        public bool ThemHanhKhach(string MaHK, string HoTen, string CCCD, string SDT, ref string error)
         {
             bool b = false;
             using (SqlCommand command = new SqlCommand())
@@ -41,6 +41,7 @@ namespace DBMS_Project.BL
                 command.CommandType = CommandType.StoredProcedure;
                 command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaHK", MaHK);
+                command.Parameters.AddWithValue("@HoTen", HoTen);
                 command.Parameters.AddWithValue("@CCCD", CCCD);
                 command.Parameters.AddWithValue("@SDT", SDT);
                 b = connect.MyExecuteNonQuery(command, connect, ref error);
@@ -48,7 +49,7 @@ namespace DBMS_Project.BL
             return b;
         }
 
-        public bool SuaHanhKhach(string MaHK, string CCCD, string SDT, ref string error)
+        public bool SuaHanhKhach(string MaHK, string HoTen, string CCCD, string SDT, ref string error)
         {
             bool b = false;
             using (SqlCommand command = new SqlCommand())
@@ -57,6 +58,7 @@ namespace DBMS_Project.BL
                 command.CommandType = CommandType.StoredProcedure;
                 command.Connection = connect.getConnection;
                 command.Parameters.AddWithValue("@MaHK", MaHK);
+                command.Parameters.AddWithValue("@HoTen", HoTen);
                 command.Parameters.AddWithValue("@CCCD", CCCD);
                 command.Parameters.AddWithValue("@SDT", SDT);
                 b = connect.MyExecuteNonQuery(command, connect, ref error);
@@ -78,12 +80,69 @@ namespace DBMS_Project.BL
             return b;
         }
 
-        public DataTable TimHanhKhach(string CCCD)
+        public DataTable TimHanhKhachTheoCCCD(string CCCD)
         {
             using (SqlCommand comm = new SqlCommand())
             {
-                comm.CommandText = "SELECT * FROM dbo.TimHanhKhach(@CCCD)";
+                comm.CommandText = "SELECT * FROM dbo.TimHanhKhachTheoCCCD(@CCCD)";
                 comm.Parameters.AddWithValue("@CCCD", CCCD);
+                comm.CommandType = CommandType.Text;
+                comm.Connection = connect.getConnection;
+                DataTable ds = new DataTable();
+                ds = connect.ExecuteQueryDataTable(comm, connect);
+                return ds;
+            }
+        }
+
+        public DataTable TimHanhKhachTheoMaHK(string MaHK)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.CommandText = "SELECT * FROM dbo.TimHanhKhachTheoMaHK(@MaHK)";
+                comm.Parameters.AddWithValue("@MaHK", MaHK);
+                comm.CommandType = CommandType.Text;
+                comm.Connection = connect.getConnection;
+                DataTable ds = new DataTable();
+                ds = connect.ExecuteQueryDataTable(comm, connect);
+                return ds;
+            }
+        }
+
+        public DataTable TimHanhKhachTheoHoTen(string HoTen)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.CommandText = "SELECT * FROM dbo.TimHanhKhachTheoHoTen(@HoTen)";
+                comm.Parameters.AddWithValue("@HoTen", HoTen);
+                comm.CommandType = CommandType.Text;
+                comm.Connection = connect.getConnection;
+                DataTable ds = new DataTable();
+                ds = connect.ExecuteQueryDataTable(comm, connect);
+                return ds;
+            }
+        }
+
+        public DataTable TimHanhKhachTheoSDT(string SDT)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.CommandText = "SELECT * FROM dbo.TimHanhKhachTheoSDT(@SDT)";
+                comm.Parameters.AddWithValue("@SDT", SDT);
+                comm.CommandType = CommandType.Text;
+                comm.Connection = connect.getConnection;
+                DataTable ds = new DataTable();
+                ds = connect.ExecuteQueryDataTable(comm, connect);
+                return ds;
+            }
+        }
+
+        public DataTable TimHanhKhachTheoHoTenVaSDT(string HoTen, string SDT)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.CommandText = "SELECT * FROM dbo.TimHanhKhachTheoHoTenVaSDT(@HoTen,@SDT)";
+                comm.Parameters.AddWithValue("@Hoten", HoTen);
+                comm.Parameters.AddWithValue("@SDT", SDT);
                 comm.CommandType = CommandType.Text;
                 comm.Connection = connect.getConnection;
                 DataTable ds = new DataTable();

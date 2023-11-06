@@ -16,7 +16,7 @@ namespace DBMS_Project.ConnectDataBase
             data source(Quoc) = ADMIN\BAOQUOC
             data source(Quan) = LAPTOP-MEAMVPHN\SQLSERVER     */
 
-        string ConnStr = "Data Source=LAPTOP-MEAMVPHN\\SQLSERVER ;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
+        string ConnStr = "Data Source=Anh ;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
