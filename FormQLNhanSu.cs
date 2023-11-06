@@ -1,4 +1,5 @@
-﻿using DBMS_Project.ConnectDataBase;
+﻿using DBMS_Project.BL;
+using DBMS_Project.ConnectDataBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,8 @@ namespace DBMS_Project
 
     public partial class FormQLNhanSu : Form
     {
-        DB_QuanLyChuyenBay db = new DB_QuanLyChuyenBay();
-        ChinhSua state = ChinhSua.none;
+        BL_QuanLyNhanSu bl = new BL_QuanLyNhanSu();
+       ChinhSua state = ChinhSua.none;
         public FormQLNhanSu()
         {
             InitializeComponent();
@@ -31,10 +32,11 @@ namespace DBMS_Project
         }
         private void LoadData()
         {
-            DataTable dataTable = db.LayDuLieu("select * from LoadNhanVien");
+            DataTable dataTable = bl.LayDuLieu();
             dgvQLNhanSu.DataSource = dataTable;
             trangthai1();
-            cbb_idnhanvien.DataSource = db.LayDuLieu("select DISTINCT MaNV from LoadNhanVien");
+
+            cbb_idnhanvien.DataSource = bl.GetNhanVien();
             this.cbb_idnhanvien.DisplayMember = "MaNV";
         }
 
@@ -64,56 +66,23 @@ namespace DBMS_Project
         {
             if (state == ChinhSua.them)
             {
-                if (!db.KiemTraDuLieu("select * from NhanVien where MaNV = '" + txt_id_emp.Text + "'") && txt_id_emp.Text != "")
+                if (!bl.KiemTraDuDieu(txt_id_emp.Text) && txt_id_emp.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("InsertNhanVien", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_id_emp.Text;
-                    cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar).Value = txt_name.Text;
-                    cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = txt_gender.Text;
-                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = txt_address.Text;
-                    cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtp_born.Value.ToShortDateString();
-                    cmd.Parameters.Add("@SDT", SqlDbType.VarChar).Value = txt_phone.Text;
-                    cmd.Parameters.Add("@MaCV", SqlDbType.VarChar).Value = txt_id_work.Text;
-                    cmd.Parameters.Add("@NgayTuyenDung", SqlDbType.Date).Value = dtp_tuyendung.Value.ToShortDateString();
-                    cmd.Parameters.Add("@HeSoLuong", SqlDbType.Float).Value = Convert.ToDouble(txt_hesoluong.Text);
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thêm thành công!");
-                    else
-                        MessageBox.Show("Thêm thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.ThemNhanSu(txt_id_emp.Text, txt_name.Text, txt_gender.Text, txt_address.Text, dtp_born.Value, txt_phone.Text,
+                        txt_id_work.Text, dtp_tuyendung.Value , txt_hesoluong.Text);
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
             else if (state == ChinhSua.sua)
             {
-                if (db.KiemTraDuLieu("select * from NhanVien where MaNV = '" + txt_id_emp.Text + "'") && txt_id_emp.Text != "")
+                if (bl.KiemTraDuDieu(txt_id_emp.Text) && txt_id_emp.Text != "")
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("UpdateNhanVien", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_id_emp.Text;
-                    cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar).Value = txt_name.Text;
-                    cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = txt_gender.Text;
-                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = txt_address.Text;
-                    cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtp_born.Value.ToShortDateString();
-                    cmd.Parameters.Add("@SDT", SqlDbType.VarChar).Value = txt_phone.Text;
-                    cmd.Parameters.Add("@MaCV", SqlDbType.VarChar).Value = txt_id_work.Text;
-                    cmd.Parameters.Add("@NgayTuyenDung", SqlDbType.Date).Value = dtp_tuyendung.Value.ToShortDateString();
-                    cmd.Parameters.Add("@HeSoLuong", SqlDbType.Float).Value = Convert.ToDouble(txt_hesoluong.Text);
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Thay đổi thành công!");
-                    else
-                        MessageBox.Show("Thay đổi thất bại");
-                    LoadData();
-                    db.closeConnection();
+                    bl.UpdateNhanSu(txt_id_emp.Text, txt_name.Text, txt_gender.Text, txt_address.Text, dtp_born.Value, txt_phone.Text,
+                        txt_id_work.Text, dtp_tuyendung.Value, txt_hesoluong.Text);
                 }
                 else MessageBox.Show("Mã chuyến bay không hợp lệ!");
             }
+            LoadData();
             state = ChinhSua.none;
         }
 
@@ -174,16 +143,7 @@ namespace DBMS_Project
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
-                    db.openConnection();
-                    SqlCommand cmd = new SqlCommand("DeleteNhanVien", db.getConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNV", SqlDbType.VarChar).Value = txt_id_emp.Text;
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Xóa thành công!");
-                    else
-                        MessageBox.Show("Xóa thất bại");
-
-                    db.closeConnection();
+                    bl.XoaNhanVien(txt_id_emp.Text);
                     LoadData();
                 }
             }
@@ -193,14 +153,7 @@ namespace DBMS_Project
         private void btn_Luong_Click(object sender, EventArgs e)
         {
 
-            db.openConnection();
-            SqlCommand cmd = new SqlCommand("SELECT dbo.TinhLuong(@MaNV)", db.getConnection);
-            cmd.Parameters.AddWithValue("@MaNV", SqlDbType.Char).Value = txt_id_emp.Text;
-            object result = cmd.ExecuteScalar();
-            double LuongNV = (double)result;
-            string LuongNVString = LuongNV.ToString();
-            MessageBox.Show("Lương của nhân viên có Mã Nhân Viên là " + txt_id_emp.Text + "là: " + LuongNVString + " VNĐ");
-            db.closeConnection();
+            bl.TinhLuong(txt_id_emp.Text);
         }
 
         private void btn_QLThamGia_Click(object sender, EventArgs e)
@@ -213,14 +166,8 @@ namespace DBMS_Project
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            db.openConnection();
-            SqlCommand cmd = new SqlCommand("SELECT * from SearchNhanVien(@MaNV)", db.getConnection);
-            cmd.Parameters.AddWithValue("@MaNV", cbb_idnhanvien.Text);
-            SqlDataReader reader = cmd.ExecuteReader();
-            DataTable data = new DataTable();
-            data.Load(reader);
-            reader.Close();
-            if (data.Rows.Count > 0)
+            DataTable data = bl.TimNhanVien(cbb_idnhanvien.Text);
+            if (data != null)
             {
                 dgvQLNhanSu.DataSource = data;
             }
@@ -228,24 +175,12 @@ namespace DBMS_Project
             {
                 MessageBox.Show("Không tồn tại nhân viên!");
             }
-            db.closeConnection();
         }
 
         private void btn_Reload_Click(object sender, EventArgs e)
         {
             LoadData();
         }
-
-        private void thốngKêSốGiờBayVàLươngCủaNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xemLịchSửThamGiaChuyếnBayCủaNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
             this.Hide();
