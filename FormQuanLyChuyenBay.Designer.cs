@@ -92,6 +92,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chuyenBayTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.ChuyenBayTableAdapter();
+            this.btn_thongke = new System.Windows.Forms.Button();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
             this.pnlEnabled.SuspendLayout();
@@ -127,22 +128,22 @@
             this.pnlmain.Location = new System.Drawing.Point(12, 62);
             this.pnlmain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlmain.Name = "pnlmain";
-            this.pnlmain.Size = new System.Drawing.Size(1165, 625);
+            this.pnlmain.Size = new System.Drawing.Size(1165, 681);
             this.pnlmain.TabIndex = 1;
             // 
             // pnl_modify
             // 
             this.pnl_modify.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_modify.Controls.Add(this.label9);
             this.pnl_modify.Controls.Add(this.btnTamHoan);
             this.pnl_modify.Controls.Add(this.pnlEnabled);
             this.pnl_modify.Controls.Add(this.btn_xoa);
             this.pnl_modify.Controls.Add(this.btn_sua);
             this.pnl_modify.Controls.Add(this.btn_them);
-            this.pnl_modify.Controls.Add(this.label9);
             this.pnl_modify.Location = new System.Drawing.Point(340, 324);
             this.pnl_modify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_modify.Name = "pnl_modify";
-            this.pnl_modify.Size = new System.Drawing.Size(809, 289);
+            this.pnl_modify.Size = new System.Drawing.Size(809, 328);
             this.pnl_modify.TabIndex = 4;
             // 
             // btnTamHoan
@@ -150,7 +151,7 @@
             this.btnTamHoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btnTamHoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTamHoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTamHoan.Location = new System.Drawing.Point(3, 233);
+            this.btnTamHoan.Location = new System.Drawing.Point(8, 267);
             this.btnTamHoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTamHoan.Name = "btnTamHoan";
             this.btnTamHoan.Size = new System.Drawing.Size(199, 50);
@@ -180,10 +181,10 @@
             this.pnlEnabled.Controls.Add(this.label15);
             this.pnlEnabled.Controls.Add(this.txt_tinhtrang);
             this.pnlEnabled.Enabled = false;
-            this.pnlEnabled.Location = new System.Drawing.Point(218, 4);
+            this.pnlEnabled.Location = new System.Drawing.Point(209, 28);
             this.pnlEnabled.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEnabled.Name = "pnlEnabled";
-            this.pnlEnabled.Size = new System.Drawing.Size(600, 300);
+            this.pnlEnabled.Size = new System.Drawing.Size(600, 322);
             this.pnlEnabled.TabIndex = 5;
             // 
             // label17
@@ -370,7 +371,7 @@
             this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_xoa.Location = new System.Drawing.Point(3, 183);
+            this.btn_xoa.Location = new System.Drawing.Point(8, 213);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(199, 50);
@@ -412,7 +413,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(3, 15);
+            this.label9.Location = new System.Drawing.Point(15, 11);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(215, 28);
             this.label9.TabIndex = 71;
@@ -500,6 +501,7 @@
             // 
             this.pnltimkiem.BackColor = System.Drawing.Color.White;
             this.pnltimkiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltimkiem.Controls.Add(this.btn_thongke);
             this.pnltimkiem.Controls.Add(this.btn_QLTamHoan);
             this.pnltimkiem.Controls.Add(this.btn_reload);
             this.pnltimkiem.Controls.Add(this.cb_ngayden);
@@ -527,7 +529,7 @@
             this.pnltimkiem.Location = new System.Drawing.Point(8, 7);
             this.pnltimkiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnltimkiem.Name = "pnltimkiem";
-            this.pnltimkiem.Size = new System.Drawing.Size(326, 606);
+            this.pnltimkiem.Size = new System.Drawing.Size(326, 645);
             this.pnltimkiem.TabIndex = 2;
             // 
             // btn_QLTamHoan
@@ -549,10 +551,10 @@
             this.btn_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_reload.Location = new System.Drawing.Point(22, 556);
+            this.btn_reload.Location = new System.Drawing.Point(14, 553);
             this.btn_reload.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(139, 43);
+            this.btn_reload.Size = new System.Drawing.Size(147, 43);
             this.btn_reload.TabIndex = 77;
             this.btn_reload.Text = "ReLoad";
             this.btn_reload.UseVisualStyleBackColor = false;
@@ -702,10 +704,10 @@
             this.btn_TimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_TimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_TimKiem.Location = new System.Drawing.Point(168, 556);
+            this.btn_TimKiem.Location = new System.Drawing.Point(167, 553);
             this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(145, 43);
+            this.btn_TimKiem.Size = new System.Drawing.Size(136, 43);
             this.btn_TimKiem.TabIndex = 55;
             this.btn_TimKiem.Text = "Tìm";
             this.btn_TimKiem.UseVisualStyleBackColor = false;
@@ -792,12 +794,26 @@
             // 
             this.chuyenBayTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_thongke
+            // 
+            this.btn_thongke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_thongke.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_thongke.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_thongke.Location = new System.Drawing.Point(-1, 600);
+            this.btn_thongke.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btn_thongke.Name = "btn_thongke";
+            this.btn_thongke.Size = new System.Drawing.Size(326, 43);
+            this.btn_thongke.TabIndex = 79;
+            this.btn_thongke.Text = "Số lượng chuyến bay theo ngày";
+            this.btn_thongke.UseVisualStyleBackColor = false;
+            this.btn_thongke.Click += new System.EventHandler(this.btn_thongke_Click);
+            // 
             // FormQuanLyChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.ClientSize = new System.Drawing.Size(1192, 699);
+            this.ClientSize = new System.Drawing.Size(1192, 766);
             this.Controls.Add(this.pnlmain);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -891,5 +907,6 @@
         private System.Windows.Forms.Panel pnlEnabled;
         private System.Windows.Forms.Button btnTamHoan;
         private System.Windows.Forms.Button btn_QLTamHoan;
+        private System.Windows.Forms.Button btn_thongke;
     }
 }

@@ -33,6 +33,8 @@
             this.pnlmain = new System.Windows.Forms.Panel();
             this.pnl_modify = new System.Windows.Forms.Panel();
             this.pnlEnabled = new System.Windows.Forms.Panel();
+            this.cbb_loai = new System.Windows.Forms.ComboBox();
+            this.cbb_SoHieu = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.nud_stt = new System.Windows.Forms.NumericUpDown();
@@ -77,8 +79,7 @@
             this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.phanDoanTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.PhanDoanTableAdapter();
-            this.cbb_SoHieu = new System.Windows.Forms.ComboBox();
-            this.cbb_loai = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlmain.SuspendLayout();
             this.pnl_modify.SuspendLayout();
             this.pnlEnabled.SuspendLayout();
@@ -119,6 +120,7 @@
             // 
             // pnlEnabled
             // 
+            this.pnlEnabled.Controls.Add(this.button1);
             this.pnlEnabled.Controls.Add(this.cbb_loai);
             this.pnlEnabled.Controls.Add(this.cbb_SoHieu);
             this.pnlEnabled.Controls.Add(this.label9);
@@ -151,6 +153,25 @@
             this.pnlEnabled.Name = "pnlEnabled";
             this.pnlEnabled.Size = new System.Drawing.Size(1067, 288);
             this.pnlEnabled.TabIndex = 5;
+            // 
+            // cbb_loai
+            // 
+            this.cbb_loai.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbb_loai.FormattingEnabled = true;
+            this.cbb_loai.Location = new System.Drawing.Point(214, 124);
+            this.cbb_loai.Name = "cbb_loai";
+            this.cbb_loai.Size = new System.Drawing.Size(248, 36);
+            this.cbb_loai.TabIndex = 101;
+            this.cbb_loai.SelectedIndexChanged += new System.EventHandler(this.cbb_loai_SelectedValueChanged);
+            // 
+            // cbb_SoHieu
+            // 
+            this.cbb_SoHieu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbb_SoHieu.FormattingEnabled = true;
+            this.cbb_SoHieu.Location = new System.Drawing.Point(854, 59);
+            this.cbb_SoHieu.Name = "cbb_SoHieu";
+            this.cbb_SoHieu.Size = new System.Drawing.Size(160, 36);
+            this.cbb_SoHieu.TabIndex = 100;
             // 
             // label9
             // 
@@ -223,7 +244,7 @@
             // 
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(706, 67);
+            this.label13.Location = new System.Drawing.Point(706, 124);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 30);
             this.label13.TabIndex = 72;
@@ -254,10 +275,10 @@
             this.btn_luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_luu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_luu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_luu.Location = new System.Drawing.Point(833, 172);
+            this.btn_luu.Location = new System.Drawing.Point(711, 224);
             this.btn_luu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(232, 45);
+            this.btn_luu.Size = new System.Drawing.Size(159, 46);
             this.btn_luu.TabIndex = 77;
             this.btn_luu.Text = "Lưu thay đổi";
             this.btn_luu.UseVisualStyleBackColor = false;
@@ -278,10 +299,10 @@
             this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_huy.Location = new System.Drawing.Point(833, 225);
+            this.btn_huy.Location = new System.Drawing.Point(893, 224);
             this.btn_huy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(232, 45);
+            this.btn_huy.Size = new System.Drawing.Size(171, 45);
             this.btn_huy.TabIndex = 77;
             this.btn_huy.Text = "Hủy thao tác";
             this.btn_huy.UseVisualStyleBackColor = false;
@@ -291,7 +312,7 @@
             // 
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(415, 126);
+            this.label3.Location = new System.Drawing.Point(706, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 30);
             this.label3.TabIndex = 91;
@@ -320,7 +341,7 @@
             // 
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(706, 127);
+            this.label15.Location = new System.Drawing.Point(706, 183);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(112, 30);
             this.label15.TabIndex = 74;
@@ -338,7 +359,7 @@
             // 
             // dtp_ngayden
             // 
-            this.dtp_ngayden.Location = new System.Drawing.Point(833, 134);
+            this.dtp_ngayden.Location = new System.Drawing.Point(832, 185);
             this.dtp_ngayden.Name = "dtp_ngayden";
             this.dtp_ngayden.Size = new System.Drawing.Size(232, 22);
             this.dtp_ngayden.TabIndex = 82;
@@ -355,7 +376,7 @@
             // 
             // dtp_ngaydi
             // 
-            this.dtp_ngaydi.Location = new System.Drawing.Point(833, 74);
+            this.dtp_ngaydi.Location = new System.Drawing.Point(832, 129);
             this.dtp_ngaydi.Name = "dtp_ngaydi";
             this.dtp_ngaydi.Size = new System.Drawing.Size(232, 22);
             this.dtp_ngaydi.TabIndex = 83;
@@ -573,24 +594,19 @@
             // 
             this.phanDoanTableAdapter.ClearBeforeFill = true;
             // 
-            // cbb_SoHieu
+            // button1
             // 
-            this.cbb_SoHieu.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbb_SoHieu.FormattingEnabled = true;
-            this.cbb_SoHieu.Location = new System.Drawing.Point(521, 124);
-            this.cbb_SoHieu.Name = "cbb_SoHieu";
-            this.cbb_SoHieu.Size = new System.Drawing.Size(160, 36);
-            this.cbb_SoHieu.TabIndex = 100;
-            // 
-            // cbb_loai
-            // 
-            this.cbb_loai.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbb_loai.FormattingEnabled = true;
-            this.cbb_loai.Location = new System.Drawing.Point(214, 124);
-            this.cbb_loai.Name = "cbb_loai";
-            this.cbb_loai.Size = new System.Drawing.Size(160, 36);
-            this.cbb_loai.TabIndex = 101;
-            this.cbb_loai.SelectedIndexChanged += new System.EventHandler(this.cbb_loai_SelectedValueChanged);
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.button1.Location = new System.Drawing.Point(468, 124);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 36);
+            this.button1.TabIndex = 102;
+            this.button1.Text = "Xem công ty";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormQuanLyPhanDoan
             // 
@@ -675,5 +691,6 @@
         private System.Windows.Forms.Panel pnlEnabled;
         private System.Windows.Forms.ComboBox cbb_SoHieu;
         private System.Windows.Forms.ComboBox cbb_loai;
+        private System.Windows.Forms.Button button1;
     }
 }

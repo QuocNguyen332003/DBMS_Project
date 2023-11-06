@@ -99,5 +99,14 @@ namespace DBMS_Project.BL
         {
             return db.LayDuLieu("SELECT SoHieu FROM MayBay WhERE TenLoaiMayBay = N'" + tenloaimb + "'");
         }
+        public string CongTySanXuat(string tenloai)
+        {
+            db.openConnection();
+            SqlCommand cmd = new SqlCommand("SELECT dbo.[TenCongTySanXuatMayBay](@TenLoaiMayBay)", db.getConnection);
+            cmd.Parameters.AddWithValue("@TenLoaiMayBay", tenloai);
+            object result = cmd.ExecuteScalar();
+            return (string)result;
+        }
+
     }
 }

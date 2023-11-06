@@ -194,5 +194,11 @@ namespace DBMS_Project
             LoadData();
             this.Show();
         }
+
+        private void btn_thongke_Click(object sender, EventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(cbb_ngaydi.Text);
+            MessageBox.Show(" Số lượng chuyến bay trong ngày " + date + " là: " +bl.SoLuongChuyenBayTheoNgay(date).ToString());
+        }
     }
 }

@@ -139,5 +139,11 @@ namespace DBMS_Project
             cbb_SoHieu.DataSource = bl.getSoHieuTheoLoaiMB(cbb_loai.Text);
             cbb_SoHieu.DisplayMember = "SoHieu";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string tenloai = cbb_loai.Text;
+            MessageBox.Show("Công ty sản xuất loại máy bay " + tenloai + " là: " + bl.CongTySanXuat(tenloai));
+        }
     }
 }
