@@ -157,5 +157,29 @@ namespace DBMS_Project
             this.hanhKhachTableAdapter.Fill(this.dBMS_DataSet.HanhKhach);
 
         }
+
+        private void rb_sdt_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_SDT.Enabled = !tb_TimKiem_SDT.Enabled;
+            tb_TimKiem_SDT.ResetText();
+        }
+
+        private void rb_cccd_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_CCCD.Enabled = !tb_TimKiem_CCCD.Enabled;
+            tb_TimKiem_CCCD.ResetText();
+        }
+
+        private void rb_mahk_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_MaHanhKhach.Enabled = !tb_TimKiem_MaHanhKhach.Enabled;
+            tb_TimKiem_MaHanhKhach.ResetText();
+        }
+
+        private void rb_hoten_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_HoTen.Enabled = !tb_TimKiem_HoTen.Enabled;
+            tb_TimKiem_HoTen.ResetText();
+        }
     }
 }
