@@ -10,18 +10,13 @@ using System.Drawing;
 namespace DBMS_Project.ConnectDataBase
 {
     internal class DB_QuanLyChuyenBay
-<<<<<<<<< Temporary merge branch 1
     {
-        string ConnStr = "Data Source=ADMIN\\BAOQUOC;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
-=========
-    { 
-           /*data source(Anh) = Anh
+               /*data source(Anh) = Anh
             data source(Hung) = LAPTOP-4U0DKBNK
             data source(Quoc) = ADMIN\BAOQUOC
             data source(Quan) = LAPTOP-MEAMVPHN\SQLSERVER     */
 
         string ConnStr = "Data Source=LAPTOP-MEAMVPHN\\SQLSERVER ;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
->>>>>>>>> Temporary merge branch 2
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
