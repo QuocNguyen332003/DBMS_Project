@@ -162,14 +162,10 @@ namespace DBMS_Project
             int numTongSoGhe = cb_tongsoghe.Checked ? 1 : 0;
             int numTinhTrangHD = cb_tinhtrang.Checked ? 1 : 0;
 
-            DataTable data = bl.TimMayBay(tb_sohieu.Text, numSoHieu, cbb_ten1.Text, numTen, tb_tongsoghe.Text, numTongSoGhe, cbb_tinhtrang1.Text, numTinhTrangHD);
+            DataTable data = bl.TimMayBay(cbb_sohieu.Text, numSoHieu, cbb_ten.Text, numTen, cbb_tongsoghe.Text, numTongSoGhe, cbb_tinhtrang.Text, numTinhTrangHD);
             if (data != null)
             {
                 dgv_Quanlymaybay.DataSource = data;
-            }
-            else
-            {
-                MessageBox.Show("Không tồn tại máy bay!");
             }
         }   
     }

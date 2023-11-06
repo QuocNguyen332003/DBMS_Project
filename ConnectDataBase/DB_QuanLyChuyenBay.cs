@@ -10,8 +10,13 @@ using System.Drawing;
 namespace DBMS_Project.ConnectDataBase
 {
     internal class DB_QuanLyChuyenBay
-    {
-        string ConnStr = "Data Source=LAPTOP-4U0DKBNK;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
+    { 
+           /*data source(Anh) = Anh
+            data source(Hung) = LAPTOP-4U0DKBNK
+            data source(Quoc) = ADMIN\BAOQUOC
+            data source(Quan) = LAPTOP-MEAMVPHN\SQLSERVER     */
+
+        string ConnStr = "Data Source=LAPTOP-MEAMVPHN\\SQLSERVER ;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;

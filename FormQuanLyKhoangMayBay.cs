@@ -92,7 +92,7 @@ namespace DBMS_Project
                 traloi = MessageBox.Show("Bạn có chắc chắn xóa khoang máy bay này không? ", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (traloi == DialogResult.OK)
                 {
-                    bl.XoaKhoangMayBay(tb_sohieu.Text, tb_tenloaikhoang.Text, tb_makhoang.Text);
+                    bl.XoaKhoangMayBay(tb_sohieu.Text, tb_tenloaimaybay.Text, tb_makhoang.Text);
                     LoadData();
                 }
             }

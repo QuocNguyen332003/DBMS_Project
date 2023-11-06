@@ -63,7 +63,7 @@ namespace DBMS_Project.BL
         public void ThayDoiThongTin(string soHieu, string ten, string maKhoang, string tenKhoang, int soGhe)
         {
             db.openConnection();
-            SqlCommand cmd = new SqlCommand("ThemKhoangMayBay", db.getConnection);
+            SqlCommand cmd = new SqlCommand("UpdateKhoangMayBay", db.getConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@SoHieu", SqlDbType.VarChar).Value = soHieu;
             cmd.Parameters.Add("@TenLoaiMayBay", SqlDbType.NVarChar).Value = ten;
