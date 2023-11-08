@@ -13,13 +13,13 @@ namespace DBMS_Project.BL
 {
     internal class BL_QuanLyVe
     {
-        ~BL_QuanLyVe() { }
-
         DB_QuanLyChuyenBay connect = new DB_QuanLyChuyenBay();
 
         public BL_QuanLyVe()
         {
         }
+
+        ~BL_QuanLyVe() { }
 
         public DataTable LayDuLieu()
         {

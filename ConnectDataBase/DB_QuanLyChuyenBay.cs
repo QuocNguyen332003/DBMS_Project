@@ -10,8 +10,8 @@ using System.Drawing;
 namespace DBMS_Project.ConnectDataBase
 {
     internal class DB_QuanLyChuyenBay
-    { 
-           /*data source(Anh) = Anh
+    {
+               /*data source(Anh) = Anh
             data source(Hung) = LAPTOP-4U0DKBNK
             data source(Quoc) = ADMIN\BAOQUOC
             data source(Quan) = LAPTOP-MEAMVPHN\SQLSERVER     */

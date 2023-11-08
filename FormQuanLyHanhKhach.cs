@@ -13,13 +13,14 @@ namespace DBMS_Project
 {
     public partial class FormQuanLyHanhKhach : Form
     {
-        ~FormQuanLyHanhKhach() { }
         BL_QuanLyHanhKhach db = new BL_QuanLyHanhKhach();
         public FormQuanLyHanhKhach()
         {
             InitializeComponent();
             LoadData();
         }
+
+        ~FormQuanLyHanhKhach() { }
 
         private void LoadData()
         {
@@ -36,24 +37,34 @@ namespace DBMS_Project
             tb_SDT.ResetText();
         }
 
+        private void Reset_Text_TimKiem()
+        {
+            tb_TimKiem_CCCD.ResetText();
+            tb_TimKiem_HoTen.ResetText();
+            tb_TimKiem_MaHanhKhach.ResetText();
+            tb_TimKiem_SDT.ResetText();
+        }
+
         private void dgv_QuanLyHanhKhach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgv_QuanLyHanhKhach.CurrentCell.RowIndex;
             if (r < dgv_QuanLyHanhKhach.Rows.Count - 1 && r >= 0)
             {
                 tb_MaHanhKhach.Text = dgv_QuanLyHanhKhach.Rows[r].Cells[0].Value.ToString();
-                tb_CCCD.Text = dgv_QuanLyHanhKhach.Rows[r].Cells[1].Value.ToString();
-                tb_SDT.Text = dgv_QuanLyHanhKhach.Rows[r].Cells[2].Value.ToString();
+                tb_HoTen.Text = dgv_QuanLyHanhKhach.Rows[r].Cells[1].Value.ToString();
+                tb_CCCD.Text = dgv_QuanLyHanhKhach.Rows[r].Cells[2].Value.ToString();
+                tb_SDT.Text = dgv_QuanLyHanhKhach.Rows[r].Cells[3].Value.ToString();
             }
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
             string MaHK = tb_MaHanhKhach.Text.ToString();
+            string HoTen = tb_HoTen.Text.ToString();
             string CCCD = tb_CCCD.Text.ToString();
             string SDT = tb_SDT.Text.ToString();
             string error = "";
-            bool b = db.ThemHanhKhach(MaHK, CCCD, SDT, ref error);
+            bool b = db.ThemHanhKhach(MaHK, HoTen, CCCD, SDT, ref error);
             if (b)
             {
                 MessageBox.Show("Thêm thành công", "Thành công", MessageBoxButtons.OK);
@@ -66,10 +77,11 @@ namespace DBMS_Project
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             string MaHK = tb_MaHanhKhach.Text.ToString();
+            string HoTen = tb_HoTen.Text.ToString();
             string CCCD = tb_CCCD.Text.ToString();
             string SDT = tb_SDT.Text.ToString();
             string error = "";
-            bool b = db.SuaHanhKhach(MaHK, CCCD, SDT, ref error);
+            bool b = db.SuaHanhKhach(MaHK, HoTen, CCCD, SDT, ref error);
             if (b)
             {
                 MessageBox.Show("Sửa thành công", "Thành công", MessageBoxButtons.OK);
@@ -95,24 +107,48 @@ namespace DBMS_Project
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
-            string CCCD = tb_TimKiem_CCCD.Text.ToString();
-            DataTable dataTable = db.TimHanhKhach(CCCD);
-            if(dataTable.Rows.Count > 0)
+            Reset_Text();
+            string CCCD = tb_TimKiem_CCCD.Text.Trim();
+            DataTable dataTable = new DataTable();
+            if (CCCD.Length > 0)
             {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    var MaHK = row["MaHanhKhach"];
-                    tb_TimKiem_MaHanhKhach.Text = (string)MaHK;
-                    var SDT = row["SDT"];
-                    tb_TimKiem_SDT.Text = (string)SDT;
-                }
-            }    
-            else
+                dataTable = db.TimHanhKhachTheoCCCD(CCCD);
+                dgv_QuanLyHanhKhach.DataSource = dataTable;
+                return;
+            }
+            string MaHK = tb_TimKiem_MaHanhKhach.Text.Trim();
+            if(MaHK.Length > 0)
             {
-                tb_TimKiem_MaHanhKhach.Text = "Không tìm thấy";
-                tb_TimKiem_HoTen.Text = "Không tìm thấy";
-                tb_TimKiem_SDT.Text = "Không tìm thấy";
+                dataTable = db.TimHanhKhachTheoMaHK(MaHK);
+                dgv_QuanLyHanhKhach.DataSource = dataTable;
+                return;
+            }
+            string HoTen = tb_TimKiem_HoTen.Text.Trim();
+            string sdt = tb_TimKiem_SDT.Text.Trim();
+            if (HoTen.Length > 0 && sdt.Length == 0)
+            {
+                dataTable = db.TimHanhKhachTheoHoTen(HoTen);
+                dgv_QuanLyHanhKhach.DataSource = dataTable;
+                return;
+            }
+            if(HoTen.Length == 0 && sdt.Length > 0)
+            {
+                dataTable = db.TimHanhKhachTheoSDT(sdt);
+                dgv_QuanLyHanhKhach.DataSource = dataTable;
+                return;
+            }
+            if(HoTen.Length > 0 && sdt.Length > 0)
+            {
+                dataTable = db.TimHanhKhachTheoHoTenVaSDT(HoTen, sdt);
+                dgv_QuanLyHanhKhach.DataSource = dataTable;
+                return;
             }    
+        }
+
+        private void btn_ReLoad_Click(object sender, EventArgs e)
+        {
+            Reset_Text_TimKiem();
+            LoadData();
         }
 
         private void FormQuanLyHanhKhach_Load(object sender, EventArgs e)
@@ -120,6 +156,30 @@ namespace DBMS_Project
             // TODO: This line of code loads data into the 'dBMS_DataSet.HanhKhach' table. You can move, or remove it, as needed.
             this.hanhKhachTableAdapter.Fill(this.dBMS_DataSet.HanhKhach);
 
+        }
+
+        private void rb_sdt_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_SDT.Enabled = !tb_TimKiem_SDT.Enabled;
+            tb_TimKiem_SDT.ResetText();
+        }
+
+        private void rb_cccd_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_CCCD.Enabled = !tb_TimKiem_CCCD.Enabled;
+            tb_TimKiem_CCCD.ResetText();
+        }
+
+        private void rb_mahk_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_MaHanhKhach.Enabled = !tb_TimKiem_MaHanhKhach.Enabled;
+            tb_TimKiem_MaHanhKhach.ResetText();
+        }
+
+        private void rb_hoten_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_TimKiem_HoTen.Enabled = !tb_TimKiem_HoTen.Enabled;
+            tb_TimKiem_HoTen.ResetText();
         }
     }
 }

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyHanhKhach));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_ReLoad = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tb_TimKiem_SDT = new System.Windows.Forms.TextBox();
             this.tb_TimKiem_HoTen = new System.Windows.Forms.TextBox();
@@ -58,32 +59,54 @@
             this.dBMS_DataSet = new DBMS_Project.DBMS_DataSet();
             this.hanhKhachBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hanhKhachTableAdapter = new DBMS_Project.DBMS_DataSetTableAdapters.HanhKhachTableAdapter();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rb_cccd = new System.Windows.Forms.RadioButton();
+            this.rb_mahk = new System.Windows.Forms.RadioButton();
+            this.rb_hoten = new System.Windows.Forms.RadioButton();
+            this.rb_sdt = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QuanLyHanhKhach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hanhKhachBindingSource)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.tb_TimKiem_SDT);
             this.panel2.Controls.Add(this.tb_TimKiem_HoTen);
             this.panel2.Controls.Add(this.tb_TimKiem_MaHanhKhach);
+            this.panel2.Controls.Add(this.tb_TimKiem_CCCD);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.btn_ReLoad);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.tb_TimKiem_CCCD);
             this.panel2.Controls.Add(this.btn_TimKiem);
             this.panel2.Location = new System.Drawing.Point(22, 49);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(288, 515);
             this.panel2.TabIndex = 6;
+            // 
+            // btn_ReLoad
+            // 
+            this.btn_ReLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_ReLoad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ReLoad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_ReLoad.Location = new System.Drawing.Point(28, 461);
+            this.btn_ReLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_ReLoad.Name = "btn_ReLoad";
+            this.btn_ReLoad.Size = new System.Drawing.Size(234, 43);
+            this.btn_ReLoad.TabIndex = 65;
+            this.btn_ReLoad.Text = "Reload";
+            this.btn_ReLoad.UseVisualStyleBackColor = false;
+            this.btn_ReLoad.Click += new System.EventHandler(this.btn_ReLoad_Click);
             // 
             // pictureBox1
             // 
@@ -98,34 +121,37 @@
             // tb_TimKiem_SDT
             // 
             this.tb_TimKiem_SDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.tb_TimKiem_SDT.Enabled = false;
             this.tb_TimKiem_SDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TimKiem_SDT.Location = new System.Drawing.Point(8, 373);
             this.tb_TimKiem_SDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_TimKiem_SDT.Multiline = true;
             this.tb_TimKiem_SDT.Name = "tb_TimKiem_SDT";
-            this.tb_TimKiem_SDT.Size = new System.Drawing.Size(266, 30);
+            this.tb_TimKiem_SDT.Size = new System.Drawing.Size(242, 30);
             this.tb_TimKiem_SDT.TabIndex = 63;
             // 
             // tb_TimKiem_HoTen
             // 
             this.tb_TimKiem_HoTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.tb_TimKiem_HoTen.Enabled = false;
             this.tb_TimKiem_HoTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TimKiem_HoTen.Location = new System.Drawing.Point(8, 301);
             this.tb_TimKiem_HoTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_TimKiem_HoTen.Multiline = true;
             this.tb_TimKiem_HoTen.Name = "tb_TimKiem_HoTen";
-            this.tb_TimKiem_HoTen.Size = new System.Drawing.Size(266, 30);
+            this.tb_TimKiem_HoTen.Size = new System.Drawing.Size(242, 30);
             this.tb_TimKiem_HoTen.TabIndex = 62;
             // 
             // tb_TimKiem_MaHanhKhach
             // 
             this.tb_TimKiem_MaHanhKhach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.tb_TimKiem_MaHanhKhach.Enabled = false;
             this.tb_TimKiem_MaHanhKhach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TimKiem_MaHanhKhach.Location = new System.Drawing.Point(8, 231);
             this.tb_TimKiem_MaHanhKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_TimKiem_MaHanhKhach.Multiline = true;
             this.tb_TimKiem_MaHanhKhach.Name = "tb_TimKiem_MaHanhKhach";
-            this.tb_TimKiem_MaHanhKhach.Size = new System.Drawing.Size(266, 30);
+            this.tb_TimKiem_MaHanhKhach.Size = new System.Drawing.Size(242, 30);
             this.tb_TimKiem_MaHanhKhach.TabIndex = 61;
             // 
             // label9
@@ -176,7 +202,7 @@
             this.tb_TimKiem_CCCD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_TimKiem_CCCD.Multiline = true;
             this.tb_TimKiem_CCCD.Name = "tb_TimKiem_CCCD";
-            this.tb_TimKiem_CCCD.Size = new System.Drawing.Size(266, 30);
+            this.tb_TimKiem_CCCD.Size = new System.Drawing.Size(242, 30);
             this.tb_TimKiem_CCCD.TabIndex = 56;
             // 
             // btn_TimKiem
@@ -184,7 +210,7 @@
             this.btn_TimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.btn_TimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_TimKiem.Location = new System.Drawing.Point(25, 434);
+            this.btn_TimKiem.Location = new System.Drawing.Point(28, 414);
             this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(234, 43);
@@ -381,6 +407,62 @@
             // 
             this.hanhKhachTableAdapter.ClearBeforeFill = true;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rb_sdt);
+            this.panel3.Controls.Add(this.rb_hoten);
+            this.panel3.Controls.Add(this.rb_mahk);
+            this.panel3.Controls.Add(this.rb_cccd);
+            this.panel3.Location = new System.Drawing.Point(236, 132);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(49, 271);
+            this.panel3.TabIndex = 66;
+            // 
+            // rb_cccd
+            // 
+            this.rb_cccd.AutoSize = true;
+            this.rb_cccd.Checked = true;
+            this.rb_cccd.Location = new System.Drawing.Point(29, 24);
+            this.rb_cccd.Name = "rb_cccd";
+            this.rb_cccd.Size = new System.Drawing.Size(17, 16);
+            this.rb_cccd.TabIndex = 0;
+            this.rb_cccd.TabStop = true;
+            this.rb_cccd.UseVisualStyleBackColor = true;
+            this.rb_cccd.CheckedChanged += new System.EventHandler(this.rb_cccd_CheckedChanged);
+            // 
+            // rb_mahk
+            // 
+            this.rb_mahk.AutoSize = true;
+            this.rb_mahk.Location = new System.Drawing.Point(29, 99);
+            this.rb_mahk.Name = "rb_mahk";
+            this.rb_mahk.Size = new System.Drawing.Size(17, 16);
+            this.rb_mahk.TabIndex = 1;
+            this.rb_mahk.TabStop = true;
+            this.rb_mahk.UseVisualStyleBackColor = true;
+            this.rb_mahk.CheckedChanged += new System.EventHandler(this.rb_mahk_CheckedChanged);
+            // 
+            // rb_hoten
+            // 
+            this.rb_hoten.AutoSize = true;
+            this.rb_hoten.Location = new System.Drawing.Point(29, 169);
+            this.rb_hoten.Name = "rb_hoten";
+            this.rb_hoten.Size = new System.Drawing.Size(17, 16);
+            this.rb_hoten.TabIndex = 2;
+            this.rb_hoten.TabStop = true;
+            this.rb_hoten.UseVisualStyleBackColor = true;
+            this.rb_hoten.CheckedChanged += new System.EventHandler(this.rb_hoten_CheckedChanged);
+            // 
+            // rb_sdt
+            // 
+            this.rb_sdt.AutoSize = true;
+            this.rb_sdt.Location = new System.Drawing.Point(29, 241);
+            this.rb_sdt.Name = "rb_sdt";
+            this.rb_sdt.Size = new System.Drawing.Size(17, 16);
+            this.rb_sdt.TabIndex = 3;
+            this.rb_sdt.TabStop = true;
+            this.rb_sdt.UseVisualStyleBackColor = true;
+            this.rb_sdt.CheckedChanged += new System.EventHandler(this.rb_sdt_CheckedChanged);
+            // 
             // FormQuanLyHanhKhach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -406,6 +488,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QuanLyHanhKhach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBMS_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hanhKhachBindingSource)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,5 +525,11 @@
         private DBMS_DataSet dBMS_DataSet;
         private System.Windows.Forms.BindingSource hanhKhachBindingSource;
         private DBMS_DataSetTableAdapters.HanhKhachTableAdapter hanhKhachTableAdapter;
+        private System.Windows.Forms.Button btn_ReLoad;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton rb_sdt;
+        private System.Windows.Forms.RadioButton rb_hoten;
+        private System.Windows.Forms.RadioButton rb_mahk;
+        private System.Windows.Forms.RadioButton rb_cccd;
     }
 }
