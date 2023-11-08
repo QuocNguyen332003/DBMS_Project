@@ -42,10 +42,11 @@ namespace DBMS_Project.BL
             cmd.Parameters.Add("@MaSanBayDen", SqlDbType.VarChar).Value = masbden;
             cmd.Parameters.Add("@GioDen", SqlDbType.Time).Value = gioden;
             cmd.Parameters.Add("@NgayDen", SqlDbType.Date).Value = ngayden;
-            if (cmd.ExecuteNonQuery() > 0)
-                MessageBox.Show("Thêm thành công!");
-            else
-                MessageBox.Show("Thêm thất bại");
+            try {
+                cmd.ExecuteNonQuery();
+            }
+            catch(SqlException e) { MessageBox.Show(e.Message); }
+
             db.closeConnection();
         }
 
