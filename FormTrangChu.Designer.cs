@@ -65,10 +65,10 @@
             this.btnQLHanhKhach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLHanhKhach.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLHanhKhach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLHanhKhach.Location = new System.Drawing.Point(1009, 52);
+            this.btnQLHanhKhach.Location = new System.Drawing.Point(1128, 52);
             this.btnQLHanhKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLHanhKhach.Name = "btnQLHanhKhach";
-            this.btnQLHanhKhach.Size = new System.Drawing.Size(246, 50);
+            this.btnQLHanhKhach.Size = new System.Drawing.Size(159, 50);
             this.btnQLHanhKhach.TabIndex = 17;
             this.btnQLHanhKhach.Text = "Quản Lý Vé";
             this.btnQLHanhKhach.UseVisualStyleBackColor = false;
@@ -86,7 +86,7 @@
             this.btnQLNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLNhanSu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLNhanSu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLNhanSu.Location = new System.Drawing.Point(781, 52);
+            this.btnQLNhanSu.Location = new System.Drawing.Point(863, 52);
             this.btnQLNhanSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLNhanSu.Name = "btnQLNhanSu";
             this.btnQLNhanSu.Size = new System.Drawing.Size(208, 50);
@@ -107,7 +107,7 @@
             this.btnQLChuyenBay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLChuyenBay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLChuyenBay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLChuyenBay.Location = new System.Drawing.Point(516, 52);
+            this.btnQLChuyenBay.Location = new System.Drawing.Point(555, 52);
             this.btnQLChuyenBay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLChuyenBay.Name = "btnQLChuyenBay";
             this.btnQLChuyenBay.Size = new System.Drawing.Size(241, 50);

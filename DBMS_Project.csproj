@@ -54,6 +54,7 @@
     <Compile Include="BL\BL_QuanLyPhanDoan.cs" />
     <Compile Include="BL\BL_QuanLyTamHoan.cs" />
     <Compile Include="BL\BL_QuanLyVe.cs" />
+    <Compile Include="BL\BL_TaiKhoan.cs" />
     <Compile Include="BL\BL_ThamGia.cs" />
     <Compile Include="FormChiTietTamHoan.cs">
       <SubType>Form</SubType>
