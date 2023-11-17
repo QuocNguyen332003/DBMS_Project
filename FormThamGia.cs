@@ -108,6 +108,7 @@ namespace DBMS_Project
             else { MessageBox.Show("Bạn chưa chọn phần tử tham gia muốn xóa!"); }
         }
 
+
         private void btn_Save_Click(object sender, EventArgs e)
         {
             if (state == ChinhSua.them)
