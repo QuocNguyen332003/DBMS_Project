@@ -73,12 +73,14 @@ namespace DBMS_Project
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.them;
             pnl_thongso.Enabled = true;
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.sua;
             tb_makhoang.Enabled = false;
             pnl_thongso.Enabled = true;
@@ -86,6 +88,7 @@ namespace DBMS_Project
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (tb_sohieu.Text != "")
             {
                 DialogResult traloi;
@@ -101,7 +104,8 @@ namespace DBMS_Project
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            if(state == ChinhSua.them)
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
+            if (state == ChinhSua.them)
             {
                 if(!bl.KiemTraDuDieu(tb_sohieu.Text, tb_tenloaikhoang.Text, tb_makhoang.Text) && tb_sohieu.Text != "")
                 {

@@ -72,6 +72,7 @@ namespace DBMS_Project
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.them;
 
             pnlEnabled.Enabled = true;
@@ -83,6 +84,7 @@ namespace DBMS_Project
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.sua;
             pnlEnabled.Enabled = true;
 
@@ -93,6 +95,7 @@ namespace DBMS_Project
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (cbb_idchuyenbay.Text != "" && txt_idnhanvien.Text!= "" && cbb_stt.Text != "")
             {
                 DialogResult traloi;

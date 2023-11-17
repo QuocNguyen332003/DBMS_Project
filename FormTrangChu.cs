@@ -57,5 +57,16 @@ namespace DBMS_Project
             item.ShowDialog();
             this.Show();
         }
+
+        private void btn_taikhoan_Click(object sender, EventArgs e)
+        {
+            if (BienToanCuc.isadmin) {
+                this.Hide();
+                FormQLTaiKhoan item = new FormQLTaiKhoan();
+                item.ShowDialog();
+                this.Show();
+            }
+            else { MessageBox.Show("Bạn không có quyền!"); }
+        }
     }
 }

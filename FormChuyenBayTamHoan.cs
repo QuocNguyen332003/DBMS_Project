@@ -61,12 +61,14 @@ namespace DBMS_Project
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.sua;
             pnl_modify.Enabled = true;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (txt_id.Text != "")
             {
                 DialogResult traloi;

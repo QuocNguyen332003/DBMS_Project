@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Remoting.Contexts;
 
 namespace DBMS_Project.BL
 {
@@ -16,27 +17,16 @@ namespace DBMS_Project.BL
         public BL_TaiKhoan() { }
         public bool KiemTraTaiKhoan(string username, string password)
         {
-            db.openConnection();            
-            SqlCommand cmd_new = new SqlCommand("SELECT dbo.LayLoaiTaiKhoan(@username, @password)", db.getConnection);
+            db.openConnectionAdmin();
+            SqlCommand cmd_new = new SqlCommand("SELECT dbo.LayLoaiTaiKhoan(@username, @password)", db.getConnectionAdmin);
             cmd_new.Parameters.AddWithValue("@username", username);
             cmd_new.Parameters.AddWithValue("@password", password);
             string loai = (string)cmd_new.ExecuteScalar();
-            db.closeConnection();
-            if (loai == "admin") { 
-                BienToanCuc.isadmin = true;
-                BienToanCuc.username = "admin_QL";
-                BienToanCuc.password = "admin";
-                DB_QuanLyChuyenBay.ConnStr = @"Data Source=LAPTOP-MEAMVPHN\SQLSERVER;Initial Catalog=QuanLyChuyenBay;User Id=" + BienToanCuc.username + ";Password=" + BienToanCuc.password + ";";
-
-                return true;
-            }
-            else if (loai == "user")
-            {
-                BienToanCuc.isadmin = false;
-                BienToanCuc.username = "NguoiXem";
-                BienToanCuc.password = "nguoixem";
-                DB_QuanLyChuyenBay.ConnStr = @"Data Source=LAPTOP-MEAMVPHN\SQLSERVER;Initial Catalog=QuanLyChuyenBay;User Id=" + BienToanCuc.username + ";Password=" + BienToanCuc.password + ";";
-
+            db.closeConnectionAdmin();
+            if (KiemTraUser(username)) {
+                BienToanCuc.isadmin = loai == "admin"? true: false;
+                BienToanCuc.username = username;
+                BienToanCuc.password = password;
                 return true;
             }
             else
@@ -45,6 +35,49 @@ namespace DBMS_Project.BL
                 return false;
             }
             
+        }
+        public bool KiemTraUser(string username)
+        {
+            SqlCommand commadmin = db.getConnectionAdmin.CreateCommand();
+            if (db.getConnectionAdmin.State == ConnectionState.Open)
+                db.getConnectionAdmin.Close();
+            db.getConnectionAdmin.Open();
+            string sql = "select * from TaiKhoan where username = '" + username + "'";
+            commadmin.CommandText = sql;
+            SqlDataReader reader = commadmin.ExecuteReader();
+            if (reader.HasRows) { reader.Close(); return true; }
+            else { reader.Close(); return false; }
+        }
+        public DataTable LoadTaiKhoan()
+        {
+            return db.LayDuLieu("SELECT * FROM LoadTaiKhoan");
+        }
+        public void ThemTaiKhoan(string username, string password, string Loai)
+        {
+            db.openConnection();
+            SqlCommand cmd = new SqlCommand("InsertTaiKhoan", db.getConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@pass", SqlDbType.NVarChar).Value = password;
+            cmd.Parameters.Add("@Loai", SqlDbType.NVarChar).Value = Loai;
+
+            if (cmd.ExecuteNonQuery() > 0)
+                MessageBox.Show("Thêm thành công!");
+            else
+                MessageBox.Show("Thêm thất bại");
+            db.closeConnection();
+        }
+        public void XoaTaiKhoan(string username)
+        {
+            db.openConnection();
+            SqlCommand cmd = new SqlCommand("DeleteTaiKhoan", db.getConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
+            if (cmd.ExecuteNonQuery() > 0)
+                MessageBox.Show("Xóa thành công!");
+            else
+                MessageBox.Show("Xóa thất bại");
+            db.closeConnection();
         }
     }
 }

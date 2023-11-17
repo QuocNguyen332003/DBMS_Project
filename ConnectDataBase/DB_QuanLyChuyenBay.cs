@@ -15,38 +15,27 @@ namespace DBMS_Project.ConnectDataBase
      data source(Hung) = LAPTOP-4U0DKBNK
      data source(Quoc) = ADMIN\BAOQUOC
      data source(Quan) = LAPTOP-MEAMVPHN\SQLSERVER     */
-        //"Data Source=LAPTOP-MEAMVPHN\\SQLSERVER;Initial Catalog=QuanLyChuyenBay;Integrated Security=True" :
-        public static string ConnStr = @"Data Source = LAPTOP-MEAMVPHN\SQLSERVER;Initial Catalog = QuanLyChuyenBay; Integrated Security = True";
+        string ConnStr = @"Data Source=LAPTOP-MEAMVPHN\SQLSERVER;Initial Catalog=QuanLyChuyenBay;User Id=" + BienToanCuc.username + ";Password=" + BienToanCuc.password + ";";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
+
+        string conadmin = @"Data Source=LAPTOP-MEAMVPHN\SQLSERVER;Initial Catalog=QuanLyChuyenBay;Integrated Security=True";
+        SqlConnection connadmin = null;
         public DB_QuanLyChuyenBay()
         {
             conn = new SqlConnection(ConnStr);
             comm = conn.CreateCommand();
 
+            connadmin = new SqlConnection(conadmin);
+            comm = conn.CreateCommand();
         }
-        public void openConnection()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-        }
-        public SqlConnection getConnection
-        {
-            get
-            {
-                return conn;
-            }
-        }
-        public void closeConnection()
-        {
-            if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-        }
+        public void openConnection() { if (conn.State == ConnectionState.Closed){ conn.Open();} }
+        public SqlConnection getConnection{ get { return conn; } }
+        public void closeConnection() {  if (conn.State == ConnectionState.Open) { conn.Close(); } }
+        public void openConnectionAdmin() { if (connadmin.State == ConnectionState.Closed) { connadmin.Open(); } }
+        public SqlConnection getConnectionAdmin { get { return connadmin; } }
+        public void closeConnectionAdmin(){ if (connadmin.State == ConnectionState.Open){connadmin.Close();}}
         public bool MyExecuteNonQuery(SqlCommand comm, DB_QuanLyChuyenBay conn, ref string error)
         {
             bool f = false;

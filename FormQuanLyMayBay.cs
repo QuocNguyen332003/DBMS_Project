@@ -84,6 +84,7 @@ namespace DBMS_Project
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.them;
             Reset_Text();
             pnl_thongso.Enabled = true;
@@ -93,6 +94,7 @@ namespace DBMS_Project
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.sua;
             pnl_thongso.Enabled = true;
             tb_sohieu.Enabled = false;
@@ -101,7 +103,8 @@ namespace DBMS_Project
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            if(tb_sohieu.Text != "")
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
+            if (tb_sohieu.Text != "")
             {
                 DialogResult traloi;
                 traloi = MessageBox.Show("Bạn có chắc chắn xóa Máy bay này?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -157,6 +160,7 @@ namespace DBMS_Project
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             int numSoHieu = cb_sohieu.Checked ? 1 : 0;
             int numTen = cb_ten.Checked ? 1 : 0;
             int numTongSoGhe = cb_tongsoghe.Checked ? 1 : 0;

@@ -37,6 +37,7 @@ namespace DBMS_Project
                 this.Close();
             }
         }
+
     }
     internal class BienToanCuc
     {

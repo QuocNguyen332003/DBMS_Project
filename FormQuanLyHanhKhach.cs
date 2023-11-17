@@ -59,6 +59,7 @@ namespace DBMS_Project
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             string MaHK = tb_MaHanhKhach.Text.ToString();
             string HoTen = tb_HoTen.Text.ToString();
             string CCCD = tb_CCCD.Text.ToString();
@@ -76,6 +77,7 @@ namespace DBMS_Project
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             string MaHK = tb_MaHanhKhach.Text.ToString();
             string HoTen = tb_HoTen.Text.ToString();
             string CCCD = tb_CCCD.Text.ToString();
@@ -93,6 +95,7 @@ namespace DBMS_Project
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             string MaHK = tb_MaHanhKhach.Text.ToString();
             string error = "";
             bool b = db.XoaHanhKhach(MaHK, ref error);
@@ -107,6 +110,7 @@ namespace DBMS_Project
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             Reset_Text();
             string CCCD = tb_TimKiem_CCCD.Text.Trim();
             DataTable dataTable = new DataTable();

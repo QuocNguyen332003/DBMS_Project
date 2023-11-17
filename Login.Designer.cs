@@ -35,7 +35,6 @@
             this.tb_user = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnForgot = new System.Windows.Forms.Button();
             this.btnDangnhap = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +60,6 @@
             this.panel1.Controls.Add(this.tb_user);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnForgot);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnDangnhap);
             this.panel1.Location = new System.Drawing.Point(4, 4);
@@ -117,25 +115,6 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "TÊN ĐĂNG NHẬP";
             // 
-            // btnForgot
-            // 
-            this.btnForgot.AutoSize = true;
-            this.btnForgot.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnForgot.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnForgot.FlatAppearance.BorderSize = 0;
-            this.btnForgot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnForgot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForgot.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnForgot.Location = new System.Drawing.Point(135, 313);
-            this.btnForgot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnForgot.Name = "btnForgot";
-            this.btnForgot.Size = new System.Drawing.Size(207, 47);
-            this.btnForgot.TabIndex = 65;
-            this.btnForgot.Text = "Quên mật khẩu";
-            this.btnForgot.UseVisualStyleBackColor = false;
-            // 
             // btnDangnhap
             // 
             this.btnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
@@ -186,7 +165,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnForgot;
         private System.Windows.Forms.Button btnDangnhap;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
