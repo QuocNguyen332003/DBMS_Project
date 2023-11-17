@@ -33,6 +33,7 @@ namespace DBMS_Project
             if (!(txt_user.Text == ""))
             {
                 bl.ThemTaiKhoan(txt_user.Text, txt_pass.Text, cbb_loai.Text);
+                LoadData();
             }
             else MessageBox.Show("Nhập đầy đủ thông tin");
         }
@@ -42,6 +43,7 @@ namespace DBMS_Project
             if (!(txt_user.Text == ""))
             {
                 bl.XoaTaiKhoan(txt_user.Text);
+                LoadData();
             }
             else MessageBox.Show("Nhập đầy đủ thông tin");
         }

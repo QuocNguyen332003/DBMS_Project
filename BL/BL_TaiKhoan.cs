@@ -73,10 +73,8 @@ namespace DBMS_Project.BL
             SqlCommand cmd = new SqlCommand("DeleteTaiKhoan", db.getConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
-            if (cmd.ExecuteNonQuery() > 0)
-                MessageBox.Show("Xóa thành công!");
-            else
-                MessageBox.Show("Xóa thất bại");
+            cmd.ExecuteNonQuery();
+            
             db.closeConnection();
         }
     }
