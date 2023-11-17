@@ -54,6 +54,7 @@
     <Compile Include="BL\BL_QuanLyPhanDoan.cs" />
     <Compile Include="BL\BL_QuanLyTamHoan.cs" />
     <Compile Include="BL\BL_QuanLyVe.cs" />
+    <Compile Include="BL\BL_TaiKhoan.cs" />
     <Compile Include="BL\BL_ThamGia.cs" />
     <Compile Include="FormChiTietTamHoan.cs">
       <SubType>Form</SubType>
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="FormQLNhanSu.Designer.cs">
       <DependentUpon>FormQLNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQLTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLTaiKhoan.Designer.cs">
+      <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQuanLyChuyenBay.cs">
       <SubType>Form</SubType>
@@ -155,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLNhanSu.resx">
       <DependentUpon>FormQLNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQLTaiKhoan.resx">
+      <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyChuyenBay.resx">
       <DependentUpon>FormQuanLyChuyenBay.cs</DependentUpon>

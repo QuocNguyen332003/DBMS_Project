@@ -35,6 +35,7 @@
             this.btnQLChuyenBay = new System.Windows.Forms.Button();
             this.btnQLMayBay = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_taikhoan = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +43,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btn_taikhoan);
             this.panel1.Controls.Add(this.btnQLHanhKhach);
             this.panel1.Controls.Add(this.btnQLNhanSu);
             this.panel1.Controls.Add(this.btnQLChuyenBay);
@@ -50,7 +52,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1300, 145);
+            this.panel1.Size = new System.Drawing.Size(1300, 141);
             this.panel1.TabIndex = 0;
             // 
             // btnQLHanhKhach
@@ -65,10 +67,10 @@
             this.btnQLHanhKhach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLHanhKhach.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLHanhKhach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLHanhKhach.Location = new System.Drawing.Point(1009, 52);
+            this.btnQLHanhKhach.Location = new System.Drawing.Point(1045, 11);
             this.btnQLHanhKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLHanhKhach.Name = "btnQLHanhKhach";
-            this.btnQLHanhKhach.Size = new System.Drawing.Size(246, 50);
+            this.btnQLHanhKhach.Size = new System.Drawing.Size(159, 50);
             this.btnQLHanhKhach.TabIndex = 17;
             this.btnQLHanhKhach.Text = "Quản Lý Vé";
             this.btnQLHanhKhach.UseVisualStyleBackColor = false;
@@ -86,7 +88,7 @@
             this.btnQLNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLNhanSu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLNhanSu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLNhanSu.Location = new System.Drawing.Point(781, 52);
+            this.btnQLNhanSu.Location = new System.Drawing.Point(1045, 72);
             this.btnQLNhanSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLNhanSu.Name = "btnQLNhanSu";
             this.btnQLNhanSu.Size = new System.Drawing.Size(208, 50);
@@ -107,7 +109,7 @@
             this.btnQLChuyenBay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLChuyenBay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLChuyenBay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLChuyenBay.Location = new System.Drawing.Point(516, 52);
+            this.btnQLChuyenBay.Location = new System.Drawing.Point(626, 11);
             this.btnQLChuyenBay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLChuyenBay.Name = "btnQLChuyenBay";
             this.btnQLChuyenBay.Size = new System.Drawing.Size(241, 50);
@@ -128,10 +130,10 @@
             this.btnQLMayBay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLMayBay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLMayBay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.btnQLMayBay.Location = new System.Drawing.Point(272, 52);
+            this.btnQLMayBay.Location = new System.Drawing.Point(626, 72);
             this.btnQLMayBay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQLMayBay.Name = "btnQLMayBay";
-            this.btnQLMayBay.Size = new System.Drawing.Size(223, 50);
+            this.btnQLMayBay.Size = new System.Drawing.Size(207, 50);
             this.btnQLMayBay.TabIndex = 14;
             this.btnQLMayBay.Text = "Quản Lý Máy Bay";
             this.btnQLMayBay.UseVisualStyleBackColor = false;
@@ -140,13 +142,34 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 143);
+            this.pictureBox1.Size = new System.Drawing.Size(265, 139);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // btn_taikhoan
+            // 
+            this.btn_taikhoan.AutoSize = true;
+            this.btn_taikhoan.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_taikhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_taikhoan.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_taikhoan.FlatAppearance.BorderSize = 0;
+            this.btn_taikhoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_taikhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_taikhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_taikhoan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_taikhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.btn_taikhoan.Location = new System.Drawing.Point(332, 44);
+            this.btn_taikhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_taikhoan.Name = "btn_taikhoan";
+            this.btn_taikhoan.Size = new System.Drawing.Size(241, 50);
+            this.btn_taikhoan.TabIndex = 18;
+            this.btn_taikhoan.Text = "Quản Lý Tài khoản";
+            this.btn_taikhoan.UseVisualStyleBackColor = false;
+            this.btn_taikhoan.Click += new System.EventHandler(this.btn_taikhoan_Click);
             // 
             // FormTrangChu
             // 
@@ -176,5 +199,6 @@
         private System.Windows.Forms.Button btnQLChuyenBay;
         private System.Windows.Forms.Button btnQLMayBay;
         private System.Windows.Forms.Button btnQLHanhKhach;
+        private System.Windows.Forms.Button btn_taikhoan;
     }
 }

@@ -85,18 +85,21 @@ namespace DBMS_Project
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.them;
             pnlEnabled.Enabled = true;
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.sua;
             pnlEnabled.Enabled = true;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (txt_id.Text != "")
             {
                 DialogResult traloi;
@@ -113,6 +116,7 @@ namespace DBMS_Project
         }
         private void btnTamHoan_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (txt_id.Text != "")
             {
                 DialogResult traloi;
@@ -128,6 +132,7 @@ namespace DBMS_Project
         }
         private void btn_luu_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (state == ChinhSua.them)
             {
                 if (!bl.KiemTraDuDieu(txt_id.Text) && txt_id.Text != "")
@@ -197,6 +202,7 @@ namespace DBMS_Project
 
         private void btn_thongke_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             DateTime date = Convert.ToDateTime(cbb_ngaydi.Text);
             MessageBox.Show(" Số lượng chuyến bay trong ngày " + date + " là: " +bl.SoLuongChuyenBayTheoNgay(date).ToString());
         }

@@ -42,6 +42,7 @@ namespace DBMS_Project
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.them;
             trangthai2();
 
@@ -57,6 +58,7 @@ namespace DBMS_Project
         }
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             state = ChinhSua.sua;
             trangthai2();
             txt_id_emp.Enabled = false;
@@ -64,6 +66,7 @@ namespace DBMS_Project
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (state == ChinhSua.them)
             {
                 if (!bl.KiemTraDuDieu(txt_id_emp.Text) && txt_id_emp.Text != "")
@@ -136,6 +139,7 @@ namespace DBMS_Project
         }
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             if (txt_id_emp.Text != "")
             {
                 DialogResult traloi;
@@ -152,7 +156,7 @@ namespace DBMS_Project
         }
         private void btn_Luong_Click(object sender, EventArgs e)
         {
-
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             bl.TinhLuong(txt_id_emp.Text);
         }
 
@@ -166,6 +170,7 @@ namespace DBMS_Project
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             DataTable data = bl.TimNhanVien(cbb_idnhanvien.Text);
             if (data != null)
             {
@@ -183,6 +188,7 @@ namespace DBMS_Project
         }
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             this.Hide();
             FormThongKeNV thongke = new FormThongKeNV();
             thongke.ShowDialog();

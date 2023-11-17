@@ -58,6 +58,7 @@ namespace DBMS_Project
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             string MaVe = tb_MaVe.Text.ToString();
             string MaHanhKhach = tb_MaHanhKhach.Text.ToString();
             string MaChuyenBay = tb_MaChuyenBay.Text.ToString();
@@ -77,6 +78,7 @@ namespace DBMS_Project
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             string MaVe = tb_MaVe.Text.ToString();
             string MaHanhKhach = tb_MaHanhKhach.Text.ToString();
             string MaChuyenBay = tb_MaChuyenBay.Text.ToString();
@@ -96,6 +98,7 @@ namespace DBMS_Project
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             string MaVe = tb_MaVe.Text.ToString();
             string error = "";
             bool b = db.XoaVe(MaVe, ref error);
@@ -111,6 +114,7 @@ namespace DBMS_Project
         
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
+            if (!BienToanCuc.isadmin) { MessageBox.Show("Bạn không có quyền!"); return; }
             DataTable dataTable = db.ThongKeVe();
             dgv_QuanLyVe_ThongKe.DataSource = dataTable;
             dgv_QuanLyVe_ThongKe.AutoResizeColumns();

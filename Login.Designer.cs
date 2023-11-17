@@ -31,11 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_mk = new System.Windows.Forms.TextBox();
+            this.tb_user = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnForgot = new System.Windows.Forms.Button();
             this.btnDangnhap = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,41 +56,42 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tb_mk);
+            this.panel1.Controls.Add(this.tb_user);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnForgot);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnDangnhap);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(317, 361);
             this.panel1.TabIndex = 53;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // textBox2
+            // tb_mk
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(45, 194);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 45);
-            this.textBox2.TabIndex = 69;
+            this.tb_mk.BackColor = System.Drawing.Color.White;
+            this.tb_mk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_mk.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_mk.Location = new System.Drawing.Point(45, 194);
+            this.tb_mk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_mk.Multiline = true;
+            this.tb_mk.Name = "tb_mk";
+            this.tb_mk.PasswordChar = '*';
+            this.tb_mk.Size = new System.Drawing.Size(240, 45);
+            this.tb_mk.TabIndex = 69;
             // 
-            // textBox1
+            // tb_user
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(45, 112);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 42);
-            this.textBox1.TabIndex = 68;
+            this.tb_user.BackColor = System.Drawing.Color.White;
+            this.tb_user.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_user.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_user.Location = new System.Drawing.Point(45, 112);
+            this.tb_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_user.Multiline = true;
+            this.tb_user.Name = "tb_user";
+            this.tb_user.Size = new System.Drawing.Size(240, 42);
+            this.tb_user.TabIndex = 68;
             // 
             // label2
             // 
@@ -115,25 +115,6 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "TÊN ĐĂNG NHẬP";
             // 
-            // btnForgot
-            // 
-            this.btnForgot.AutoSize = true;
-            this.btnForgot.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnForgot.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnForgot.FlatAppearance.BorderSize = 0;
-            this.btnForgot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnForgot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForgot.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnForgot.Location = new System.Drawing.Point(135, 313);
-            this.btnForgot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnForgot.Name = "btnForgot";
-            this.btnForgot.Size = new System.Drawing.Size(207, 47);
-            this.btnForgot.TabIndex = 65;
-            this.btnForgot.Text = "Quên mật khẩu";
-            this.btnForgot.UseVisualStyleBackColor = false;
-            // 
             // btnDangnhap
             // 
             this.btnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
@@ -146,13 +127,14 @@
             this.btnDangnhap.TabIndex = 63;
             this.btnDangnhap.Text = "Đăng nhập";
             this.btnDangnhap.UseVisualStyleBackColor = false;
+            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(39, 66);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(327, 368);
             this.panel2.TabIndex = 68;
@@ -183,13 +165,12 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnForgot;
         private System.Windows.Forms.Button btnDangnhap;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_mk;
+        private System.Windows.Forms.TextBox tb_user;
     }
 }
 
