@@ -35,6 +35,7 @@ namespace DBMS_Project
                 bl.ThemTaiKhoan(txt_user.Text, txt_pass.Text, cbb_loai.Text);
             }
             else MessageBox.Show("Nhập đầy đủ thông tin");
+            LoadData();
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
