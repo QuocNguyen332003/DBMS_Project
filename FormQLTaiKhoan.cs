@@ -36,6 +36,7 @@ namespace DBMS_Project
                 LoadData();
             }
             else MessageBox.Show("Nhập đầy đủ thông tin");
+            LoadData();
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
